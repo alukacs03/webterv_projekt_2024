@@ -7,8 +7,11 @@
     --background-colour: #F1F8FD;
     --header-colour: #98651E;
     --footer-colour: #533710;
-    --footer-text-colour: #F0D394;
+    --light-colour: #F0D394;
     --dark-green: #6E4B1F;
+    --button-color: #2F981E;
+    --button-color-active: #4E9F40;
+    
 }
 
 body {
@@ -74,6 +77,7 @@ a {
     background-color: var(--background-colour);
     height: auto;
     flex: 1;
+    padding: 5rem;
 }
 
 /*
@@ -81,7 +85,11 @@ a {
 */
 
 #offerWrapper{
-
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 
@@ -90,8 +98,9 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
     padding: 1rem;
+    color: white;
     border-radius: 1rem;
 }
 
@@ -110,6 +119,19 @@ a {
 .offerButton {
     margin: 0;
     padding: 0;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    width: 10rem;
+    height: 2.5rem;
+    background-color: var(--button-color);
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.offerButton:hover {
+    background-color: var(--button-color-active);
+    cursor: pointer;
 }
 
 .offerImage {
@@ -117,6 +139,75 @@ a {
     width: 10rem;
     object-fit: cover;
     border-radius: 0.8rem;
+}
+
+/*
+    Reviews
+*/
+
+#reviewWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.reviewCard {
+    display: grid;
+    box-sizing: border-box;
+    background-color: var(--light-colour);
+    grid-template-columns: 2fr 9fr;
+    grid-template-rows: 1fr;
+    padding: 1rem;
+    border-radius: 2rem;
+}
+
+.reviewProfilePic {
+    height: 10rem;
+    border-radius: 1rem;
+}
+
+.reviewName {
+    margin: 0;
+    padding: 0;
+}
+
+.reviewDate {
+
+}
+
+.reviewDetails {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.reviewLeft {
+    display: flex;
+    gap: 1rem;
+    border-right: 1px solid var(--dark-green);
+    padding: 0.5rem;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: left;
+}
+
+
+.reviewRight {
+    padding: 0 1rem;
+    margin: 0;
+}
+
+.reviewText {
+    padding: 0;
+    margin: 0;
+    text-align: justify;
+}
+
+.reviewRight {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 
@@ -131,7 +222,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: var(--footer-text-colour);
+    color: var(--light-colour);
 }
 
 #footerPhone {
