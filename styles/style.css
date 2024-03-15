@@ -243,6 +243,7 @@ a {
     border-radius: 2rem;
     flex-flow: row wrap;
     color: var(--dark-green);
+    justify-content: center;
 }
 
 #aboutUsLeft {
@@ -251,6 +252,7 @@ a {
     justify-content: center;
     text-align: left;
     max-width: 30rem;
+    align-self: center;
 }
 
 #aboutUsRight {
