@@ -102,6 +102,8 @@ a {
     padding: 1rem;
     color: white;
     border-radius: 1rem;
+    flex: 1;
+    max-width: 15rem;
 }
 
 .offerTitle {
@@ -152,13 +154,12 @@ a {
 }
 
 .reviewCard {
-    display: grid;
+    display: flex;
     box-sizing: border-box;
     background-color: var(--light-colour);
-    grid-template-columns: 2fr 9fr;
-    grid-template-rows: 1fr;
-    padding: 1rem;
+    padding: 1rem 0.5rem;
     border-radius: 2rem;
+    flex-wrap: wrap;
 }
 
 .reviewProfilePic {
@@ -185,17 +186,21 @@ a {
 .reviewLeft {
     display: flex;
     gap: 1rem;
-    border-right: 1px solid var(--dark-green);
     padding: 0.5rem;
     align-items: center;
     justify-content: space-evenly;
     text-align: left;
+    max-height: 10rem;
 }
 
 
 .reviewRight {
     padding: 0 1rem;
     margin: 0;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    flex: 1;
 }
 
 .reviewText {
