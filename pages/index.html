@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <title>Rönklovagok Kft.</title>
@@ -141,25 +141,26 @@
             <h2 class="indexSubTitle">Írd meg nekünk...</h2>
         </div>
         <div id="formWrapper">
-            <form id="contactForm" action="/#" method="POST">
+            <form id="contactForm" action="./404.html" method="POST">
                 <div id="contactTopContainer">
-                    <div id="contactNameContainer">
+                    <div id="contactNameContainer" class="contactContainer">
                         <label for="contactNameInput" class="contactLabel">Név:</label>
-                        <input type="text" name="contactNameInput" id="contactNameInput" class="contactInputField">
+                        <input type="text" name="contactNameInput" id="contactNameInput" class="contactInputField" placeholder="Név..." required>
                     </div>
-                    <div id="contactSubjectContainer">
+                    <div id="contactSubjectContainer" class="contactContainer">
                         <label for="contactSubjectInput" class="contactLabel">Tárgy:</label>
-                        <input type="text" name="contactSubjectInput" id="contactSubjectInput" class="contactInputField">
+                        <input type="text" name="contactSubjectInput" id="contactSubjectInput" class="contactInputField" placeholder="Tárgy..." required>
                     </div>
-                    <div id="contactEmailContainer">
+                    <div id="contactEmailContainer" class="contactContainer">
                         <label for="contactEmailInput" class="contactLabel">E-mail:</label>
-                        <input type="email" name="contactEmailInput" id="contactEmailInput" class="contactInputField">
+                        <input type="email" name="contactEmailInput" id="contactEmailInput" class="contactInputField" placeholder="E-mail..." required>
                     </div>
                 </div>
-                <div id="contactMessageContainer">
-                    <label for="contactMessageInput">Üzenet:</label>
-                    <textarea name="contactMessageInput" id="contactMessageInput" cols="30" rows="10"></textarea>
+                <div id="contactMessageContainer" class="contactContainer">
+                    <label for="contactMessageInput" class="contactLabel">Üzenet:</label>
+                    <textarea name="contactMessageInput" id="contactMessageInput" cols="30" rows="10" required></textarea>
                 </div>
+                <button id="contactSubmitButton" type="submit">Üzenet elküldése</button>
             </form>
         </div>
     </main>
