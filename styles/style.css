@@ -77,7 +77,8 @@ a {
     background-color: var(--background-colour);
     height: auto;
     flex: 1;
-    padding: 0 10rem;
+    padding: 1.5rem 10rem;
+    gap: 1.5rem;
 }
 
 /*
@@ -173,10 +174,6 @@ a {
 .reviewName {
     margin: 0;
     padding: 0;
-}
-
-.reviewDate {
-
 }
 
 .reviewDetails {
@@ -283,6 +280,26 @@ a {
     padding: 1rem;
     height: auto;
     font-size: 1rem;
+}
+
+/*
+    Contact Form
+*/
+
+#formWrapper {
+    width: 100%;
+}
+
+#contactForm {
+    display: grid;
+    box-sizing: border-box;
+    background-color: var(--light-colour);
+    padding: 2rem;
+    border-radius: 2rem;
+    flex-flow: row wrap;
+    color: var(--dark-green);
+    font-weight: bold;
+    justify-content: center;
 }
 
 /*
