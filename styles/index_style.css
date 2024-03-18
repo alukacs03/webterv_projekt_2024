@@ -97,7 +97,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .reviewLeft {
@@ -118,18 +118,14 @@
     justify-content: center;
     font-weight: bold;
     flex: 1;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .reviewText {
     padding: 0;
     margin: 0;
     text-align: justify;
-}
-
-.reviewRight {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
 }
 
 #allReviewsButton {
@@ -139,12 +135,31 @@
     font-size: 1.25rem;
 }
 
-.starFull {
+.reviewDate {
+    margin: 8px 0px;
+}
 
+.reviewStars{
+    background-color: var(--dark-green);
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    display: grid;
+    max-width: 9rem;
+    grid-template-columns: repeat(5,1fr);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.star{
+    width: 100%;
+}
+
+.starFull {
+    filter: invert(73%) sepia(19%) saturate(4602%) hue-rotate(17deg) brightness(103%) contrast(107%);
 }
 
 .starEmpty {
-    
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(294deg) brightness(108%) contrast(102%);
 }
 
 /*
@@ -234,7 +249,7 @@
     justify-content: center;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
 }
 
@@ -245,6 +260,8 @@
     align-items: flex-start;
     gap: 0.5rem;
 }
+
+
 
 .contactInputField {
     border: none;
@@ -260,7 +277,14 @@
 }
 
 #contactMessageContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
+}
+
+#contactMessageLabel {
+    margin-bottom: 8px;
 }
 
 #contactMessageInput {

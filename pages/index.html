@@ -79,9 +79,15 @@
                     <img src="../pictures/profilepics/catboy.jpeg" alt="catboy" class="reviewProfilePic">
                     <div class="reviewDetails">
                         <h2 class="reviewName">Sett</h2>
-                        <div>
+                        <div class="reviewPepe">
                             <p class="reviewDate">2024.02.21</p>
-                            <div class="reviewStars">5 stars</div>
+                            <div class="reviewStars">
+                                <img src="../pictures/resources/star.png" alt="Csillagok" class="starFull star">
+                                <img src="../pictures/resources/star.png" alt="csillagok" class="starFull star">
+                                <img src="../pictures/resources/star.png" alt="mondjátok" class="starFull star">
+                                <img src="../pictures/resources/star.png" alt="el" class="starEmpty star">
+                                <img src="../pictures/resources/star.png" alt="nekem" class="starEmpty star">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -104,7 +110,12 @@
                         <h2 class="reviewName">Sett</h2>
                         <div>
                             <p class="reviewDate">2024.02.21</p>
-                            <div class="reviewStars">5 stars</div>
+                            <div class="reviewStars">
+                                <img src="../pictures/resources/star.png" alt="Csillagok" class="starFull star">
+                                <img src="../pictures/resources/star.png" alt="csillagok" class="starFull star">
+                                <img src="../pictures/resources/star.png" alt="mondjátok" class="starFull star">
+                                <img src="../pictures/resources/star.png" alt="el" class="starFull star">
+                                <img src="../pictures/resources/star.png" alt="nekem" class="starEmpty star"></div>
                         </div>
                     </div>
                 </div>
@@ -157,8 +168,8 @@
                         <input type="email" name="contactEmailInput" id="contactEmailInput" class="contactInputField" placeholder="E-mail..." required>
                     </div>
                 </div>
-                <div id="contactMessageContainer" class="contactContainer">
-                    <label for="contactMessageInput" class="contactLabel">Üzenet:</label>
+                <div id="contactMessageContainer">
+                    <label for="contactMessageInput" class="contactLabel" id="contactMessageLabel">Üzenet:</label>
                     <textarea name="contactMessageInput" id="contactMessageInput" cols="30" rows="10" required></textarea>
                 </div>
                 <button id="contactSubmitButton" type="submit">Üzenet elküldése</button>
