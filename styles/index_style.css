@@ -1,86 +1,4 @@
 /*
-    Globalis
-*/
-
-/* globalis valtozok a szinekre */
-:root {
-    --background-colour: #F1F8FD;
-    --header-colour: #98651E;
-    --footer-colour: #533710;
-    --light-colour: #F0D394;
-    --dark-green: #6E4B1F;
-    --button-color: #2F981E;
-    --button-color-active: #4E9F40;
-}
-
-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    margin: 0;
-    overflow: scroll;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-/*
-    Header
-*/
-
-
-header {
-    height: 3rem;
-    background-color: var(--header-colour);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
-    margin: 0;
-    padding: 1rem 1.5rem;
-}
-
-
-a {
-    text-decoration: none;
-    color: white;
-}
-
-
-#pageName {
-    font-weight: bold;
-    font-size: 2rem;
-    padding: 0;
-    margin: 0;
-}
-
-#menuOptions {
-    display: flex;
-    gap: 2rem;
-}
-
-.menuLink {
-    color: white;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 1.25rem;
-}
-
-/*
-    Main
-*/
-
-#indexMain {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    background-color: var(--background-colour);
-    height: auto;
-    flex: 1;
-    padding: 1.5rem 10rem;
-    gap: 1.5rem;
-}
-
-/*
     Ajanlatok
 */
 
@@ -407,3 +325,9 @@ footer {
     width: 100%;
     height: 100%;
 }
+
+
+/*
+    Rolunk oldal CSS
+*/
+
