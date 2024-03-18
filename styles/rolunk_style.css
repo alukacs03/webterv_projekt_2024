@@ -27,13 +27,13 @@
 }
 
 #mainTitle {
-    font-size: 5rem;
+    font-size: 4vw;
     margin: 0;
     padding: 0;
 }
 
 #subTitle {
-    font-size: 2rem;
+    font-size: 3vw;
     padding: 0;
     margin: 0;
 }
@@ -48,7 +48,7 @@
     display: flex;
     box-sizing: border-box;
     background-color: var(--light-colour);
-    padding: 2rem 6vw;
+    padding: 2rem 4vw;
     border-radius: 2rem;
     flex-wrap: wrap;
     color: var(--dark-green);
@@ -63,5 +63,32 @@
 
 
 .galleryWrapper {
-
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
 }
+
+.galleryItemWrapper {
+    background-color: var(--button-color);
+    border-radius: 2rem;
+    width: 20rem;
+}
+
+.galleryImage {
+    width: 20rem;
+
+    height: auto;
+    border-radius: 2rem 2rem 0 0;
+}
+
+.galleryDesc {
+    padding: 1.25rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
