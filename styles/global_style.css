@@ -162,7 +162,7 @@ li {
     background-color: var(--background-colour);
     height: auto;
     flex: 1;
-    padding: 1.5rem 10vw;
+    padding: 1.5rem 5vw;
     margin-top: 4rem;
     gap: 1.5rem;
 }
