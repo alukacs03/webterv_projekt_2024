@@ -154,7 +154,7 @@ li {
     Main
 */
 
-#indexMain {
+main {
     display: flex;
     flex-direction: column;
     text-align: center;
