@@ -11,8 +11,12 @@
     flex-wrap: wrap;
 }
 
+.offerCard:hover {
+    box-shadow: 0.5rem 0.5rem 0.5rem black;
+}
 
 .offerCard {
+    transition: 0.4s ease-in-out;
     background-color: var(--dark-green);
     display: flex;
     flex-direction: column;
@@ -291,6 +295,7 @@
 #contactMessageInput {
     resize: none;
     width: 100%;
+    height: 40vh;
     border: none;
     border-radius: 0.5rem;
     padding: 0.2rem;
@@ -306,7 +311,25 @@
     font-size: 1rem;
 }
 
+@media (max-width: 768px) {
+    #contactMessageInput {
+        height: 22vh;
+    }
+    #contactEmailInput {
+        width: 100%;
+    }
+    #contactEmailContainer {
+        grid-column: span 2;
+    }
+    #contactTopContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
 
+@media (max-width: 560px) {
+}
 
 /*
     Miscellaneous
