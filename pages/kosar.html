@@ -8,6 +8,8 @@
     <meta name="description" content="Rönklovagok Kft. gyors faszállítás olcsón">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/global_style.css">
+    <link rel="stylesheet" href="../styles/kosar_style.css">
+    <script src="../js/script.js" defer></script>
 </head>
 <body>
     <header id="pageHeader">
@@ -31,8 +33,37 @@
             </div>
         </nav>
     </header>
-    <script src="../js/script.js"></script>
     <main id="indexMain">
+        <h1 class="kosarTitle">Kosár</h1>
+        <div id="cartWrapper">
+            <div class="cartCard">
+                <div class="cartCardField">
+                    <img src="../pictures/products/bukk.jpg" alt="" class="cartCardProductImage">
+                </div>
+                <div class="cartCardField">
+                    <p class="cartCardTitle">Név</p>
+                    <p class="cartCardProductName">Akác</p>
+                </div>
+                <div class="cartCardField">
+                    <p class="cartCardTitle">Mennyiség</p>
+                    <div class="cartCardAmountWrapper">
+                        <input type="number" name="amountInput" id="amountInput">
+                        <label for="amountInput">m<sup>3</sup></label>
+                    </div>
+                </div>
+                <div class="cartCardField">
+                    <p class="cartCardTitle">Ár</p>
+                    <p class="cartCardPricePerMeasurement">35.000Ft/m<sup>3</sup></p>
+                </div>
+                <div class="cartCardField">
+                    <p class="cartCardTitle">Összesen</p>
+                    <p class="cartCardItemPriceSum">350.000 Ft</p>
+                </div>
+                <div class="cartCardField">
+                    <img src="" alt="kuka" class="cartCardBinImage">
+                </div>
+            </div>
+        </div>
     </main>
     <footer id="pageFooter">
         <h2 id="location">6726 Szeged, Közép faszorr 31-33.</h2>

@@ -1,0 +1,26 @@
+.kosarTitle {
+    font-size: 3rem;
+    align-self: center;
+    padding-top: 2rem;
+    color: var(--dark-green);
+}
+
+#cartWrapper {
+    width: 100%;
+}
+
+.cartCard {
+    display: grid;
+    grid-template-columns: 10rem 1fr 2fr 1fr 2fr 1fr;
+    box-sizing: border-box;
+    background-color: var(--light-colour);
+    padding: 1rem;
+    border-radius: 2rem;
+    flex-wrap: wrap;
+    color: var(--dark-green);
+}
+
+.cartCardProductImage {
+    height: 10rem;
+    border-radius: 1rem;
+}
