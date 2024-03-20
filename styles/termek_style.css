@@ -1,5 +1,5 @@
 #termekMain {
-    
+
 }
 
 .paragraphWrapper {
@@ -19,6 +19,7 @@
     font-size: 3rem;
     align-self: center;
     padding-top: 2rem;
+    color: var(--dark-green);
 }
 
 #categorySelectBar {
@@ -28,7 +29,7 @@
     grid-template-rows: 1fr 1fr 1fr;
     gap: 1rem;
     padding-bottom: 5vh;
-    margin-bottom: 5vh;
+    margin-bottom: 3vh;
     border-bottom: 1px solid var(--dark-green);
 }
 
@@ -58,7 +59,7 @@
 }
 
 .termek {
-    color: black;
+    color: beige;
 }
 
 .categoryTitleWrapper {
@@ -69,9 +70,11 @@
     justify-content: space-between;
     align-items: center;
     padding: 2rem;
+    margin-top: 2vh;
     box-sizing: border-box;
     border-radius: 1rem;
     background-color: var(--button-color);
+    color: beige
 }
 
 .productImage {
@@ -110,7 +113,11 @@
 .productWrapper {
     display: flex;
     flex-wrap: wrap;
+    justify-content: start;
+    width: 100%;
     gap: 2rem;
+    padding-bottom: 5vh;
+    border-bottom: 1px solid var(--dark-green);
 }
 
 .productBottomDiv {
