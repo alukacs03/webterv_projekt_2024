@@ -173,6 +173,7 @@ main {
 
 footer {
     height: 3rem;
+    width: 100%;
     background-color: var(--footer-colour);
     padding: 0.5rem 1rem;
     display: flex;
