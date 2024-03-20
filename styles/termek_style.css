@@ -1,3 +1,7 @@
+#termekMain {
+    
+}
+
 .paragraphWrapper {
     display: flex;
     box-sizing: border-box;
@@ -28,6 +32,10 @@
     border-bottom: 1px solid var(--dark-green);
 }
 
+.catItemWrapper:hover {
+    box-shadow: 0.5rem 0.5rem 0.5rem darkslategray;
+}
+
 .catItemWrapper {
     display: flex;
     box-sizing: border-box;
@@ -38,6 +46,7 @@
     align-items: center;
     justify-content: space-between;
     border-radius: 1rem;
+    transition: 0.2s ease;
 }
 
 @media (max-width: 560px) {
@@ -48,11 +57,15 @@
     }
 }
 
+.termek {
+    color: black;
+}
+
 .categoryTitleWrapper {
     align-self: start;
     display: flex;
     width: 20rem;
-    height: 10rem;
+    height: 7rem;
     justify-content: space-between;
     align-items: center;
     padding: 2rem;
@@ -66,14 +79,32 @@
     border-radius: 1rem;
 }
 
+.productCard:hover {
+    box-shadow: 0.5rem 0.5rem 0.5rem darkgray;
+}
+
 .productCard {
-    background-color: var(--dark-green);
+    background-color: var(--braun);
     padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 2rem;
     gap: 1rem;
+    transition: 0.2s ease;
+}
+
+.productTextWrapper {
+    color: beige;
+}
+
+.productName {
+    font-size: 2.5vh;
+    font-weight: bold;
+}
+
+.productPrice {
+    font-size: 2vh;
 }
 
 .productWrapper {
@@ -103,6 +134,12 @@
     background-color: var(--light-colour);
 }
 
+.productCartButton:hover {
+    width: calc(10rem + 4px);
+    height: calc(3rem + 4px);
+    margin: 0;
+}
+
 .productCartButton {
     background-color: var(--button-color);
     width: 10rem;
@@ -111,5 +148,7 @@
     display: flex;
     justify-content: space-between;
     padding: 1rem;
+    margin: 2px;
     align-items: center;
+    transition: 0.2s ease;
 }

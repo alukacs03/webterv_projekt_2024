@@ -11,9 +11,11 @@
     --dark-green: #6E4B1F;
     --button-color: #2F981E;
     --button-color-active: #4E9F40;
+    --braun: #985B06;
 }
 
 body {
+    background-color: var(--background-colour);
     overflow-x: hidden;
     display: flex;
     min-height: 100vh;
@@ -159,7 +161,6 @@ main {
     flex-direction: column;
     text-align: center;
     align-items: center;
-    background-color: var(--background-colour);
     height: auto;
     flex: 1;
     padding: 1.5rem 5vw;
