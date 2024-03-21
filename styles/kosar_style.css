@@ -7,20 +7,80 @@
 
 #cartWrapper {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 
 .cartCard {
     display: grid;
-    grid-template-columns: 10rem 1fr 2fr 1fr 2fr 1fr;
+    grid-template-columns: 10rem 1fr 2fr 1fr 2fr 5rem;
     box-sizing: border-box;
     background-color: var(--light-colour);
     padding: 1rem;
     border-radius: 2rem;
-    flex-wrap: wrap;
     color: var(--dark-green);
+    height: 12rem;
+    min-width: 10rem;
+}
+
+@media (max-width: 1000px) {
+    .cartCard {
+        grid-template-columns: 1fr;
+        grid-template-rows: 12rem 1fr 2fr 1fr 2fr 5rem;
+        height: fit-content;
+        justify-content: center;
+        width: fit-content;
+        gap: 1rem;
+    }
+
+    #cartWrapper {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cartCardField {
+        padding: 1rem;
+        height: 100%;
+    }
+
+    .cartCardProductImage {
+        justify-self: center;
+    }
 }
 
 .cartCardProductImage {
     height: 10rem;
     border-radius: 1rem;
+}
+
+.cartCardField {
+    display: grid;
+    grid-template-rows: 2rem auto;
+}
+
+.cartCardTitle {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.cartCardProductName, .cartCardPricePerMeasurement, .cartCardItemPriceSum, .cartCardAmountWrapper {
+    font-weight: bold;
+    font-size: 1.5rem;
+    justify-self: center;
+    align-self: center;
+}
+
+.amountInput {
+    width: 50%;
+    border: none;
+    outline: none;
+    height: 2.5rem;
+    border-radius: 0.8rem;
+    background-color:#D9D9D9;
+    padding-left: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--dark-green);
 }
