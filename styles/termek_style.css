@@ -1,7 +1,3 @@
-#termekMain {
-
-}
-
 .paragraphWrapper {
     display: flex;
     box-sizing: border-box;
@@ -31,6 +27,11 @@
     padding-bottom: 5vh;
     margin-bottom: 3vh;
     border-bottom: 1px solid var(--dark-green);
+}
+
+#utolso {
+    padding: 0;
+    border: none;
 }
 
 .catItemWrapper:hover {
