@@ -399,3 +399,9 @@
     }
 }
 
+#ja {
+    color: var(--footer-colour);
+    position: fixed;
+    left: 50%;
+    bottom: 2vh;
+}
