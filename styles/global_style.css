@@ -116,7 +116,7 @@ li {
     background-color: white;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     .hamburger{
         display: block;
     }
@@ -151,7 +151,7 @@ li {
 }
 
 #pageHeader.veryScrollDown {
-    transform: translate3d(0, -35vh, 0);
+    transform: translate3d(0, -50vh, 0);
 }
 
 #pageHeader.scrollDown {

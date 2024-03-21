@@ -8,9 +8,69 @@
     <meta name="description" content="Rönklovagok Kft. gyors faszállítás olcsón">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/global_style.css">
+    <link rel="stylesheet" href="../styles/beRe_style.css">
     <script src="../js/script.js" defer></script>
 </head>
 <body>
-
+    <header id="pageHeader">
+        <nav class="menuBar">
+            <a href="index.html" class="menuBranding">Rönklovagok Kft.</a>
+            <ul class="menu">
+                <li class="menuItem">
+                    <a href="rolunk.html" class="menuLink">Rólunk</a>
+                </li>
+                <li class="menuItem">
+                    <a href="termek.html" class="menuLink">Termékek</a>
+                </li>
+                <li class="menuItem">
+                    <a href="kosar.html" class="menuLink">Kosár</a>
+                </li>
+                <li class="menuItem">
+                    <a href="bejelentekezes.html" class="menuLink">Bejelentkezés</a>
+                </li>
+                <li class="menuItem">
+                    <a href="regisztracio.html" class="menuLink">Regisztráció</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="singIOWapper">
+            <form action="index.html" id="IOForm" method="post">
+                <div id="formTitle">
+                    <p>Regisztráció</p>
+                </div>
+                <div id="emailContainer" class="container">
+                    <label for="email" class="containerLabel">E-mail cím</label>
+                    <input type="email" name="email" class="containerinput">
+                </div>
+                <div id="paswordContainer" class="container">
+                    <label for="password" class="containerLabel">Jelszó</label>
+                    <input type="password" name="password" class="containerinput">
+                </div>
+                <div id="paswordAginContainer" class="container">
+                    <label for="passwordAgin" class="containerLabel">Jelszó újra</label>
+                    <input type="password" name="passwordAgin" class="containerinput">
+                </div>
+                <button id="regButton">Regisztráció</button>
+                <div id="singIn">
+                    <p id="singInText">Már van fiókod?</p>
+                    <a href="bejelentekezes.html" id="singInLink">Bejelentkezés →</a>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer id="pageFooter">
+        <h2 id="location">6726 Szeged, Közép faszorr 31-33.</h2>
+        <div id="footerPhone">
+            <img id ="phoneImage" src="../pictures/phone.png" alt="Telefon">
+            <h3 id="phoneNumber">+36 20 420 6969</h3>
+        </div>
+    </footer>
 </body>
 </html>
