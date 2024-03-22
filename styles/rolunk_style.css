@@ -1,0 +1,101 @@
+/* globalis valtozok a szinekre */
+:root {
+    --background-colour: #F1F8FD;
+    --header-colour: #98651E;
+    --footer-colour: #533710;
+    --light-colour: #F0D394;
+    --dark-green: #6E4B1F;
+    --button-color: #2F981E;
+    --button-color-active: #4E9F40;
+}
+
+#titleBar {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    text-align: left;
+    align-items: center;
+    margin-top: 2rem;
+    color: var(--dark-green);
+}
+
+#titleDiv {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    height: 20vw;
+    justify-content: space-around;
+}
+
+#mainTitle {
+    font-size: 4vw;
+    margin: 0;
+    padding: 0;
+}
+
+#subTitle {
+    font-size: 3.5vw;
+    padding: 0;
+    margin: 0;
+}
+
+#titleImage {
+    width: 20vw;
+    height: 20vw;
+    border-radius: 3vw;
+}
+
+.paragraphWrapper {
+    display: flex;
+    box-sizing: border-box;
+    background-color: var(--light-colour);
+    padding: 2rem 4vw;
+    border-radius: 2rem;
+    flex-wrap: wrap;
+    color: var(--dark-green);
+    width: 100%;
+    text-align: justify;
+    min-width: fit-content;
+}
+
+.paragraphText {
+    font-size: 2vh;
+}
+
+#utolso {
+    padding: 0;
+    border: none;
+}
+
+.galleryWrapper {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 3vh;
+    border-bottom: 1px solid var(--dark-green);
+}
+
+.galleryItemWrapper {
+    background-color: var(--button-color);
+    border-radius: 2rem;
+    width: 20rem;
+}
+
+.galleryImage {
+    width: 20rem;
+
+    height: auto;
+    border-radius: 2rem 2rem 0 0;
+}
+
+.galleryDesc {
+    padding: 1.25rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
