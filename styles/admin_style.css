@@ -1,0 +1,96 @@
+:root {
+    --adminMainGridMargin: 2vh;
+}
+
+#sideNav {
+    background-color: var(--dark-green);
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding-top: 100px;
+}
+
+header {
+    box-shadow: none;
+}
+
+main {
+    display: grid;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    gap: 0;
+    grid-template-columns: 1fr 10fr;
+}
+
+#adminSideNavMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+}
+
+.sideMenuLink {
+    font-size: 1vw;
+    font-weight: bold;
+    transition: 0.7s ease;
+}
+
+.menuLink {
+    font-size: 2vh;
+}
+
+#adminTitle {
+    color: white;
+}
+
+#adminMetricsWrapper {
+    width: 100%;
+    height: 100%;
+    padding-top: 70px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.metricsBox {
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+    font-weight: bold;
+}
+
+.metricNumber {
+    font-size: 12vw;
+}
+
+.metricText {
+    font-size: 3vw;
+}
+
+#metricTopLeft {
+    margin: var(--adminMainGridMargin);
+    background-color: var(--button-color);
+}
+
+#metricTopRight {
+    margin: var(--adminMainGridMargin) var(--adminMainGridMargin) var(--adminMainGridMargin) 0;
+    background-color: var(--button-color-active);
+
+}
+
+#metricBottomLeft {
+    margin: 0 var(--adminMainGridMargin) var(--adminMainGridMargin) var(--adminMainGridMargin);
+    background-color: var(--red);
+}
+
+#metricBottomRight {
+    margin: 0 var(--adminMainGridMargin) var(--adminMainGridMargin) 0;
+    background-color: var(--button-color);
+}
