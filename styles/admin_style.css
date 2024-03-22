@@ -114,7 +114,7 @@ main {
     padding: calc(70px + 1rem) 1rem 1rem 1rem;
 }
 
-#newProductForm {
+#newProductForm, #newCategoryForm {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -126,7 +126,7 @@ main {
     padding: 1vw;
 }
 
-#newProductWrapper {
+#newProductWrapper, #newCategoryWrapper {
     width: 100%;
     height: auto;
     display: grid;
@@ -200,6 +200,11 @@ main {
     padding: 1rem;
 }
 
+#categoryTopRow {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
 .formBottomRow {
     display: grid;
     justify-items: center;
@@ -219,7 +224,7 @@ main {
     height: 100%;
 }
 
-.productDescWrapper {
+.productDescWrapper, .categoryDescWrapper {
     width: 100%;
     height: 100%;
     display: flex;
@@ -243,7 +248,7 @@ main {
     font-size: 2vh;
 }
 
-.productImgWrapper {
+.productImgWrapper, .categoryImgWrapper  {
     width: 100%;
     height: 100%;
     display: grid;
@@ -251,7 +256,7 @@ main {
     gap: 1rem;
 }
 
-.productImgLeft {
+.productImgLeft, .categoryImgLeft {
     width: 100%;
     height: 100%;
     display: flex;
@@ -260,12 +265,12 @@ main {
     text-align: left;
 }
 
-.productImagePreview {
+.productImagePreview, .categoryImagePreview {
     width: 100%;
     border-radius: 1rem;
 }
 
-.productImgRight {
+.productImgRight, .categoryImgRight {
     padding-bottom: 0;
     display: flex;
     flex-direction: column;
@@ -283,7 +288,7 @@ main {
     background-color: var(--red);
 }
 
-#productImageInput {
+#productImageInput, #categoryImageInput {
     display: none;
 }
 
@@ -300,7 +305,7 @@ main {
         gap: 0.5vw;
     }
 
-    #newProductWrapper {
+    #newProductWrapper, #newCategoryWrapper {
         width: 100%;
         height: 100%;
         display: grid;
@@ -325,6 +330,8 @@ main {
         gap: 1vw;
         padding: 1rem;
     }
+
+    
 }
 
 @media (max-width: 800px) {
@@ -339,7 +346,7 @@ main {
         gap: 0.5vw;
     }
 
-    #newProductWrapper {
+    #newProductWrapper, #newCategoryWrapper {
         width: 100%;
         height: fit-content;
         display: grid;

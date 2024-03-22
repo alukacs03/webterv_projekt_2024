@@ -30,60 +30,37 @@
         <nav id="sideNav">
             <ul class="sideMenu" id="adminSideNavMenu">
                 <li class="sideMenuItem"><a class="sideMenuLink" href="ujTermek.html">Új termék</a></li>
-                <li class="sideMenuItem"><a class="sideMenuLink" href="ujKategoria.html">Új kategória</a></li>
+                <li class="sideMenuItem"><a class="sideMenuLink" href="#">Új kategória</a></li>
                 <li class="sideMenuItem"><a class="sideMenuLink" href="megrendelesek.html">Megrendelések</a></li>
             </ul>
         </nav>
         <div class="adminMainWrapper formPageWrapper">
-            <form id="newProductForm" onsubmit="return false;" enctype="multipart/form-data" method="post">
-                <div id="newProductWrapper">
-                    <h2 class="formTitle">Új termék hozzáadása</h2>
-                    <div class="formWrapper" id="newProductFormWrapper">
-                        <div class="formTopRow">
-                            <div class="formTopRowField" id="formProdNameDiv">
-                                <p class="inputTitle">Terméknév</p>
-                                <input type="text" class="formInput" placeholder="Terméknév..." required>
-                            </div>
-                            <div class="formTopRowField" id="formProdCatDiv">
-                                <p class="inputTitle">Termék kategória</p>
-                                <select name="categorySelector" id="categorySelector" required>
-                                    <option value="">-</option>
-                                    <option value="tuzifa">Tűzifa</option>
-                                    <option value="tuzifa">Fűrészárú</option>
-                                    <option value="tuzifa">OSB lapok</option>
-                                    <option value="tuzifa">Karácsonyfa</option>
-                                    <option value="tuzifa">Fogpiszkáló</option>
-                                    <option value="tuzifa">Faszeg</option>
-                                </select>
-                            </div>
-                            <div class="formTopRowField">
-                                <p class="inputTitle">Ár</p>
-                                <div class="priceInputWrapper">
-                                    <input required type="number" min="0" placeholder="Ár..." class="formInput">
-                                    <p class="inputTitle">Ft</p>
-                                </div>
-                            </div>
-                            <div class="formTopRowField">
-                                <p class="inputTitle">Mértékegység</p>
-                                <input type="text" placeholder="m^3" class="formInput" required>
+            <form id="newCategoryForm" onsubmit="return false;" enctype="multipart/form-data" method="post">
+                <div id="newCategoryWrapper">
+                    <h2 class="formTitle">Új kategória hozzáadása</h2>
+                    <div class="formWrapper" id="newCategoryFormWrapper">
+                        <div class="formTopRow" id="categoryTopRow">
+                            <div class="formTopRowField" id="formCatNameDiv">
+                                <p class="inputTitle">Kategórianév</p>
+                                <input type="text" class="formInput" placeholder="Kategórianév..." required>
                             </div>
                         </div>
                         <div class="formBottomRow">
-                            <div class="productDescWrapper">
-                                <label for="descInput" class="inputTitle">Termék leírása</label>
+                            <div class="categoryDescWrapper">
+                                <label for="descInput" class="inputTitle">Kategória leírása</label>
                                 <textarea name="descInput" id="descInput" cols="30" rows="10" class="descInput formInput" placeholder="Rövid leírás..." required></textarea>
                             </div>
-                            <div class="productImgWrapper">
-                                <div class="productImgLeft">
-                                    <p class="inputTitle">Termék képe</p>
+                            <div class="categoryImgWrapper">
+                                <div class="categoryImgLeft">
+                                    <p class="inputTitle">Kategória képe</p>
                                     <div class="imgWrapper">
-                                        <img class="productImagePreview" src="../../pictures/aboutus_gallery/international_success.jpeg" alt="Termékkép">
+                                        <img class="categoryImagePreview" src="../../pictures/aboutus_gallery/international_success.jpeg" alt="Kategóriakép">
                                     </div>
                                 </div>
-                                <div class="productImgRight">
+                                <div class="categoryImgRight">
                                     <div class="imgUploadBtnWrapper">
-                                        <label for="productImageInput" class="formButton">Kép választása</label>
-                                        <input type="file" name="productImageInput" id="productImageInput" accept="image/*">
+                                        <label for="categoryImageInput" class="formButton">Kép választása</label>
+                                        <input type="file" name="categoryImageInput" id="categoryImageInput" accept="image/*">
                                     </div>
                                     <button id="imgUploadButton" class="formButton">Kép feltöltése...</button>
                                     <button id="imgDeleteButton" class="formButton redButton">Kép törlése...</button>
@@ -91,7 +68,7 @@
                             </div>
                         </div>
                     </div>
-                    <button id="newProductButton" class="formSubmitButton" type="submit">Termék közzététele</button>
+                    <button id="newCategoryButton" class="formSubmitButton" type="submit">Kategória mentése</button>
                 </div>
             </form>
         </div>
