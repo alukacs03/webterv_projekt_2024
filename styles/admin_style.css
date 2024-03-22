@@ -284,6 +284,10 @@ main {
     font-size: 1.5vh;
 }
 
+.orderCardFieldValue .formButton:hover {
+    font-size: 2.2vh;
+}
+
 .redButton {
     background-color: var(--red);
 }
@@ -386,5 +390,116 @@ main {
         grid-template-rows: 1fr 1fr;
         gap: 2vw;
         padding: 1rem;
+    }
+}
+
+
+/*
+    Megrendelések
+*/
+
+.ordersPageWrapper {
+    padding-top: calc(70px + 2rem);
+    padding: calc(70px + 2rem) 2rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#ordersTitle {
+    font-size: 2.5vw;
+    color: var(--dark-green);
+}
+
+.ordersListWrapper {
+    padding-top: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.orderItemWrapper {
+    width: 80%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.5fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-colour);
+    padding: 2vw;
+    border-radius: 1rem;
+}
+
+.orderCardField {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-items: start;
+    align-items: center;
+    gap: 1rem;
+}
+
+.orderCardFieldTitle {
+    font-weight: bold;
+    font-size: 3vh;
+}
+
+.orderCardFieldValue {
+    font-size: 2.5vh;
+}
+
+.orderShipped {
+    background-color: var(--button-color);
+    padding: 1vh;
+    border-radius: 1rem;
+    color: beige;
+    font-weight: bold;
+}
+
+.buttonField, .buttonField:hover {
+    grid-row: 1/3;
+    font-size: 2vh;
+}
+
+@media (max-width: 1350px) {
+    .orderItemWrapper {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .orderCardField:last-of-type {
+        grid-column: 1/3;
+    }
+}
+
+@media (max-width: 800px) {
+    #ordersTitle {
+        font-size: 5vw;
+    }
+
+    .orderItemWrapper {
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .orderCardField {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .orderCardFieldValue {
+        text-align: center;
+    }
+
+    .orderCardField:last-of-type {
+        grid-column: 1;
+        grid-row: 5;
     }
 }

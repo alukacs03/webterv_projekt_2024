@@ -31,69 +31,98 @@
             <ul class="sideMenu" id="adminSideNavMenu">
                 <li class="sideMenuItem"><a class="sideMenuLink" href="ujTermek.html">Új termék</a></li>
                 <li class="sideMenuItem"><a class="sideMenuLink" href="ujKategoria.html">Új kategória</a></li>
-                <li class="sideMenuItem"><a class="sideMenuLink" href="megrendelesek.html">Megrendelések</a></li>
+                <li class="sideMenuItem"><a class="sideMenuLink" href="#">Megrendelések</a></li>
             </ul>
         </nav>
-        <div class="adminMainWrapper formPageWrapper">
-            <form id="newProductForm" onsubmit="return false;" enctype="multipart/form-data" method="post">
-                <div id="newProductWrapper">
-                    <h2 class="formTitle">Új termék hozzáadása</h2>
-                    <div class="formWrapper" id="newProductFormWrapper">
-                        <div class="formTopRow">
-                            <div class="formTopRowField" id="formProdNameDiv">
-                                <p class="inputTitle">Terméknév</p>
-                                <input type="text" class="formInput" placeholder="Terméknév..." required>
-                            </div>
-                            <div class="formTopRowField" id="formProdCatDiv">
-                                <p class="inputTitle">Termék kategória</p>
-                                <select name="categorySelector" id="categorySelector" required>
-                                    <option value="">-</option>
-                                    <option value="tuzifa">Tűzifa</option>
-                                    <option value="tuzifa">Fűrészárú</option>
-                                    <option value="tuzifa">OSB lapok</option>
-                                    <option value="tuzifa">Karácsonyfa</option>
-                                    <option value="tuzifa">Fogpiszkáló</option>
-                                    <option value="tuzifa">Faszeg</option>
-                                </select>
-                            </div>
-                            <div class="formTopRowField">
-                                <p class="inputTitle">Ár</p>
-                                <div class="priceInputWrapper">
-                                    <input required type="number" min="0" placeholder="Ár..." class="formInput">
-                                    <p class="inputTitle">Ft</p>
-                                </div>
-                            </div>
-                            <div class="formTopRowField">
-                                <p class="inputTitle">Mértékegység</p>
-                                <input type="text" placeholder="m^3" class="formInput" required>
-                            </div>
-                        </div>
-                        <div class="formBottomRow">
-                            <div class="productDescWrapper">
-                                <label for="descInput" class="inputTitle">Termék leírása</label>
-                                <textarea name="descInput" id="descInput" cols="30" rows="10" class="descInput formInput" placeholder="Rövid leírás..." required></textarea>
-                            </div>
-                            <div class="productImgWrapper">
-                                <div class="productImgLeft">
-                                    <p class="inputTitle">Termék képe</p>
-                                    <div class="imgWrapper">
-                                        <img class="productImagePreview" src="../../pictures/aboutus_gallery/international_success.jpeg" alt="Termékkép">
-                                    </div>
-                                </div>
-                                <div class="productImgRight">
-                                    <div class="imgUploadBtnWrapper">
-                                        <label for="productImageInput" class="formButton">Kép választása</label>
-                                        <input type="file" name="productImageInput" id="productImageInput" accept="image/*">
-                                    </div>
-                                    <button id="imgUploadButton" class="formButton">Kép feltöltése...</button>
-                                    <button id="imgDeleteButton" class="formButton redButton">Kép törlése...</button>
-                                </div>
-                            </div>
-                        </div>
+        <div class="adminMainWrapper ordersPageWrapper">
+            <h1 id="ordersTitle">Megrendelések</h1>
+            <div class="ordersListWrapper">
+                <div class="orderItemWrapper">
+                    <div class="orderCardField">
+                        <div class="orderCardFieldTitle">Név</div>
+                        <div class="orderCardFieldValue orderNameField">Lakatos Lajos</div>
                     </div>
-                    <button id="newProductButton" class="formSubmitButton" type="submit">Termék közzététele</button>
+                    <div class="orderCardField">
+                        <div class="orderCardFieldTitle">Állapot</div>
+                        <div class="orderCardFieldValue orderShipped">KISZÁLLÍTVA</div>
+                    </div>
+                    <div class="orderCardField">
+                        <div class="orderCardFieldTitle">Rendelés beérkezett</div>
+                        <div class="orderCardFieldValue orderDateField">2024.02.12.</div>
+                    </div>
+                    <div class="orderCardField">
+                        <div class="orderCardFieldTitle">Végösszeg</div>
+                        <div class="orderCardFieldValue orderSumField">385.000 Ft</div>
+                    </div>
+                    <div class="orderCardField">
+                        <div class="orderCardFieldValue formButton buttonField">Több információ</div>
+                    </div>
                 </div>
-            </form>
+                <div class="orderItemWrapper">
+                    <div class="orderCardField">
+                        <div class="orderCardFieldTitle">Név</div>
+                        <div class="orderCardFieldValue orderNameField">Lakatos Lajos</div>
+                    </div>
+                    <div class="orderCardField">
+                        <div class="orderCardFieldTitle">Állapot</div>
+                        <div class="orderCardFieldValue orderShipped">KISZÁLLÍTVA</div>
+                    </div>
+                    <div class="orderCardField">
+                        <div class="orderCardFieldTitle">Rendelés beérkezett</div>
+                        <div class="orderCardFieldValue orderDateField">2024.02.12.</div>
+                    </div>
+                    <div class="orderCardField">
+                        <div class="orderCardFieldTitle">Végösszeg</div>
+                        <div class="orderCardFieldValue orderSumField">385.000 Ft</div>
+                    </div>
+                    <div class="orderCardField">
+                        <div class="orderCardFieldValue formButton buttonField">Több információ</div>
+                    </div>
+                </div>
+                <div class="orderItemWrapper">
+                    <div class="orderCardField">
+                        <div class="orderCardFieldTitle">Név</div>
+                        <div class="orderCardFieldValue orderNameField">Lakatos Lajos</div>
+                    </div>
+                    <div class="orderCardField">
+                        <div class="orderCardFieldTitle">Állapot</div>
+                        <div class="orderCardFieldValue orderShipped">KISZÁLLÍTVA</div>
+                    </div>
+                    <div class="orderCardField">
+                        <div class="orderCardFieldTitle">Rendelés beérkezett</div>
+                        <div class="orderCardFieldValue orderDateField">2024.02.12.</div>
+                    </div>
+                    <div class="orderCardField">
+                        <div class="orderCardFieldTitle">Végösszeg</div>
+                        <div class="orderCardFieldValue orderSumField">385.000 Ft</div>
+                    </div>
+                    <div class="orderCardField">
+                        <div class="orderCardFieldValue formButton buttonField">Több információ</div>
+                    </div>
+                </div>
+                <div class="orderItemWrapper">
+                    <div class="orderCardField">
+                        <div class="orderCardFieldTitle">Név</div>
+                        <div class="orderCardFieldValue orderNameField">Lakatos Lajos</div>
+                    </div>
+                    <div class="orderCardField">
+                        <div class="orderCardFieldTitle">Állapot</div>
+                        <div class="orderCardFieldValue orderShipped">KISZÁLLÍTVA</div>
+                    </div>
+                    <div class="orderCardField">
+                        <div class="orderCardFieldTitle">Rendelés beérkezett</div>
+                        <div class="orderCardFieldValue orderDateField">2024.02.12.</div>
+                    </div>
+                    <div class="orderCardField">
+                        <div class="orderCardFieldTitle">Végösszeg</div>
+                        <div class="orderCardFieldValue orderSumField">385.000 Ft</div>
+                    </div>
+                    <div class="orderCardField">
+                        <div class="orderCardFieldValue formButton buttonField">Több információ</div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </main>
     <footer id="pageFooter">
