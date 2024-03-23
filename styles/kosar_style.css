@@ -71,6 +71,7 @@
     justify-self: center;
     align-self: center;
     padding: 0.5rem;
+    cursor: pointer;
     filter: brightness(0) saturate(100%) invert(22%) sepia(87%) saturate(2060%) hue-rotate(342deg) brightness(83%) contrast(91%);
 }
 
