@@ -1,5 +1,6 @@
 .paragraphWrapper {
     display: flex;
+    flex-direction: column;
     box-sizing: border-box;
     background-color: var(--light-colour);
     padding: 2rem 4vw;
@@ -9,6 +10,7 @@
     width: 100%;
     text-align: justify;
     min-width: fit-content;
+    gap: 1rem;
 }
 
 .termekTitle {
@@ -62,6 +64,7 @@
 .termek {
     color: beige;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .categoryTitleWrapper {
@@ -132,6 +135,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 0.5rem;
+    color: white;
+    font-weight: bold;
 }
 
 .amountInput {
@@ -141,6 +147,9 @@
     height: 2.5rem;
     border-radius: 0.8rem;
     background-color: var(--light-colour);
+    font-weight: bold;
+    font-size: 1rem;
+    padding-left: 0.2rem;
 }
 
 .productCartButton:hover {
@@ -160,4 +169,13 @@
     margin: 2px;
     align-items: center;
     transition: 0.2s ease;
+}
+
+.catImage {
+    height: 5rem;
+}
+
+.cartIcon {
+    width: 2rem;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
 }

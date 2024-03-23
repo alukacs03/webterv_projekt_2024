@@ -2,6 +2,7 @@
     padding-top: 3vh;
     border-top: 1px solid var(--dark-green);
     width: 100%;
+    color: var(--dark-green);
 }
 
 #elso {

@@ -6,7 +6,7 @@ main {
     justify-content: center;
 }
 
-#singIOWapper {
+#signIOWapper {
     width: 30rem;
 }
 
@@ -69,7 +69,7 @@ main {
     margin: 0;
 }
 
-#singIn {
+#signIn {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -80,19 +80,19 @@ main {
     margin-bottom: 1.2rem;
 }
 
-.singInText {
+.signInText {
     color: var(--header-colour);
     font-style: italic;
 }
 
-#singInLink {
+#signInLink {
     color: var(--footer-colour);
     font-style: italic;
     font-weight: bold;
 }
 
 @media (max-width: 550px) {
-    #singIOWapper {
+    #signIOWapper {
         width: 20rem;
     }
 }

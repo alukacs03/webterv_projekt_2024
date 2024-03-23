@@ -44,24 +44,24 @@
         </nav>
     </header>
     <main>
-        <div id="singIOWapper">
+        <div id="signIOWapper">
             <form action="index.html" id="IOForm" method="post">
                 <div id="formTitle">
                     <p>Felhasználói bejelentkezés</p>
                 </div>
                 <div id="emailContainer" class="container">
                     <label for="email" class="containerLabel">E-mail cím</label>
-                    <input type="email" name="email" class="containerinput">
+                    <input type="email" name="email" class="containerinput" required>
                 </div>
-                <div id="paswordContainer" class="container">
+                <div id="passwordContainer" class="container">
                     <label for="password" class="containerLabel">Jelszó</label>
-                    <input type="password" name="password" class="containerinput">
+                    <input type="password" name="password" class="containerinput" required>
                 </div>
-                <button id="regButton">Bejelentkezés</button>
-                <div id="singIn">
-                    <a href="#" class="singInText" id="iForgetMyPassword">Elfelejtettem a jelszavamat</a>
-                    <p class="singInText">Még nem regisztráltál?</p>
-                    <a href="regisztracio.html" id="singInLink">Hozd létre a fiókod →</a>
+                <button id="regButton" onclick="return false;">Bejelentkezés</button>
+                <div id="signIn">
+                    <a href="#" class="signInText" id="iForgetMyPassword">Elfelejtettem a jelszavamat</a>
+                    <p class="signInText">Még nem regisztráltál?</p>
+                    <a href="regisztracio.html" id="signInLink">Hozd létre a fiókod →</a>
                 </div>
             </form>
         </div>
