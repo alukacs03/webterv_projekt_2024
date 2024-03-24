@@ -17,6 +17,119 @@
     padding-top: 100px;
 }
 
+.sideHamburger {
+    display: none;
+    cursor: pointer;
+    transition: 0.7s ease;
+}
+
+.sideHamburger:hover {
+    .sideBar{
+        background-color: var(--header-colour);
+    }
+}
+
+.sideBar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 3px 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+
+.sideMenuItem {
+
+}
+
+@media (max-width: 1100px) {
+    .sideBar:nth-child(1) {
+        width: 50%;
+        align-self: flex-end;
+        transform: translateY(6px) rotate(45deg);
+    }
+    .sideBar:nth-child(2) {
+        align-self: flex-start;
+        width: 85%;
+    }
+    .sideBar:nth-child(3) {
+        width: 50%;
+        align-self: flex-end;
+        transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .sideMenuItem {
+        width: 100%;
+    }
+
+    .sideMenu {
+        width: 70%;
+        position:fixed;
+        left: -100%;
+        flex-direction: column;
+        text-align: center;
+        transition: 0.3s;
+    }
+    .sideHamburger {
+        z-index: 999;
+        width: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+
+    .sideHamburger.active {
+        margin-right: 0.5rem;
+    }
+
+    .sideHamburger.active .sideBar:nth-child(1) {
+        align-self: flex-start;
+        transform: translateY(6px) rotate(-45deg);
+    }
+    .sideHamburger.active .sideBar:nth-child(2) {
+        align-self: flex-end;
+    }
+    .sideHamburger.active .sideBar:nth-child(3) {
+        align-self: flex-start;
+        transform: translateY(-6px) rotate(45deg);
+    }
+
+    .sideMenu.active {
+        left: 0;
+        width: 80vw;
+        display: flex;
+        justify-content: center;
+    }
+
+    .sideMenu.active .sideMenuLink {
+        font-size: 3vw;
+    }
+
+    #sideNav {
+        width: 2rem;
+        padding-right: 0;
+        padding-left: 0;
+        transition: 0.3s ease-in-out;
+    }
+
+    #sideNav.active {
+        display: flex;
+        justify-content: end;
+        width: 80vw;
+        position: fixed;
+    }
+
+    .adminMainWrapper {
+        transition: 3s ease-in-out;
+    }
+
+    .adminMainWrapper.active {
+        position: fixed;
+        right: -100%;
+    }
+}
+
 header {
     box-shadow: none;
 }
@@ -42,6 +155,10 @@ main {
     transition: 0.7s ease;
 }
 
+.sideMenuLink:hover {
+    color:var(--header-colour);
+}
+
 .menuLink {
     font-size: 3vh;
 }
@@ -54,6 +171,7 @@ main {
     width: 100%;
     height: 100%;
     padding-top: 70px;
+    transition: 0.3s ease;
 }
 
 #adminMetricsWrapper {
