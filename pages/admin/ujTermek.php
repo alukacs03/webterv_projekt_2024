@@ -15,9 +15,9 @@
 <body>
     <header id="pageHeader">
         <nav class="menuBar" id="adminMenuBar">
-            <h3 id="adminTitle"><a href="admin.html">Rönklovagok Admin Felület</a></h3>
+            <h3 id="adminTitle"><a href="admin.php">Rönklovagok Admin Felület</a></h3>
             <ul class="menu" id="adminBackToPage">
-                <li class="menuItem"><a class="menuLink" href="../../index.html">Vissza az oldalra</a></li>
+                <li class="menuItem"><a class="menuLink" href="../../index.php">Vissza az oldalra</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -30,8 +30,8 @@
         <nav id="sideNav">
             <ul class="sideMenu" id="adminSideNavMenu">
                 <li class="sideMenuItem"><a class="sideMenuLink" href="#">Új termék</a></li>
-                <li class="sideMenuItem"><a class="sideMenuLink" href="ujKategoria.html">Új kategória</a></li>
-                <li class="sideMenuItem"><a class="sideMenuLink" href="megrendelesek.html">Megrendelések</a></li>
+                <li class="sideMenuItem"><a class="sideMenuLink" href="ujKategoria.php">Új kategória</a></li>
+                <li class="sideMenuItem"><a class="sideMenuLink" href="megrendelesek.php">Megrendelések</a></li>
             </ul>
             <div class="sideHamburger">
                 <span class="sideBar"></span>

@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "image": "./pictures/products/bukk.jpg",
+        "imagealt": "bükkfa",
+        "title": "Bükk",
+        "price": "59.900",
+        "measure": "m<sup>3</sup>"
+    },
+    {
+        "id": 2,
+        "image": "./pictures/products/tolgy.jpg",
+        "imagealt": "tölgyfa",
+        "title": "Tölgy",
+        "price": "54.900",
+        "measure": "m<sup>3</sup>"
+    },
+    {
+        "id": 3,
+        "image": "./pictures/products/fenyo.jpg",
+        "imagealt": "fenyőfa",
+        "title": "Fenyő",
+        "price": "49.900",
+        "measure": "m<sup>3</sup>"
+    },
+    {
+        "id": 4,
+        "image": "./pictures/products/juhar.jpeg",
+        "imagealt": "juharfa",
+        "title": "Juhar",
+        "price": "55.000",
+        "measure": "m<sup>3</sup>"
+    }
+]

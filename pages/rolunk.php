@@ -13,37 +13,9 @@
     <script src="../js/script.js" defer></script>
 </head>
 <body>
-    <header id="pageHeader">
-        <nav class="menuBar">
-            <a href="../index.html" class="menuBranding">Rönklovagok Kft.</a>
-            <ul class="menu">
-                <li class="menuItem">
-                    <a href="rolunk.html" class="menuLink">Rólunk</a>
-                </li>
-                <li class="menuItem">
-                    <a href="termek.html" class="menuLink">Termékek</a>
-                </li>
-                <li class="menuItem">
-                    <a href="kosar.html" class="menuLink">Kosár</a>
-                </li>
-                <li class="menuItem">
-                    <a href="bejelentkezes.html" class="menuLink">Bejelentkezés</a>
-                </li>
-                <li class="menuItem">
-                    <a href="regisztracio.html" class="menuLink">Regisztráció</a>
-                </li>
-                <li class="menuItem">
-                    <a href="./admin/admin.html" class="menuLink">Admin</a>
-                </li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-    </header>
-
+    <?php
+        include_once("../templates/header.html");
+    ?>
     <main id="indexMain">
         <div id="titleBar">
             <img id="titleImage" src="../pictures/profilepics/ronklovagok.jpeg" alt="a két rönklovag">
