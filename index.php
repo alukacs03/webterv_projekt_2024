@@ -77,17 +77,15 @@ if (isset($_POST['supportSubmit'])) {
                 $offers = json_decode(file_get_contents("./data/offers.json"), true);
                 foreach ($offers as $offer) {
                     echo "<div class='offerCard'>";
-                    echo "<a href='./pages/termek.html'><img src='{$offer['image']}' alt='{$offer['name']}' class='offerImage'></a>";
+                    echo "<a href='./pages/termek.html'><img src='{$offer['image']}' alt='{$offer['imagealt']}' class='offerImage'></a>";
                     echo "<div class='offerText'>";
                     echo "<p class='offerTitle'>{$offer['title']}</p>";
-                    echo "<p class='offerPrice'>{$offer['price']} Ft / m<sup>3</sup></p>";
+                    echo "<p class='offerPrice'>{$offer['price']} Ft / {$offer['measure']}</p>";
                     echo "</div>";
                     echo "<a href='./pages/termek.php' class='cardButton'>";
                     echo "<div>";
                     echo "<p class='cardButtonText'>Tovább</p>";
-                    echo "</div>";
-                    echo "</a>";
-                    echo "</div>";
+                    echo "</div></a></div>";
                 }
             ?>
         </div>
