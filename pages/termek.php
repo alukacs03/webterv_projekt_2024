@@ -20,7 +20,7 @@
         <h1 class="termekTitle">Kategóriák</h1>
         <div id="categorySelectBar">
             <?php 
-                $categories = json_decode(file_get_contents("../data/categories.json"), true);
+                $categories = json_decode(file_get_contents("../data/products.json"), true);
                 foreach ($categories as $category){
                     echo "<a href='#{$category['href']}' class='termek'><div class='catItemWrapper'> <img class='catImage' src='{$category['image']}' alt='{$category['name']}'> <h4 class='catBarTitle'>{$category['name']}</h4></div></a>";
                 };
@@ -28,7 +28,7 @@
         </div>
 
         <?php
-            $categories = json_decode(file_get_contents("../data/categories.json"), true);
+            $categories = json_decode(file_get_contents("../data/products.json"), true);
             foreach ($categories as $category) {
                 echo "<div class='categoryTitleWrapper' id='{$category['href']}'>";
                 echo "<img class='catImage' src='{$category['image']}' alt='{$category['name']}'> <h2 class='categoryTitle'>{$category['name']}</h2></div>";

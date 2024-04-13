@@ -2,7 +2,7 @@
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
-    <title>Rönklovagok - Admin</title>
+    <title>Rönklovagok - Regisztráció</title>
     <meta name="author" content="Lukács Ákos, Sándor Barnabás">
     <meta name="keywords" content="fa, fa szállítás, faszállítás, tüzép, szeged, gyors, tüzifa">
     <meta name="description" content="Rönklovagok Kft. gyors faszállítás olcsón">
