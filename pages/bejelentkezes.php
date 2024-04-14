@@ -1,3 +1,27 @@
+<?php
+    session_start();
+    //ha a felhasznalo mar be van jelentkezve, akkor visszairanyitjuk a fooldalra
+    if(isset($_SESSION['username'])){
+        header("Location: ../index.php");
+    }
+    if (isset($_POST["regButton"])) {
+        if (isset($_POST["email"]) && trim($_POST["email"]) !== "" && isset($_POST["password"]) && trim($_POST["password"]) !== "") {
+            $email = $_POST["email"];
+            $password = $_POST["password"];
+            $users = json_decode(file_get_contents("../data/users.json"), true);
+            foreach($users as $user){
+                if($user["email"] == $email){
+                    if(password_verify($password, $user["password"])){
+                        $_SESSION["username"] = $user["email"];
+                        $_SESSION["admin"] = $user["admin"];
+                        header("Location: ../index.php");
+                    }
+                }
+            }
+        }
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -14,11 +38,11 @@
 </head>
 <body>
     <?php
-        include_once("../templates/header.html");
+        include_once("../templates/header.php");
     ?>
     <main>
         <div id="signIOWapper">
-            <form action="index.html" id="IOForm" method="post">
+            <form action="bejelentkezes.php" id="IOForm" method="post">
                 <div id="formTitle">
                     <p>Felhasználói bejelentkezés</p>
                 </div>
@@ -30,11 +54,11 @@
                     <label for="password" class="containerLabel">Jelszó</label>
                     <input id="password" type="password" name="password" class="containerinput" required>
                 </div>
-                <button id="regButton" onclick="return false;">Bejelentkezés</button>
+                <button id="regButton" name="regButton" type="submit">Bejelentkezés</button>
                 <div id="signIn">
                     <a href="#" class="signInText" id="iForgetMyPassword">Elfelejtettem a jelszavamat</a>
                     <p class="signInText">Még nem regisztráltál?</p>
-                    <a href="regisztracio.html" id="signInLink">Hozd létre a fiókod →</a>
+                    <a href="regisztracio.php" id="signInLink">Hozd létre a fiókod →</a>
                 </div>
             </form>
         </div>

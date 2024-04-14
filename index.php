@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (isset($_POST['supportSubmit'])) {
         $name = $_POST['contactNameInput'];
         $email = $_POST['contactEmailInput'];
@@ -52,15 +53,31 @@ if (isset($_POST['supportSubmit'])) {
             <li class="menuItem">
                 <a href="./pages/kosar.php" class="menuLink">Kosár</a>
             </li>
-            <li class="menuItem">
-                <a href="./pages/bejelentkezes.php" class="menuLink">Bejelentkezés</a>
-            </li>
-            <li class="menuItem">
-                <a href="./pages/regisztracio.php" class="menuLink">Regisztráció</a>
-            </li>
-            <li class="menuItem">
-                <a href="./pages/admin/admin.php" class="menuLink">Admin</a>
-            </li>
+            <?php
+                if(!isset($_SESSION["username"])){
+                    echo '
+                    <li class="menuItem">
+                    <a href="./pages/bejelentkezes.php" class="menuLink">Bejelentkezés</a>
+                </li>
+                <li class="menuItem">
+                    <a href="./pages/regisztracio.php" class="menuLink">Regisztráció</a>
+                </li>
+                    ';
+                } else {
+                    echo '
+                        <li class="menuItem">
+                        <a href="./pages/kijelentkezes.php" class="menuLink">Kijelentkezés</a>
+                        </li>
+                    ';
+                    if(isset($_SESSION["admin"]) && $_SESSION["admin"] == 1){
+                        echo '
+                            <li class="menuItem">
+                                <a href="./pages/admin/admin.php" class="menuLink">Admin</a>
+                            </li>
+                        ';
+                    }
+                }
+            ?>
         </ul>
         <div class="hamburger">
             <span class="bar"></span>

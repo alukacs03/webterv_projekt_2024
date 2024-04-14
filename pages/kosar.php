@@ -14,7 +14,7 @@
 </head>
 <body>
 <?php
-        include_once("../templates/header.html");
+        include_once("../templates/header.php");
     ?>
     <main id="indexMain">
         <h1 class="kosarTitle">Kosár</h1>

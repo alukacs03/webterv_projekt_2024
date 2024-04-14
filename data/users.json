@@ -1,8 +1,12 @@
 [
     {
-        "id": 1,
-        "email": "gercica@gmail.com",
-        "password": "123456",
-        "admin": false
+        "email": "marha@level.com",
+        "password": "$2y$10$pIQPMIkYMGrJkrlJ4j0Us.hC9IkdVb\/U57xJOSyBXWjbjEf1WogR.",
+        "admin": 1
+    },
+    {
+        "email": "koli@ati.com",
+        "password": "$2y$10$5OzuQv\/EvHtu4WoouPWrbeGvdAoV6nIz6n.7N\/Hu97xPjOaIYBfzy",
+        "admin": 0
     }
 ]

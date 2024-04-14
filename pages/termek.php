@@ -14,7 +14,7 @@
 </head>
 <body >
     <?php
-        include_once("../templates/header.html");
+        include_once("../templates/header.php");
     ?>
     <main id="termekMain">
         <h1 class="termekTitle">Kategóriák</h1>
