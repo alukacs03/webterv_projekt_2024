@@ -5,19 +5,25 @@
         header("Location: ../index.php");
     }
     if (isset($_POST["regButton"])) {
-        if (isset($_POST["email"]) && trim($_POST["email"]) !== "" && isset($_POST["password"]) && trim($_POST["password"]) !== "") {
-            $email = $_POST["email"];
+        if (isset($_POST["username"]) && trim($_POST["username"]) !== "" && isset($_POST["password"]) && trim($_POST["password"]) !== "") {
+            $username = $_POST["username"];
             $password = $_POST["password"];
             $users = json_decode(file_get_contents("../data/users.json"), true);
             foreach($users as $user){
-                if($user["email"] == $email){
+                if($user["username"] == $username){
                     if(password_verify($password, $user["password"])){
-                        $_SESSION["username"] = $user["email"];
+                        $_SESSION["username"] = $user["username"];
+                        $_SESSION["email"] = $user["email"];
                         $_SESSION["admin"] = $user["admin"];
                         header("Location: ../index.php");
+                        unset($_SESSION["loginError"]);
+                        exit();
                     }
                 }
             }
+            $_SESSION["loginError"] = "Hibás felhasználónév vagy jelszó!";
+            header("Location: bejelentkezes.php");
+            exit();
         }
     }
 
@@ -46,9 +52,15 @@
                 <div id="formTitle">
                     <p>Felhasználói bejelentkezés</p>
                 </div>
-                <div id="emailContainer" class="container">
-                    <label for="email" class="containerLabel">E-mail cím</label>
-                    <input id="email" type="email" name="email" class="containerinput" required>
+                <div id="usernameContainer" class="container">
+                    <?php 
+                        if(isset($_SESSION["loginError"])){
+                            echo "<p style='align-self: center'>".$_SESSION["loginError"]."</p>";
+                            unset($_SESSION["loginError"]);
+                        }
+                    ?>
+                    <label for="username" class="containerLabel">Felhasználónév</label>
+                    <input id="username" type="text" name="username" class="containerinput" required>
                 </div>
                 <div id="passwordContainer" class="container">
                     <label for="password" class="containerLabel">Jelszó</label>
