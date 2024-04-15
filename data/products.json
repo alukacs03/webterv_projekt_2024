@@ -13,7 +13,33 @@
                 "title": "Bükk",
                 "price": "59.900",
                 "measure": "m<sup>3</sup>",
-                "measure2": "m<sup>3</sup>"
+                "description": "Itt van a leírás, csak közben meg nem látszik, mert eldugtuk.",
+                "reviews": [
+                    {
+                        "username": "Bás",
+                        "date": "2024.04.20.",
+                        "message": "Az élet szép, de az Ákos szebb!",
+                        "stars": 5
+                    },
+                    {
+                        "username": "Bás",
+                        "date": "2024.04.20.",
+                        "message": "Az élet szép, de az Ákos szebb!",
+                        "stars": 5
+                    },
+                    {
+                        "username": "Bás",
+                        "date": "2024.04.20.",
+                        "message": "Az élet szép, de az Ákos szebb!",
+                        "stars": 5
+                    },
+                    {
+                        "username": "Bás",
+                        "date": "2024.04.20.",
+                        "message": "Az élet szép, de az Ákos szebb!",
+                        "stars": 5
+                    }
+                ]
             },
             {
                 "id": 1.2,
@@ -22,7 +48,15 @@
                 "title": "Tölgy",
                 "price": "54.900",
                 "measure": "m<sup>3</sup>",
-                "measure2": "m<sup>3</sup>"
+                "description": "Itt van a leírás, csak közben meg nem látszik, mert eldugtuk.",
+                "reviews": [
+                    {
+                        "username": "Barni",
+                        "date": "2024.04.20.",
+                        "message": "Az élet szép, de az Ákos mégszebb!",
+                        "stars": 2
+                    }
+                ]
             },
             {
                 "id": 1.3,
@@ -31,7 +65,15 @@
                 "title": "Fenyő",
                 "price": "49.900",
                 "measure": "m<sup>3</sup>",
-                "measure2": "m<sup>3</sup>"
+                "description": "Itt van a leírás, csak közben meg nem látszik, mert eldugtuk.",
+                "reviews": [
+                    {
+                        "username": "Bás",
+                        "date": "2024.04.20.",
+                        "message": "Az élet szép, de az Ákos szebb!",
+                        "stars": 5
+                    }
+                ]
             },
             {
                 "id": 1.4,
@@ -40,7 +82,15 @@
                 "title": "Juhar",
                 "price": "55.000",
                 "measure": "m<sup>3</sup>",
-                "measure2": "m<sup>3</sup>"
+                "description": "Itt van a leírás, csak közben meg nem látszik, mert eldugtuk.",
+                "reviews": [
+                    {
+                        "username": "Bás",
+                        "date": "2024.04.20.",
+                        "message": "Az élet szép, de az Ákos szebb!",
+                        "stars": 5
+                    }
+                ]
             },
             {
                 "id": 1.5,
@@ -49,7 +99,15 @@
                 "title": "Akác",
                 "price": "54.900",
                 "measure": "m<sup>3</sup>",
-                "measure2": "m<sup>3</sup>"
+                "description": "Itt van a leírás, csak közben meg nem látszik, mert eldugtuk.",
+                "reviews": [
+                    {
+                        "username": "Bás",
+                        "date": "2024.04.20.",
+                        "message": "Az élet szép, de az Ákos szebb!",
+                        "stars": 5
+                    }
+                ]
             },
             {
                 "id": 1.6,
@@ -58,7 +116,15 @@
                 "title": "Kőris",
                 "price": "61.900",
                 "measure": "m<sup>3</sup>",
-                "measure2": "m<sup>3</sup>"
+                "description": "Itt van a leírás, csak közben meg nem látszik, mert eldugtuk.",
+                "reviews": [
+                    {
+                        "username": "Bás",
+                        "date": "2024.04.20.",
+                        "message": "Az élet szép, de az Ákos szebb!",
+                        "stars": 5
+                    }
+                ]
             },
             {
                 "id": 1.7,
@@ -67,7 +133,15 @@
                 "title": "Lucfenyő",
                 "price": "52.000",
                 "measure": "m<sup>3</sup>",
-                "measure2": "m<sup>3</sup>"
+                "description": "Itt van a leírás, csak közben meg nem látszik, mert eldugtuk.",
+                "reviews": [
+                    {
+                        "username": "Bás",
+                        "date": "2024.04.20.",
+                        "message": "Az élet szép, de az Ákos szebb!",
+                        "stars": 5
+                    }
+                ]
             }
         ]
     },
@@ -85,7 +159,15 @@
                 "title": "Fenyő deszka",
                 "price": "148.900",
                 "measure": "m<sup>3</sup>",
-                "measure2": "m<sup>3</sup>"
+                "description": "Itt van a leírás, csak közben meg nem látszik, mert eldugtuk.",
+                "reviews": [
+                    {
+                        "username": "Bás",
+                        "date": "2024.04.20.",
+                        "message": "Az élet szép, de az Ákos szebb!",
+                        "stars": 5
+                    }
+                ]
             },
             {
                 "id": 2.2,
@@ -94,7 +176,15 @@
                 "title": "Fenyő gerenda",
                 "price": "145.900",
                 "measure": "m<sup>3</sup>",
-                "measure2": "m<sup>3</sup>"
+                "description": "Itt van a leírás, csak közben meg nem látszik, mert eldugtuk.",
+                "reviews": [
+                    {
+                        "username": "Bás",
+                        "date": "2024.04.20.",
+                        "message": "Az élet szép, de az Ákos szebb!",
+                        "stars": 5
+                    }
+                ]
             },
             {
                 "id": 2.3,
@@ -103,7 +193,15 @@
                 "title": "Vegyes szarufa",
                 "price": "177.000",
                 "measure": "m<sup>3</sup>",
-                "measure2": "m<sup>3</sup>"
+                "description": "Itt van a leírás, csak közben meg nem látszik, mert eldugtuk.",
+                "reviews": [
+                    {
+                        "username": "Bás",
+                        "date": "2024.04.20.",
+                        "message": "Az élet szép, de az Ákos szebb!",
+                        "stars": 5
+                    }
+                ]
             }
         ]
     },
@@ -121,7 +219,15 @@
                 "title": "6mm OSB lap",
                 "price": "1.245",
                 "measure": "m<sup>2</sup>",
-                "measure2": "m<sup>2</sup>"
+                "description": "Itt van a leírás, csak közben meg nem látszik, mert eldugtuk.",
+                "reviews": [
+                    {
+                        "username": "Bás",
+                        "date": "2024.04.20.",
+                        "message": "Az élet szép, de az Ákos szebb!",
+                        "stars": 5
+                    }
+                ]
             },
             {
                 "id": 3.2,
@@ -130,7 +236,15 @@
                 "title": "12mm OSB lap",
                 "price": "2.064",
                 "measure": "m<sup>2</sup>",
-                "measure2": "m<sup>2</sup>"
+                "description": "Itt van a leírás, csak közben meg nem látszik, mert eldugtuk.",
+                "reviews": [
+                    {
+                        "username": "Bás",
+                        "date": "2024.04.20.",
+                        "message": "Az élet szép, de az Ákos szebb!",
+                        "stars": 5
+                    }
+                ]
             },
             {
                 "id": 3.3,
@@ -139,7 +253,15 @@
                 "title": "12mm nútféderes OSB lap",
                 "price": "2.127",
                 "measure": "m<sup>2</sup>",
-                "measure2": "m<sup>2</sup>"
+                "description": "Itt van a leírás, csak közben meg nem látszik, mert eldugtuk.",
+                "reviews": [
+                    {
+                        "username": "Bás",
+                        "date": "2024.04.20.",
+                        "message": "Az élet szép, de az Ákos szebb!",
+                        "stars": 5
+                    }
+                ]
             },
             {
                 "id": 3.4,
@@ -148,7 +270,15 @@
                 "title": "22mm nútféderes OSB lap",
                 "price": "3.881",
                 "measure": "m<sup>2</sup>",
-                "measure2": "m<sup>2</sup>"
+                "description": "Itt van a leírás, csak közben meg nem látszik, mert eldugtuk.",
+                "reviews": [
+                    {
+                        "username": "Bás",
+                        "date": "2024.04.20.",
+                        "message": "Az élet szép, de az Ákos szebb!",
+                        "stars": 5
+                    }
+                ]
             }
         ]
     },
@@ -166,7 +296,15 @@
                 "title": "Lucfenyő karácsonyfa",
                 "price": "14.900",
                 "measure": "m",
-                "measure2": "m"
+                "description": "Itt van a leírás, csak közben meg nem látszik, mert eldugtuk.",
+                "reviews": [
+                    {
+                        "username": "Bás",
+                        "date": "2024.04.20.",
+                        "message": "Az élet szép, de az Ákos szebb!",
+                        "stars": 5
+                    }
+                ]
             },
             {
                 "id": 4.2,
@@ -175,7 +313,15 @@
                 "title": "Nordmann fenyő karácsonyfa",
                 "price": "19.900",
                 "measure": "m",
-                "measure2": "m"
+                "description": "Itt van a leírás, csak közben meg nem látszik, mert eldugtuk.",
+                "reviews": [
+                    {
+                        "username": "Bás",
+                        "date": "2024.04.20.",
+                        "message": "Az élet szép, de az Ákos szebb!",
+                        "stars": 5
+                    }
+                ]
             }
         ]
     },
@@ -193,7 +339,15 @@
                 "title": "Prémium fogpiszkáló",
                 "price": "4.999",
                 "measure": "100 db",
-                "measure2": "100 db"
+                "description": "Itt van a leírás, csak közben meg nem látszik, mert eldugtuk.",
+                "reviews": [
+                    {
+                        "username": "Bás",
+                        "date": "2024.04.20.",
+                        "message": "Az élet szép, de az Ákos szebb!",
+                        "stars": 5
+                    }
+                ]
             },
             {
                 "id": 5.2,
@@ -202,7 +356,15 @@
                 "title": "Fogpiszkáló",
                 "price": "899",
                 "measure": "100 db",
-                "measure2": "100 db"
+                "description": "Itt van a leírás, csak közben meg nem látszik, mert eldugtuk.",
+                "reviews": [
+                    {
+                        "username": "Bás",
+                        "date": "2024.04.20.",
+                        "message": "Az élet szép, de az Ákos szebb!",
+                        "stars": 5
+                    }
+                ]
             },
             {
                 "id": 5.3,
@@ -211,7 +373,15 @@
                 "title": "Mentolos fogpiszkáló",
                 "price": "5.999",
                 "measure": "100 db",
-                "measure2": "100 db"
+                "description": "Itt van a leírás, csak közben meg nem látszik, mert eldugtuk.",
+                "reviews": [
+                    {
+                        "username": "Bás",
+                        "date": "2024.04.20.",
+                        "message": "Az élet szép, de az Ákos szebb!",
+                        "stars": 5
+                    }
+                ]
             },
             {
                 "id": 5.4,
@@ -219,8 +389,16 @@
                 "imagealt": "fidget spinner fogpiszkáló",
                 "title": "Fidget spinner fogpiszkáló",
                 "price": "5.000",
-                "measure": "db ( + ajándék fidget spinnerrel)",
-                "measure2": "100 db"
+                "measure": "db",
+                "description": "Itt van a leírás, csak közben meg nem látszik, mert eldugtuk.",
+                "reviews": [
+                    {
+                        "username": "Bás",
+                        "date": "2024.04.20.",
+                        "message": "Az élet szép, de az Ákos szebb!",
+                        "stars": 5
+                    }
+                ]
             }
         ]
     },
@@ -238,7 +416,15 @@
                 "title": "Hagyományos faszeg",
                 "price": "1.199",
                 "measure": "100 db",
-                "measure2": "100 db"
+                "description": "Itt van a leírás, csak közben meg nem látszik, mert eldugtuk.",
+                "reviews": [
+                    {
+                        "username": "Bás",
+                        "date": "2024.04.20.",
+                        "message": "Az élet szép, de az Ákos szebb!",
+                        "stars": 5
+                    }
+                ]
             },
             {
                 "id": 6.2,
@@ -247,7 +433,15 @@
                 "title": "Barázdált faszeg",
                 "price": "1.999",
                 "measure": "100 db",
-                "measure2": "100 db"
+                "description": "Itt van a leírás, csak közben meg nem látszik, mert eldugtuk.",
+                "reviews": [
+                    {
+                        "username": "Bás",
+                        "date": "2024.04.20.",
+                        "message": "Az élet szép, de az Ákos szebb!",
+                        "stars": 5
+                    }
+                ]
             },
             {
                 "id": 6.3,
@@ -256,7 +450,15 @@
                 "title": "Fémbetétes faszeg",
                 "price": "3.999",
                 "measure": "100 db",
-                "measure2": "100 db"
+                "description": "Itt van a leírás, csak közben meg nem látszik, mert eldugtuk.",
+                "reviews": [
+                    {
+                        "username": "Bás",
+                        "date": "2024.04.20.",
+                        "message": "Az élet szép, de az Ákos szebb!",
+                        "stars": 5
+                    }
+                ]
             }
         ]
     }

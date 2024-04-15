@@ -1,0 +1,77 @@
+body{
+    margin-top: 7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#termekFelso{
+    display: flex;
+    justify-content: space-around;
+}
+
+#felsoBal{
+    margin: 0;
+    width: 60vh;
+    height: 82vh;
+}
+
+.productCard{
+    height: 100%;
+}
+
+.productImage {
+    margin-top: 2rem;
+    width: 50vh;
+    border-radius: 2rem;
+}
+
+.productName {
+    text-align: center;
+    font-size: 5vh;
+}
+
+.productPrice {
+    text-align: center;
+    font-size: 4vh;
+}
+
+.amountInput {
+    font-size: 1.5rem;
+}
+
+.amountInput {
+    width: 7rem;
+    height: 4rem;
+}
+
+.productCartButton:hover {
+    width: calc(13rem + 4px);
+    height: calc(5rem + 4px);
+}
+
+.productCartButton {
+    width: 13rem;
+    height: 5rem;
+}
+
+#felsoJobb{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#termekAlso{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+
+.reviewCard{
+    width: 50%;
+    margin-top: 3rem;
+    justify-self: center;
+}

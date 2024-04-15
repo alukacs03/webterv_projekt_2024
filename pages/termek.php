@@ -1,3 +1,8 @@
+<?php
+    if(session_status() !== PHP_SESSION_ACTIVE){
+        session_start();
+    }
+?>
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -38,11 +43,11 @@
                 $products = $category['products'];
                 echo "<div class='productWrapper woodProducts'>";
                 foreach ($products as $product) {
-                    echo "<div class='productCard'>";
+                    echo "<a href='termekleiras.php?id={$product['id']}'><div class='productCard'>";
                     echo "<img src='{$product['image']}' alt='{$product['imagealt']}' class='productImage'>";
                     echo "<div class='productBottomDiv'><div class='productTextWrapper'><p class='productName'>{$product['title']}</p><p class='productPrice'>{$product['price']} Ft / {$product['measure']}</p></div>";
-                    echo "<div class='productPurchaseBar'><input class='amountInput' type='number'><label>{$product['measure2']}</label><a href='javascript:void(0)'><div class='productCartButton'><img class='cartIcon' src='../pictures/resources/shopping-cart.png' alt='kosár'><h3 class='productCartTitle'>Kosárba</h3></div></a></div>";
-                    echo "</div></div>";
+                    echo "<div class='productPurchaseBar'><input class='amountInput' type='number'><label>{$product['measure']}</label><a href='javascript:void(0)'><div class='productCartButton'><img class='cartIcon' src='../pictures/resources/shopping-cart.png' alt='kosár'><h3 class='productCartTitle'>Kosárba</h3></div></a></div>";
+                    echo "</div></div></a>";
                 };
                 echo "</div>";
             };
