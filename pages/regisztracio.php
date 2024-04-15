@@ -5,26 +5,70 @@
         header("Location: ../index.php");
     }
     if(isset($_POST['regButton'])){
-        if(isset($_POST['email']) && trim($_POST['email']) !== "" && isset($_POST['password']) && trim($_POST['password']) !== "" && isset($_POST['passwordAgain']) && trim($_POST['passwordAgain']) !== ""){
+        if(isset($_POST['username']) && trim($_POST['username']) !== "" && isset($_POST['email']) && trim($_POST['email']) !== "" && isset($_POST['password']) && trim($_POST['password']) !== "" && isset($_POST['passwordAgain']) && trim($_POST['passwordAgain']) !== ""){
             if($_POST['password'] == $_POST['passwordAgain']){
+                $username = $_POST['username'];
                 $email = $_POST['email'];
+                // megnezzuk, hogy eleg eros-e a jelszo (legalabb 8 karakter, legalabb egy kisbetu, egy nagybetu, egy szam es egy specialis karakter)
+                $uppercase = preg_match('@[A-Z]@', $_POST['password']);
+                $lowercase = preg_match('@[a-z]@', $_POST['password']);
+                $number    = preg_match('@[0-9]@', $_POST['password']);
+                $specialChars = preg_match('@[^\w]@', $_POST['password']);
+                if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($_POST['password']) < 8) {
+                    // ezek ahhoz kellenek, hogy a jelszon kivul minden mast alapbol vissza tudjunk tolteni, mikor ujratoltodik az oldal a PHP keres miatt
+                    $_SESSION['temp_user'] = $username;
+                    $_SESSION['temp_email'] = $email;
+                    $_SESSION['pwderror'] = "A jelszónak legalább 8 karakter hosszúnak kell lennie, tartalmaznia kell legalább egy kisbetűt, egy nagybetűt, egy számot és egy speciális karaktert!";
+                    header("Location: regisztracio.php");
+                    exit();
+                }
+                // megnezzuk, hogy valid-e az email
+                if(filter_var($email, FILTER_VALIDATE_EMAIL) === false){
+                    unset($_SESSION['temp_email']);
+                    $_SESSION['temp_user'] = $username;
+                    $_SESSION['emailError'] = "Az e-mail cím nem megfelelő formátumú!";
+                    header("Location: regisztracio.php");
+                    exit();
+                }
+                //hasheljuk a jelszot
                 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+                //betoltjuk a mar meglevo usereket
                 $users = json_decode(file_get_contents("../data/users.json"), true);
+                // uj user objektum
                 $newUser = [
+                    "username" => $username,
                     "email" => $email,
                     "password" => $password,
                     "admin" => 0
                 ];
+                //megnezzuk, hogy van-e mar ilyen username vagy email
                 foreach($users as $user){
-                    if($user["email"] == $email){
-                        echo "email already in use";
-                        return;
+                    if($user["username"] == $username){
+                        unset($_SESSION['temp_user']);
+                        $_SESSION['temp_email'] = $email;
+                        $_SESSION['userError'] = "A felhasználónév már használatban van!";
+                        header("Location: regisztracio.php");
+                        exit();
                     }
+                    if($user["email"] == $email){
+                        unset($_SESSION['temp_email']);
+                        $_SESSION['temp_user'] = $username;
+                        $_SESSION['emailError'] = "Az e-mail cím már használatban van!";
+                        header("Location: regisztracio.php");
+                        exit();
+                    }
+
                 }
+                //ha eddig nem volt hiba, jok vagyunk
                 array_push($users, $newUser);
                 file_put_contents("../data/users.json", json_encode($users, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
-                $_SESSION["username"] = $email;
+                //be is jelentkezunk rogton
+                $_SESSION["username"] = $username;
                 $_SESSION["admin"] = 0;
+                // biztonsag kedveert toroljuk a temp_user es temp_email session valtozokat
+                unset($_SESSION['temp_user']);
+                unset($_SESSION['temp_email']);
+                header("Location: ../index.php");
             }
         }
     }
@@ -53,12 +97,34 @@
                 <div id="formTitle">
                     <p>Regisztráció</p>
                 </div>
+                <div id=="usernameContainer" class="container">
+                    <label for="username" class="containerLabel">Felhasználónév</label>
+                    <?php 
+                        if(isset($_SESSION['userError'])){
+                            echo "<p>".$_SESSION['userError']."</p>";
+                            unset($_SESSION['userError']);
+                        }
+                    ?>
+                    <input id="username" type="text" value="<?php echo isset($_SESSION['temp_user']) ? $_SESSION['temp_user'] : '' ?>" name="username" class="containerinput" required>
+                </div>
                 <div id="emailContainer" class="container">
                     <label for="email" class="containerLabel">E-mail cím</label>
-                    <input id="email" type="email" name="email" class="containerinput" required>
+                    <?php 
+                        if(isset($_SESSION['emailError'])){
+                            echo "<p>".$_SESSION['emailError']."</p>";
+                            unset($_SESSION['emailError']);
+                        }
+                    ?>
+                    <input id="email" type="email" value="<?php echo isset($_SESSION['temp_email']) ? $_SESSION['temp_email'] : '' ?>" name="email" class="containerinput" required>
                 </div>
                 <div id="passwordContainer" class="container">
                     <label for="password" class="containerLabel">Jelszó</label>
+                    <?php 
+                        if(isset($_SESSION['pwderror'])){
+                            echo "<p>".$_SESSION['pwderror']."</p>";
+                            unset($_SESSION['pwderror']);
+                        }
+                    ?>
                     <input id="password" type="password" name="password" class="containerinput" required>
                 </div>
                 <div id="passwordAgainContainer" class="container">

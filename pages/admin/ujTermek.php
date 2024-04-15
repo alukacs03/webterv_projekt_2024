@@ -36,18 +36,7 @@
         </nav>
     </header>
     <main>
-        <nav id="sideNav">
-            <ul class="sideMenu" id="adminSideNavMenu">
-                <li class="sideMenuItem"><a class="sideMenuLink" href="#">Új termék</a></li>
-                <li class="sideMenuItem"><a class="sideMenuLink" href="ujKategoria.php">Új kategória</a></li>
-                <li class="sideMenuItem"><a class="sideMenuLink" href="megrendelesek.php">Megrendelések</a></li>
-            </ul>
-            <div class="sideHamburger">
-                <span class="sideBar"></span>
-                <span class="sideBar"></span>
-                <span class="sideBar"></span>
-            </div>
-        </nav>
+        <?php include_once "../../templates/adminSideNav.php"; ?>
         <div class="adminMainWrapper formPageWrapper">
             <form id="newProductForm" onsubmit="return false;" enctype="multipart/form-data" method="post">
                 <div id="newProductWrapper">

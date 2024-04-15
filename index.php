@@ -165,7 +165,7 @@ if (isset($_POST['supportSubmit'])) {
                 <div id="contactTopContainer">
                     <div id="contactNameContainer" class="contactContainer">
                         <label for="contactNameInput" class="contactLabel">Név:</label>
-                        <input type="text" name="contactNameInput" id="contactNameInput" class="contactInputField" placeholder="Név..." required>
+                        <input type="text" name="contactNameInput" id="contactNameInput" class="contactInputField" placeholder="Név..." value="<?php echo isset($_SESSION['username']) ? $_SESSION['username'] : '' ?>" <?php echo isset($_SESSION['username']) ? "readonly" : "" ?> required>
                     </div>
                     <div id="contactSubjectContainer" class="contactContainer">
                         <label for="contactSubjectInput" class="contactLabel">Tárgy:</label>
@@ -173,7 +173,7 @@ if (isset($_POST['supportSubmit'])) {
                     </div>
                     <div id="contactEmailContainer" class="contactContainer">
                         <label for="contactEmailInput" class="contactLabel">E-mail:</label>
-                        <input type="email" name="contactEmailInput" id="contactEmailInput" class="contactInputField" placeholder="E-mail..." required>
+                        <input type="email" name="contactEmailInput" id="contactEmailInput" class="contactInputField" placeholder="E-mail..." value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : '' ?>" <?php echo isset($_SESSION['email']) ? "readonly" : "" ?> required>
                     </div>
                 </div>
                 <div id="contactMessageContainer">
