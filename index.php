@@ -114,7 +114,6 @@ if (isset($_POST['supportSubmit'])) {
                 foreach ($reviewsCut as $review) {
                     echo "<div class='reviewCard'>";
                     echo "<div class='reviewLeft'>";
-                    echo "<img src='{$review['profilePic']}' alt='{$review['name']}' class='reviewProfilePic'>";
                     echo "<div class='reviewDetails'>";
                     echo "<h2 class='reviewName'>{$review['name']}</h2>";
                     echo "<div class='reviewPepe'>";
@@ -132,10 +131,7 @@ if (isset($_POST['supportSubmit'])) {
                     echo "</div>";
                     echo "</div>";
                     echo "<div class='reviewRight'>";
-                    $messageArray = $review["message"];
-                    foreach ($messageArray as $message) {
-                        echo "<p class='reviewText'>{$message}</p>";
-                    }
+                    echo "<p class='reviewText'>{$review['message']}</p>";
                     echo "</div>";
                     echo "</div>";
                 }

@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php
+    if(session_status() !== PHP_SESSION_ACTIVE){
+        session_start();
+    }
+?>
 <header id="pageHeader">
     <nav class="menuBar">
         <a href="../index.php" class="menuBranding">Rönklovagok Kft.</a>
