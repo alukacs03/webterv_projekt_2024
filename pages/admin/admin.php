@@ -1,3 +1,14 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['admin'])){
+        header("Location: ../../index.php");
+        exit();
+    }
+    if(isset($_SESSION['admin']) && $_SESSION['admin'] == 0){
+        header("Location: ../../index.php");
+        exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -17,7 +28,7 @@
         <nav class="menuBar" id="adminMenuBar">
             <h3 id="adminTitle"><a href="#">Rönklovagok Admin Felület</a></h3>
             <ul class="menu" id="adminBackToPage">
-                <li class="menuItem"><a class="menuLink" href="../../index.html">Vissza az oldalra</a></li>
+                <li class="menuItem"><a class="menuLink" href="../../index.php">Vissza az oldalra</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -27,19 +38,8 @@
         </nav>
     </header>
     <main>
-        <nav id="sideNav">
-            <ul class="sideMenu" id="adminSideNavMenu">
-                <li class="sideMenuItem"><a class="sideMenuLink" href="ujTermek.html">Új termék</a></li>
-                <li class="sideMenuItem"><a class="sideMenuLink" href="ujKategoria.html">Új kategória</a></li>
-                <li class="sideMenuItem"><a class="sideMenuLink" href="megrendelesek.html">Megrendelések</a></li>
-            </ul>
-            <div class="sideHamburger">
-                <span class="sideBar"></span>
-                <span class="sideBar"></span>
-                <span class="sideBar"></span>
-            </div>
-        </nav>
-        <div class="adminMainWrapper" id="adminMetricsWrapper">
+            <?php include_once "../../templates/adminSideNav.php"; ?>
+            <div class="adminMainWrapper" id="adminMetricsWrapper">
             <div class="metricsBox" id="metricTopLeft">
                 <p class="metricNumber">4</p>
                 <p class="metricText">új megrendelés</p>

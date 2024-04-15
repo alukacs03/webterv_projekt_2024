@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "profilePic": "./pictures/profilepics/customer_1.jpeg",
+        "name": "Kiss Lajos",
+        "date": "2024.02.21",
+        "stars": 5,
+        "message": [
+            "Rendeltem tőlük nemrégiben, és nem csupán elégedett, de lenyűgözött vagyok a tapasztalataimmal.",
+            "A Rönklovagok csapata valóban elkötelezett a fenntartható erdőgazdálkodás és a minőségi szolgáltatások iránt. A faanyagok, amiket tőlük rendeltem, kiváló minőségűek és pontosan megfeleltek az elvárásaimnak.",
+            "Az ügyfélszolgálatuk segítőkész és profi, a szállítás pedig pontos és gondos."
+        ]
+    },
+    {
+        "id": 2,
+        "profilePic": "./pictures/profilepics/customer_2.jpeg",
+        "name": "Nagy Lajos",
+        "date": "2024.02.24",
+        "stars": 4,
+        "message": [
+            "A Rönklovagok Kft-től prémium fogpiszkálót vásároltam, és maximálisan elégedett vagyok a vásárlási élménnyel. A termék kiváló minőségű, a szállítás gyors és pontos volt, az ügyfélszolgálat pedig kiemelkedően segítőkész.",
+            "A fogpiszkálók gyönyörűen kidolgozottak, tökéletesen sima felületűek és szálkamentesek. Kényelmesen és hatékonyan használhatók, nem sértik meg az ínyt. A csomagolás is igényes, így ajándéknak is tökéletes.",
+            "A Rönklovagok Kft-t mindenkinek jó szívvel ajánlom, aki prémium minőségű fogpiszkálót keres."
+        ]
+    }
+]
