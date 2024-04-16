@@ -6,6 +6,63 @@
     if(isset($_SESSION['admin']) && $_SESSION['admin'] == 0){
         header("Location: ../../index.php");
     }
+    $_SESSION['error_name'] = "";
+    // && isset($_POST['categoryImageInput']) && trim($_POST['categoryImageInput']) !== ""
+    if(isset($_POST['kategoria']) && trim($_POST['kategoria']) !== "" && isset($_POST['descInput']) && trim($_POST['descInput']) !== ""){
+        $name = $_POST['kategoria'];
+        $description = $_POST['descInput'];
+        $categories = json_decode(file_get_contents("../../data/products.json"), true);
+        $last = end($categories);
+        $id = $last['id'] + 1;
+        $abc = [
+            "á",
+            "é",
+            "í",
+            "ó",
+            "ö",
+            "ő",
+            "ú",
+            "ü",
+            "ű"
+        ];
+        $abc2 = [
+            "a",
+            "e",
+            "i",
+            "o",
+            "o",
+            "o",
+            "u",
+            "u",
+            "u"
+        ];
+        $href = mb_strtolower($name);
+        $href = str_replace($abc, $abc2, $href);
+        $image = "kep";
+
+        foreach ($categories as $cat){
+            if($cat['href'] == $href){
+                $_SESSION['sess_description'] = $description;
+                $_SESSION['sess_img'] = $image;
+                $_SESSION['error_name'] = "Ez a kategórianév már foglalt. Válassz másikat!";
+            }
+        }
+
+        if($_SESSION['error_name'] == ""){
+            $category = [
+                "id" => $id,
+                "href" => $href,
+                "name" => $name,
+                "image" => $image,
+                "message" => $description,
+                "products" => []
+            ];
+            array_push($categories, $category);
+            file_put_contents("../../data/products.json", json_encode($categories, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+        }
+    }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="hu">
@@ -38,26 +95,40 @@
     <main>
         <?php include_once "../../templates/adminSideNav.php"; ?>
         <div class="adminMainWrapper formPageWrapper">
-            <form id="newCategoryForm" onsubmit="return false;" enctype="multipart/form-data" method="post">
+            <form id="newCategoryForm" action="ujKategoria.php" enctype="multipart/form-data" method="post">
                 <div id="newCategoryWrapper">
                     <h2 class="formTitle">Új kategória hozzáadása</h2>
                     <div class="formWrapper" id="newCategoryFormWrapper">
                         <div class="formTopRow" id="categoryTopRow">
                             <div class="formTopRowField" id="formCatNameDiv">
                                 <p class="inputTitle">Kategórianév</p>
-                                <input type="text" class="formInput" placeholder="Kategórianév..." required>
+                                <input type="text" class="formInput" placeholder="Kategórianév..." required id="kategoria" name="kategoria">
+                                <?php
+                                    if($_SESSION['error_name'] == "Ez a kategórianév már foglalt. Válassz másikat!"){
+                                        echo "<p id='catError'>{$_SESSION['error_name']}</p>";
+                                    }
+                                ?>
                             </div>
                         </div>
                         <div class="formBottomRow">
                             <div class="categoryDescWrapper">
                                 <label for="descInput" class="inputTitle">Kategória leírása</label>
-                                <textarea name="descInput" id="descInput" cols="30" rows="10" class="descInput formInput" placeholder="Rövid leírás..." required></textarea>
+                                <?php
+                                    if($_SESSION['error_name'] == "Ez a kategórianév már foglalt. Válassz másikat!"){
+                                        echo "<textarea name='descInput' id='descInput' cols='30' rows='10' class='descInput formInput' autofocus placeholder='Rövid leírás...' required>{$_SESSION['sess_description']}</textarea>";
+                                    }
+                                    else{
+                                        echo "<textarea name='descInput' id='descInput' cols='30' rows='10' class='descInput formInput' placeholder='Rövid leírás...' required></textarea>";
+                                    }
+                                ?>
                             </div>
                             <div class="categoryImgWrapper">
                                 <div class="categoryImgLeft">
                                     <p class="inputTitle">Kategória képe</p>
                                     <div class="imgWrapper">
-                                        <img class="categoryImagePreview" src="../../pictures/resources/uploadimage.jpeg" alt="Kategóriakép">
+                                    <?php
+                                        echo "<img class='categoryImagePreview' src='../../pictures/resources/uploadimage.jpeg' alt='Kategóriakép'>";
+                                    ?>
                                     </div>
                                 </div>
                                 <div class="categoryImgRight">

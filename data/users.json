@@ -10,5 +10,11 @@
         "email": "sajt@sajt.com",
         "password": "$2y$10$Xgmjghx9odILktTV7GoPZ.W0dyyDAV7QQcysbg5zP5XpuNc15LSeO",
         "admin": 0
+    },
+    {
+        "username": "BarnaSanyi",
+        "email": "sbarnabas0502@gmail.com",
+        "password": "$2y$10$64EMNgOe3yxv9eluf1qVFuS4oSj.388nZN7cVW7r6EdSXvhx7\/MDu",
+        "admin": 1
     }
 ]
