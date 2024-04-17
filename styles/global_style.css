@@ -176,12 +176,6 @@ main {
     gap: 1.5rem;
 }
 
-#catError {
-    margin-top: 1rem;
-    color: var(--footer-colour);
-    font-size: 20rem;
-}
-
 /*
     Up Arrow
 */

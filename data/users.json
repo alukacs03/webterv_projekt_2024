@@ -1,14 +1,8 @@
-{
-    "0": {
+[
+    {
         "username": "marhalevel",
         "email": "marha@level.com",
         "password": "$2y$10$uUbvFBKl4aRaWiiOjuu7zeXVy2KAmKG\/jJOu6HbhblSb5QG39N4ei",
         "admin": 1
-    },
-    "2": {
-        "username": "BarnaSanyi",
-        "email": "sbarnabas0502@gmail.com",
-        "password": "$2y$10$64EMNgOe3yxv9eluf1qVFuS4oSj.388nZN7cVW7r6EdSXvhx7\/MDu",
-        "admin": 1
     }
-}
+]

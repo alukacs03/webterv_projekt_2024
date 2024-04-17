@@ -41,90 +41,37 @@
         <div class="adminMainWrapper ordersPageWrapper">
             <h1 id="ordersTitle">Megrendelések</h1>
             <div class="ordersListWrapper">
-                <div class="orderItemWrapper">
-                    <div class="orderCardField">
-                        <div class="orderCardFieldTitle">Név</div>
-                        <div class="orderCardFieldValue orderNameField">Lakatos Lajos</div>
-                    </div>
-                    <div class="orderCardField">
-                        <div class="orderCardFieldTitle">Állapot</div>
-                        <div class="orderCardFieldValue orderShipped">KISZÁLLÍTVA</div>
-                    </div>
-                    <div class="orderCardField">
-                        <div class="orderCardFieldTitle">Rendelés beérkezett</div>
-                        <div class="orderCardFieldValue orderDateField">2024.02.12.</div>
-                    </div>
-                    <div class="orderCardField">
-                        <div class="orderCardFieldTitle">Végösszeg</div>
-                        <div class="orderCardFieldValue orderSumField">385.000 Ft</div>
-                    </div>
-                    <div class="orderCardField">
-                        <div class="orderCardFieldValue formButton buttonField">Több információ</div>
-                    </div>
-                </div>
-                <div class="orderItemWrapper">
-                    <div class="orderCardField">
-                        <div class="orderCardFieldTitle">Név</div>
-                        <div class="orderCardFieldValue orderNameField">Lakatos Lajos</div>
-                    </div>
-                    <div class="orderCardField">
-                        <div class="orderCardFieldTitle">Állapot</div>
-                        <div class="orderCardFieldValue orderShipped">KISZÁLLÍTVA</div>
-                    </div>
-                    <div class="orderCardField">
-                        <div class="orderCardFieldTitle">Rendelés beérkezett</div>
-                        <div class="orderCardFieldValue orderDateField">2024.02.12.</div>
-                    </div>
-                    <div class="orderCardField">
-                        <div class="orderCardFieldTitle">Végösszeg</div>
-                        <div class="orderCardFieldValue orderSumField">385.000 Ft</div>
-                    </div>
-                    <div class="orderCardField">
-                        <div class="orderCardFieldValue formButton buttonField">Több információ</div>
-                    </div>
-                </div>
-                <div class="orderItemWrapper">
-                    <div class="orderCardField">
-                        <div class="orderCardFieldTitle">Név</div>
-                        <div class="orderCardFieldValue orderNameField">Lakatos Lajos</div>
-                    </div>
-                    <div class="orderCardField">
-                        <div class="orderCardFieldTitle">Állapot</div>
-                        <div class="orderCardFieldValue orderShipped">KISZÁLLÍTVA</div>
-                    </div>
-                    <div class="orderCardField">
-                        <div class="orderCardFieldTitle">Rendelés beérkezett</div>
-                        <div class="orderCardFieldValue orderDateField">2024.02.12.</div>
-                    </div>
-                    <div class="orderCardField">
-                        <div class="orderCardFieldTitle">Végösszeg</div>
-                        <div class="orderCardFieldValue orderSumField">385.000 Ft</div>
-                    </div>
-                    <div class="orderCardField">
-                        <div class="orderCardFieldValue formButton buttonField">Több információ</div>
-                    </div>
-                </div>
-                <div class="orderItemWrapper">
-                    <div class="orderCardField">
-                        <div class="orderCardFieldTitle">Név</div>
-                        <div class="orderCardFieldValue orderNameField">Lakatos Lajos</div>
-                    </div>
-                    <div class="orderCardField">
-                        <div class="orderCardFieldTitle">Állapot</div>
-                        <div class="orderCardFieldValue orderShipped">KISZÁLLÍTVA</div>
-                    </div>
-                    <div class="orderCardField">
-                        <div class="orderCardFieldTitle">Rendelés beérkezett</div>
-                        <div class="orderCardFieldValue orderDateField">2024.02.12.</div>
-                    </div>
-                    <div class="orderCardField">
-                        <div class="orderCardFieldTitle">Végösszeg</div>
-                        <div class="orderCardFieldValue orderSumField">385.000 Ft</div>
-                    </div>
-                    <div class="orderCardField">
-                        <div class="orderCardFieldValue formButton buttonField">Több információ</div>
-                    </div>
-                </div>
+                <?php 
+                    $orders = json_decode(file_get_contents("../../data/orders.json"), true);
+                    foreach($orders as $order){
+                        $allapot = $order['allapot'] == 1 ? "KISZÁLLÍTVA" : ($order['allapot'] == 2 ? "FOLYAMATBAN" : "FIZETÉSRE VÁR");
+                        $allapotColor = $order['allapot'] == 1 ? "green" : ($order['allapot'] == 2 ? "orange" : "red");
+                        $vegosszeg = number_format($order['vegosszeg'], 0, ',', '.');
+                        echo '
+                            <div class="orderItemWrapper">
+                                <div class="orderCardField">
+                                    <div class="orderCardFieldTitle">Név</div>
+                                    <div class="orderCardFieldValue orderNameField">'.$order['megrendelo'].'</div>
+                                </div>
+                                <div class="orderCardField">
+                                    <div class="orderCardFieldTitle">Állapot</div>
+                                    <div class="orderCardFieldValue orderShipped" style=background-color:' . $allapotColor .';>'.$allapot.'</div>
+                                </div>
+                                <div class="orderCardField">
+                                    <div class="orderCardFieldTitle">Rendelés beérkezett</div>
+                                    <div class="orderCardFieldValue orderDateField">'.$order['datum'].'</div>
+                                </div>
+                                <div class="orderCardField">
+                                    <div class="orderCardFieldTitle">Végösszeg</div>
+                                    <div class="orderCardFieldValue orderSumField">'.$vegosszeg.' Ft</div>
+                                </div>
+                                <div class="orderCardField">
+                                    <a  class="orderCardFieldValue formButton buttonField" href="megrendelesDetails.php?id='. $order['id'] . '">Több információ</a>
+                                </div>
+                            </div>
+                        ';
+                    }
+                ?>
             </div>
             
         </div>
