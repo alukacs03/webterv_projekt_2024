@@ -26,62 +26,71 @@
       }
 
     $_SESSION['error_name'] = "";
-    // && isset($_POST['categoryImageInput']) && trim($_POST['categoryImageInput']) !== ""
     if(isset($_POST['catSave']) && isset($_POST['kategoria']) && trim($_POST['kategoria']) !== "" && isset($_POST['descInput']) && trim($_POST['descInput']) !== ""){
-        $name = $_POST['kategoria'];
-        $description = $_POST['descInput'];
-        $categories = json_decode(file_get_contents("../../data/products.json"), true);
-        $last = end($categories);
-        $id = $last['id'] + 1;
-        $abc = [
-            "á",
-            "é",
-            "í",
-            "ó",
-            "ö",
-            "ő",
-            "ú",
-            "ü",
-            "ű"
-        ];
-        $abc2 = [
-            "a",
-            "e",
-            "i",
-            "o",
-            "o",
-            "o",
-            "u",
-            "u",
-            "u"
-        ];
-        $href = mb_strtolower($name);
-        $href = str_replace($abc, $abc2, $href);
+        if(isset($_SESSION['sess_img'])){
+            $name = $_POST['kategoria'];
+            $description = $_POST['descInput'];
+            $categories = json_decode(file_get_contents("../../data/products.json"), true);
+            $last = end($categories);
+            $id = $last['id'] + 1;
+            $abc = [
+                "á",
+                "é",
+                "í",
+                "ó",
+                "ö",
+                "ő",
+                "ú",
+                "ü",
+                "ű",
+                " "
+            ];
+            $abc2 = [
+                "a",
+                "e",
+                "i",
+                "o",
+                "o",
+                "o",
+                "u",
+                "u",
+                "u",
+                "_"
+            ];
+            $href = mb_strtolower($name);
+            $href = str_replace($abc, $abc2, $href);
 
-        foreach ($categories as $cat){
-            if($cat['href'] == $href){
-                $_SESSION['sess_description'] = $description;
-                $_SESSION['error_name'] = "Ez a kategórianév már foglalt. Válassz másikat!";
+            foreach ($categories as $cat){
+                if($cat['href'] == $href){
+                    $_SESSION['sess_description'] = $description;
+                    $_SESSION['error_name'] = "Ez a kategórianév már foglalt. Válassz másikat!";
+                }
+            }
+
+            if($_SESSION['error_name'] == ""){
+                rename("../../pictures/categories/kep.png", "../../pictures/categories/cat_" . $href . ".png");
+                $_SESSION['sess_img']= "../../pictures/categories/cat_" . $href . ".png";
+                $category = [
+                    "id" => $id,
+                    "href" => $href,
+                    "name" => $name,
+                    "image" => $_SESSION['sess_img'],
+                    "message" => $description,
+                    "products" => []
+                ];
+                array_push($categories, $category);
+                file_put_contents("../../data/products.json", json_encode($categories, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+                unset($_SESSION['vanKep']);
+                unset($_SESSION['sess_img']);
+                unset($_SESSION['sess_description']);
+                unset($_SESSION['category']);
+                unset($_SESSION['noImage']);
             }
         }
-
-        if($_SESSION['error_name'] == ""){
-            rename("../../pictures/categories/kep.png", "../../pictures/categories/cat_" . $href . ".png");
-            $_SESSION['sess_img']= "../../pictures/categories/cat_" . $href . ".png";
-            $category = [
-                "id" => $id,
-                "href" => $href,
-                "name" => $name,
-                "image" => $_SESSION['sess_img'],
-                "message" => $description,
-                "products" => []
-            ];
-            array_push($categories, $category);
-            file_put_contents("../../data/products.json", json_encode($categories, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
-            unset($_SESSION['vanKep']);
-            unset($_SESSION['sess_img']);
-            unset($_SESSION['sess_description']);
-            unset($_SESSION['category']);
+        else{
+            $_SESSION['noImage'] = 1;
+            $_SESSION['category'] = $_POST['kategoria'];
+            $_SESSION['sess_description'] = $_POST['descInput'];
         }
     }
 
@@ -176,7 +185,11 @@
                             </div>
                         </div>
                     </div>
-                    
+                    <?php
+                        if(isset($_SESSION["noImage"])){
+                            echo "<p>Nincs kép feltöltve!</p>";
+                        }
+                    ?>
                     <button name="catSave" id="newCategoryButton" class="formSubmitButton" type="submit">Kategória mentése</button>
                 </div>
             </form>

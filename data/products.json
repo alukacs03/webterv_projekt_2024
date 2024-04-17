@@ -469,5 +469,25 @@
         "image": "..\/..\/pictures\/categories\/cat_bilicki.png",
         "message": "Ő egy jó ember.",
         "products": []
+    },
+    {
+        "id": 7,
+        "href": "bilicki",
+        "name": "Bilicki",
+        "image": "..\/..\/pictures\/categories\/cat_bilicki.png",
+        "message": "Ő egy jó ember.",
+        "products": [],
+        "0": [
+            {
+                "id": "7.1",
+                "image": "..\/..\/pictures\/categories\/cat_kaja.png",
+                "imagealt": "kaja",
+                "title": "Kaja",
+                "price": "234",
+                "measure": "Z",
+                "description": "234",
+                "reviews": []
+            }
+        ]
     }
 ]

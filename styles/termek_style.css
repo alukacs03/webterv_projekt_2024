@@ -20,6 +20,13 @@
     color: var(--dark-green);
 }
 
+#termekStars {
+    justify-content: start;
+    width: 100%;
+    display: flex;
+}
+
+
 #categorySelectBar {
     width: 100%;
     display: grid;
