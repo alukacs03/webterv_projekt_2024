@@ -89,7 +89,6 @@
                                         <input type="file" name="productImageInput" id="productImageInput" accept="image/*">
                                     </div>
                                     <button id="imgUploadButton" class="formButton">Kép feltöltése...</button>
-                                    <button id="imgDeleteButton" class="formButton redButton">Kép törlése...</button>
                                 </div>
                             </div>
                         </div>

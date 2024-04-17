@@ -46,18 +46,7 @@
                         <div id='formWrapper'>
                         <form id='contactForm' action='index.php' method='POST'>
                             <div id='contactTopContainer'>
-                                <div id='contactNameContainer' class='contactContainer'>
-                                    <label for='contactNameInput' class='contactLabel'>Név:</label>
-                                    <input type='text' name='contactNameInput' id='contactNameInput' class='contactInputField' placeholder='Név...' required>
-                                </div>
-                                <div id='contactSubjectContainer' class='contactContainer'>
-                                    <label for='contactSubjectInput' class='contactLabel'>Tárgy:</label>
-                                    <input type='text' name='contactSubjectInput' id='contactSubjectInput' class='contactInputField' placeholder='Tárgy...' required>
-                                </div>
-                                <div id='contactEmailContainer' class='contactContainer'>
-                                    <label for='contactEmailInput' class='contactLabel'>E-mail:</label>
-                                    <input type='email' name='contactEmailInput' id='contactEmailInput' class='contactInputField' placeholder='E-mail...' required>
-                                </div>
+                                //csillagok mondjátok el nekem
                             </div>  
                             <div id='contactMessageContainer'>
                                 <label for='contactMessageInput' class='contactLabel' id='contactMessageLabel'>Üzenet:</label>

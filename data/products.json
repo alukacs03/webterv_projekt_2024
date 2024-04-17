@@ -3,7 +3,7 @@
         "id": 1,
         "href": "tuzifa",
         "name": "Tüzifa",
-        "image": "..\/pictures\/products\/cat_firewood.png",
+        "image": "..\/pictures\/categories\/cat_firewood.png",
         "message": "Gondosan válogatott, keményfából származó tűzifánk garantálja a hosszan tartó melegséget és a kellemes lángokat. Tűzifánk kiemelkedő fűtőértékkel bír, így kevesebb tüzelővel is komfortos hőmérsékletet biztosíthat otthonában. A hosszan égő tűzifa kényelmes használatot nyújt, míg a hangulatos lángok meghitt atmoszférát teremtenek kandallójában vagy kályhájában. A Rönklovagok Kft. profi faszállítóként gyorsan és hatékonyan juttatja el a tűzifát otthonába az ország bármely pontjára. Válasszon minket, ha megbízható partnert keres a kiváló minőségű tűzifa kényelmes beszerzéséhez!",
         "products": [
             {
@@ -149,7 +149,7 @@
         "id": 2,
         "name": "Fűszeráru",
         "href": "fureszaru",
-        "image": "..\/pictures\/products\/cat_planks.png",
+        "image": "..\/pictures\/categories\/cat_planks.png",
         "message": "Termékeink gondosan válogatott, hazai erdőkből származó faanyagból készülnek, modern technológiák és szigorú minőségellenőrzés mellett. Fűrészárunk rendkívül strapabíró, ellenálló a vetemedéssel és a gombásodással szemben, így hosszú távú megoldást nyújt építkezési, barkács- és hobbiprojektekhez egyaránt. Széles választékban kínálunk deszkákat és léceket különböző méretben, vastagságban és fafajtában, hogy megtalálja az Ön igényeinek és céljainak leginkább megfelelő terméket. Akár tetőfedéshez, burkoláshoz, kerítésépítéshez, bútorasztalos munkákhoz, vagy akár dekorációs célokra keres fűrészárut, a Rönklovagok Kft.-nél biztosan talál megfelelőt. Csapatunk profi tanácsadással áll az Ön rendelkezésére, hogy segítsen kiválasztani a legoptimálisabb fűrészárut projektjéhez. Továbbá, igény esetén méretre vágjuk a fűrészárut, és akár házhoz is szállítjuk.",
         "products": [
             {
@@ -209,7 +209,7 @@
         "id": 3,
         "name": "OSB Lapok",
         "href": "osblapok",
-        "image": "..\/pictures\/products\/cat_OSB.png",
+        "image": "..\/pictures\/categories\/cat_OSB.png",
         "message": "A Rönklovagok Kft. nem csak a tűzifa és a fűrészáru terén nyújt kiemelkedő minőséget, de az OSB lapok piacán is megbízható partnernek számít. Kínálatunkban megtalálja a legkülönfélébb méretű és vastagságú OSB lapokat, melyek kiválóan alkalmasak építkezési és barkácsmunkák széles skálájához. Az OSB lapok (Oriented Strand Board) nagy szilárdságú, teherbíró és nedvességálló építőanyagok, melyeket faforgács préselésével és ragasztásával állítanak elő. Sokoldalúan felhasználhatók tetőfedéshez, falburkoláshoz, padlózathoz, lépcsőépítéshez, bútorgyártáshoz és még sok máshoz.",
         "products": [
             {
@@ -286,7 +286,7 @@
         "id": 4,
         "name": "Karácsonyfa",
         "href": "karacsonyfa",
-        "image": "..\/pictures\/products\/cat_christmastree.png",
+        "image": "..\/pictures\/categories\/cat_christmastree.png",
         "message": "A Rönklovagok Kft. nem csak a téli hideg elleni védekezésben, de a karácsonyi hangulat megteremtésében is segít. Gondosan válogatott, friss karácsonyfáinkkal varázslatos ünnepi atmoszférát teremthet otthonában. Kínálatunkban megtalálja a klasszikus lucfenyőket és a nordmann fenyőket is, különböző méretben és formában, hogy megtalálja az Önnek legmegfelelőbbet. Karácsonyfáinkat fenntartható erdőgazdálkodásból származtatjuk, így a vásárlásukkal hozzájárul a környezet védelméhez is.",
         "products": [
             {
@@ -329,7 +329,7 @@
         "id": 5,
         "name": "Fogpiszkáló",
         "href": "fogpiszkalo",
-        "image": "..\/pictures\/products\/cat_toothstick.png",
+        "image": "..\/pictures\/categories\/cat_toothstick.png",
         "message": "Feledje el az átlagos fogpiszkálókat! A Rönklovagok Kft. prémium minőségű fogpiszkálókat kínál, melyek a mindennapi rutinját is luxussá varázsolják. Kínálatunkban olyan fogpiszkálók találhatók, amelyek nemcsak praktikusak, hanem kiemelkedő minőségűek és elegánsak is. A Rönklovagok Kft. fogpiszkálói: Kiválasztott nyírfából készülnek: Kizárólag a legfinomabb, hibátlan nyírfát használjuk, így biztosítva a fogpiszkálók rendkívüli simaságát és szálkamentes használatát. Kényelmes és precíz: Ergonomikus kialakításuknak köszönhetően kényelmesen tarthatók a kézben, pontos és kíméletes tisztítást biztosítva. Tartós és megbízható: A nyírfából készült fogpiszkálók rendkívül strapabíróak, nem hajlanak el és nem töredeznek használat közben. Letisztult elegancia: Modern dizájnjukkal nemcsak praktikus eszközök, hanem elegáns kiegészítői az asztalnak vagy a neszesszernek. A Rönklovagok Kft. prémium minőségű fogpiszkálói azoknak az igényes vásárlóknak szólnak, akik a legjobbat keresik. Tökéletes választás egy elegáns vacsora kiegészítőjeként, vagy a mindennapi fogápolás során is.",
         "products": [
             {
@@ -406,7 +406,7 @@
         "id": 6,
         "name": "Faszeg",
         "href": "faszeg",
-        "image": "..\/pictures\/products\/cat_woodendowel.png",
+        "image": "..\/pictures\/categories\/cat_woodendowel.png",
         "message": "A tiplik, más néven faszegek, apró, de annál fontosabb elemei a barkácsolásnak. Ezek a fából készült rögzítőelemek nélkülözhetetlenek, ha két fadarabot szilárdan és tartósan szeretnénk összekötni. Cégünk elkötelezett a kiváló minőségű tiplik gyártása mellett. Termékeinket nem gépeken, hanem kézzel készítjük, gondosan válogatott alapanyagokból. Minden egyes tiplit hozzáértő kezek faragnak tökéletesre, hogy Önnek a legjobb rögzítési élményt nyújthassuk.",
         "products": [
             {
@@ -461,5 +461,13 @@
                 ]
             }
         ]
+    },
+    {
+        "id": 7,
+        "href": "bilicki",
+        "name": "Bilicki",
+        "image": "..\/..\/pictures\/categories\/cat_bilicki.png",
+        "message": "Ő egy jó ember.",
+        "products": []
     }
 ]
