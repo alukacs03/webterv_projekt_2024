@@ -157,7 +157,7 @@
                 "image": "../pictures/products/fenyodeszka.jpeg",
                 "imagealt": "fenyő deszka",
                 "title": "Fenyő deszka",
-                "price": "148.900",
+                "price": 148900,
                 "measure": "m<sup>3</sup>",
                 "description": "Itt van a leírás, csak közben meg nem látszik, mert eldugtuk.",
                 "reviews": [
@@ -174,7 +174,7 @@
                 "image": "../pictures/products/fenyogerenda.jpeg",
                 "imagealt": "fenyő gerenda",
                 "title": "Fenyő gerenda",
-                "price": "145.900",
+                "price": 145900,
                 "measure": "m<sup>3</sup>",
                 "description": "Itt van a leírás, csak közben meg nem látszik, mert eldugtuk.",
                 "reviews": [
@@ -191,7 +191,7 @@
                 "image": "../pictures/products/szarufa.jpeg",
                 "imagealt": "vegyes szarufa",
                 "title": "Vegyes szarufa",
-                "price": "177.000",
+                "price": "177000",
                 "measure": "m<sup>3</sup>",
                 "description": "Itt van a leírás, csak közben meg nem látszik, mert eldugtuk.",
                 "reviews": [
@@ -217,7 +217,7 @@
                 "image": "../pictures/products/6mmOSB.jpeg",
                 "imagealt": "6mm osb lap",
                 "title": "6mm OSB lap",
-                "price": "1.245",
+                "price": "1245",
                 "measure": "m<sup>2</sup>",
                 "description": "Itt van a leírás, csak közben meg nem látszik, mert eldugtuk.",
                 "reviews": [

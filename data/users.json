@@ -4,11 +4,5 @@
         "email": "marha@level.com",
         "password": "$2y$10$uUbvFBKl4aRaWiiOjuu7zeXVy2KAmKG\/jJOu6HbhblSb5QG39N4ei",
         "admin": 1
-    },
-    {
-        "username": "sajtsajt",
-        "email": "sajt@sajt.com",
-        "password": "$2y$10$Xgmjghx9odILktTV7GoPZ.W0dyyDAV7QQcysbg5zP5XpuNc15LSeO",
-        "admin": 0
     }
 ]

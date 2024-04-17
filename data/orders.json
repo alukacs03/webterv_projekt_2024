@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "megrendelo": "Lakatos Lajos",
+        "allapot": "2",
+        "datum": "2024.02.12",
+        "vegosszeg": 385000,
+        "products": [
+            {
+                "id": 2.1,
+                "mennyiseg": 1
+            },
+            {
+                "id": 2.2,
+                "mennyiseg": 2
+            },
+            {
+                "id": 2.3,
+                "mennyiseg": 2
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "megrendelo": "Kov\u00e1cs J\u00e1nos",
+        "allapot": "1",
+        "datum": "2024.02.12",
+        "vegosszeg": 385000,
+        "products": [
+            {
+                "id": 2.1,
+                "mennyiseg": 1
+            },
+            {
+                "id": 2.2,
+                "mennyiseg": 2
+            },
+            {
+                "id": 2.3,
+                "mennyiseg": 2
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "megrendelo": "Nagy B\u00e9la",
+        "allapot": 3,
+        "datum": "2024.02.12",
+        "vegosszeg": 385000,
+        "products": [
+            {
+                "id": 3.1,
+                "mennyiseg": 1
+            },
+            {
+                "id": 2.2,
+                "mennyiseg": 2
+            },
+            {
+                "id": 2.3,
+                "mennyiseg": 2
+            }
+        ]
+    }
+]
