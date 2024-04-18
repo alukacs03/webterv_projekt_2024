@@ -32,6 +32,11 @@
                             <a href="kijelentkezes.php" class="menuLink">Kijelentkezés</a>
                         </li>
                     ';
+                    echo '
+                    <li class="menuItem">
+                        <a href="profil.php" class="menuLink">Profil</a>
+                    </li>
+                ';
                     if(isset($_SESSION["admin"]) && $_SESSION["admin"] == 1){
                         echo '
                             <li class="menuItem">

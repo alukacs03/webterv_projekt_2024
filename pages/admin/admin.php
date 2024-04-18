@@ -8,6 +8,21 @@
         header("Location: ../../index.php");
         exit();
     }
+
+    $orders = json_decode(file_get_contents("../../data/orders.json"), true);
+    $newOrders = 0;
+    foreach($orders as $order){
+        if($order['allapot'] == 3){
+            $newOrders++;
+        }
+    }
+
+    $categories = json_decode(file_get_contents("../../data/products.json"), true);
+    $productNum = 0;
+    foreach($categories as $category){
+        $productNum += count($category['products']);
+        
+    }
 ?>
 <!DOCTYPE html>
 <html lang="hu">
@@ -41,7 +56,7 @@
             <?php include_once "../../templates/adminSideNav.php"; ?>
             <div class="adminMainWrapper" id="adminMetricsWrapper">
             <div class="metricsBox" id="metricTopLeft">
-                <p class="metricNumber">4</p>
+                <p class="metricNumber"><?php echo $newOrders?></p>
                 <p class="metricText">új megrendelés</p>
             </div>
             <div class="metricsBox" id="metricTopRight">
@@ -49,11 +64,11 @@
                 <p class="metricText">új vélemény</p>
             </div>
             <div class="metricsBox" id="metricBottomLeft">
-                <p class="metricNumber">12</p>
+                <p class="metricNumber"><?php echo rand(0, 100)?></p>
                 <p class="metricText">új fa szú</p>
             </div>
             <div class="metricsBox" id="metricBottomRight">
-                <p class="metricNumber">64</p>
+                <p class="metricNumber"><?php echo $productNum ?></p>
                 <p class="metricText">féle termék</p>
             </div>
         </div>

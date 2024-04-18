@@ -19,9 +19,17 @@
               if (move_uploaded_file($_FILES["categoryImageInput"]["tmp_name"], $cel)) {
                 $_SESSION['vanKep'] = 1;
                 $_SESSION['sess_img'] = $cel;
+              } else {
+                echo "nem sikerult a mozgatas";
               }
-            } 
+            } else {
+                echo "túl nagy a fájl mérete";
+            }
+          } else {
+            echo $_FILES["categoryImageInput"]["error"];
           }
+        } else {
+            echo "nem engedélyezett kiterjesztés";
         }
       }
 

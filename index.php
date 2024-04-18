@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+if(!isset($_COOKIE['cart'])){
+    setcookie("cart", serialize([]), time() + (60*60*24*30), "/");
+}
+
 if (isset($_POST['supportSubmit'])) {
         $name = $_POST['contactNameInput'];
         $email = $_POST['contactEmailInput'];
@@ -69,6 +74,12 @@ if (isset($_POST['supportSubmit'])) {
                         <a href="./pages/kijelentkezes.php" class="menuLink">Kijelentkezés</a>
                         </li>
                     ';
+                    echo '
+                    <li class="menuItem">
+                    <a href="./pages/profil.php" class="menuLink">Profil</a>
+                    </li>
+                ';
+                
                     if(isset($_SESSION["admin"]) && $_SESSION["admin"] == 1){
                         echo '
                             <li class="menuItem">

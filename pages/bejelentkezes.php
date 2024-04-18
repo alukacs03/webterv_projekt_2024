@@ -15,6 +15,7 @@
                         $_SESSION["username"] = $user["username"];
                         $_SESSION["email"] = $user["email"];
                         $_SESSION["admin"] = $user["admin"];
+                        unset($_SESSION['noUserError']);
                         header("Location: ../index.php");
                         unset($_SESSION["loginError"]);
                         exit();

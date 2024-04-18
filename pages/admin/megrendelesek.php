@@ -43,6 +43,10 @@
             <div class="ordersListWrapper">
                 <?php 
                     $orders = json_decode(file_get_contents("../../data/orders.json"), true);
+                    $orders = array_reverse($orders);
+                    if(count($orders) == 0){
+                        echo "<h2>Nincs megrendelés :(</h2>";
+                    }
                     foreach($orders as $order){
                         $allapot = $order['allapot'] == 1 ? "KISZÁLLÍTVA" : ($order['allapot'] == 2 ? "FOLYAMATBAN" : "FIZETÉSRE VÁR");
                         $allapotColor = $order['allapot'] == 1 ? "green" : ($order['allapot'] == 2 ? "orange" : "red");

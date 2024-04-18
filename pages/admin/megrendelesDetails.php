@@ -99,7 +99,7 @@
                                     $catProducts = $category['products'];
                                     foreach($catProducts as $catProduct){
                                         if($catProduct['id'] == $product['id']){
-                                            $vegosszeg = number_format($catProduct['price'] * $product['mennyiseg'], 0, ',', '.');
+                                            $vegosszeg = number_format($catProduct['price'] * $product['am'], 0, ',', '.');
                                             $price = number_format($catProduct['price'], 0, ',', '.');
                             
                                             echo '
@@ -110,7 +110,7 @@
                                                 </div>
                                                 <div class="orderCardField">
                                                     <div class="orderCardFieldTitle">Mennyiség</div>
-                                                    <div class="orderCardFieldValue">'.$product['mennyiseg'].'</div>
+                                                    <div class="orderCardFieldValue">'.$product['am'].'</div>
                                                 </div>
                                                 <div class="orderCardField">
                                                     <div class="orderCardFieldTitle">Ár/'. $catProduct['measure'] .'</div>
