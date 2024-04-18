@@ -39,9 +39,6 @@
     background-color: white;
 }
 
-.sideMenuItem {
-
-}
 
 @media (max-width: 1100px) {
     .sideBar:nth-child(1) {
@@ -410,9 +407,7 @@ main {
     background-color: var(--red);
 }
 
-#productImageInput, #categoryImageInput {
-    display: none;
-}
+
 
 
 @media (max-width: 1100px) {

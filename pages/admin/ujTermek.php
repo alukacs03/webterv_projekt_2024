@@ -6,6 +6,128 @@
     if(isset($_SESSION['admin']) && $_SESSION['admin'] == 0){
         header("Location: ../../index.php");
     }
+
+    if (isset($_FILES["productImageInput"]) && isset($_POST['imgUpload'])) {
+        $_SESSION['product'] = $_POST['termek'];
+        $_SESSION['sess_description'] = $_POST['descInput'];
+        $_SESSION['category'] = $_POST['categorySelector'];
+        $_SESSION['price'] = $_POST['price'];
+        $_SESSION['measure'] = $_POST['measure'];
+        $engedelyezett_kiterjesztesek = ["jpg", "jpeg", "png"];
+        $kiterjesztes = strtolower(pathinfo($_FILES["productImageInput"]["name"], PATHINFO_EXTENSION));
+        if (in_array($kiterjesztes, $engedelyezett_kiterjesztesek)) {
+          if ($_FILES["productImageInput"]["error"] === 0) {
+            if ($_FILES["productImageInput"]["size"] <= 31457280) {
+              $cel = "../../pictures/products/kep.png";
+              if (move_uploaded_file($_FILES["productImageInput"]["tmp_name"], $cel)) {
+                $_SESSION['vanKep'] = 1;
+                $_SESSION['sess_img'] = $cel;
+              }
+            } 
+          }
+        }
+      }
+
+    $_SESSION['error_name'] = "";
+    if(isset($_POST['productSave']) && isset($_POST['termek']) && trim($_POST['termek']) !== "" && isset($_POST['descInput']) && trim($_POST['descInput']) !== ""){
+        if(isset($_SESSION['sess_img'])){
+            $_SESSION['product'] = $_POST['termek'];
+            $_SESSION['sess_description'] = $_POST['descInput'];
+            $_SESSION['category'] = $_POST['categorySelector'];
+            $_SESSION['price'] = $_POST['price'];
+            $_SESSION['measure'] = $_POST['measure'];
+            $categories = json_decode(file_get_contents("../../data/products.json"), true);
+            $products;
+            $actCat = [];
+            foreach ($categories as $category) {
+                if($category['name'] == $_SESSION['category']){
+                    $products = $category['products'];
+                    $actCat = $category;
+                    break;
+                }
+            }
+            $ell = false;
+            if(count($products) > 0){
+                $last = end($products);
+                $idBefore = explode('.', $last['id'])[1] + 1;
+                $id = $actCat['id'] . "." . $idBefore;
+            }
+            else{
+                $id = $actCat['id'] . ".1";
+                $ell = true;
+            }
+            
+            $abc = [
+                "á",
+                "é",
+                "í",
+                "ó",
+                "ö",
+                "ő",
+                "ú",
+                "ü",
+                "ű",
+                " "
+            ];
+            $abc2 = [
+                "a",
+                "e",
+                "i",
+                "o",
+                "o",
+                "o",
+                "u",
+                "u",
+                "u",
+                "_"
+            ];
+            $alt = mb_strtolower($_SESSION['product']);
+            $alt = str_replace($abc, $abc2, $alt);
+
+            if(!$ell){
+                foreach ($products as $prod){
+                    if($prod['imagealt'] == $alt){
+                        $_SESSION['error_name'] = "Ez a terméknév már foglalt. Válassz másikat!";
+                    }
+                }    
+            }
+            
+            if($_SESSION['error_name'] == ""){
+                rename("../../pictures/products/kep.png", "../../pictures/products/cat_" . $alt . ".png");
+                $_SESSION['sess_img']= "../../pictures/categories/cat_" . $alt . ".png";
+                $product = [
+                    "id" => $id,
+                    "image" => $_SESSION['sess_img'],
+                    "imagealt" => $alt,
+                    "title" => $_SESSION['product'],
+                    "price" => $_SESSION["price"],
+                    "measure" => $_SESSION["measure"],
+                    "description" => $_SESSION['sess_description'],
+                    "reviews" => []
+                ];
+                array_push($products, $product);
+                array_push($actCat, $products);
+                array_push($categories, $actCat);
+                
+                
+                file_put_contents("../../data/products.json", json_encode($categories, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+                unset($_SESSION['vanKep']);
+                unset($_SESSION['sess_img']);
+                unset($_SESSION['sess_description']);
+                unset($_SESSION['category']);
+                unset($_SESSION['product']);
+                unset($_SESSION['price']);
+                unset($_SESSION['measure']);
+                unset($_SESSION['noImage']);
+            }
+        }
+        else{
+            $_SESSION['noImage'] = 1;
+        }
+    }
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="hu">
@@ -38,49 +160,57 @@
     <main>
         <?php include_once "../../templates/adminSideNav.php"; ?>
         <div class="adminMainWrapper formPageWrapper">
-            <form id="newProductForm" onsubmit="return false;" enctype="multipart/form-data" method="post">
+            <form id="newProductForm" action="ujTermek.php" enctype="multipart/form-data" method="post">
                 <div id="newProductWrapper">
                     <h2 class="formTitle">Új termék hozzáadása</h2>
                     <div class="formWrapper" id="newProductFormWrapper">
                         <div class="formTopRow">
                             <div class="formTopRowField" id="formProdNameDiv">
                                 <p class="inputTitle">Terméknév</p>
-                                <input type="text" class="formInput" placeholder="Terméknév..." required>
+                                <input name="termek" type="text" class="formInput" placeholder="Terméknév...">
                             </div>
                             <div class="formTopRowField" id="formProdCatDiv">
                                 <p class="inputTitle">Termék kategória</p>
-                                <select name="categorySelector" id="categorySelector" required>
-                                    <option value="">-</option>
-                                    <option value="tuzifa">Tűzifa</option>
-                                    <option value="tuzifa">Fűrészárú</option>
-                                    <option value="tuzifa">OSB lapok</option>
-                                    <option value="tuzifa">Karácsonyfa</option>
-                                    <option value="tuzifa">Fogpiszkáló</option>
-                                    <option value="tuzifa">Faszeg</option>
+                                <select name="categorySelector" id="categorySelector">
+                                    <?php
+                                        echo '<option value="">-</option>';
+                                        $cats = json_decode(file_get_contents("../../data/products.json"), true);
+                                        foreach ($cats as $cat){
+                                            echo "<option value='{$cat['name']}'>{$cat['name']}</option>";
+                                        }
+                                    ?>
+                                    
                                 </select>
                             </div>
                             <div class="formTopRowField">
                                 <p class="inputTitle">Ár</p>
                                 <div class="priceInputWrapper">
-                                    <input required type="number" min="0" placeholder="Ár..." class="formInput">
+                                    <input name="price" type="number" min="0" placeholder="Ár..." class="formInput">
                                     <p class="inputTitle">Ft</p>
                                 </div>
                             </div>
                             <div class="formTopRowField">
                                 <p class="inputTitle">Mértékegység</p>
-                                <input type="text" placeholder="m^3" class="formInput" required>
+                                <input name="measure" type="text" placeholder="m^3" class="formInput">
                             </div>
                         </div>
                         <div class="formBottomRow">
                             <div class="productDescWrapper">
                                 <label for="descInput" class="inputTitle">Termék leírása</label>
-                                <textarea name="descInput" id="descInput" cols="30" rows="10" class="descInput formInput" placeholder="Rövid leírás..." required></textarea>
+                                <textarea name="descInput" id="descInput" cols="30" rows="10" class="descInput formInput" placeholder="Rövid leírás..."></textarea>
                             </div>
                             <div class="productImgWrapper">
                                 <div class="productImgLeft">
                                     <p class="inputTitle">Termék képe</p>
                                     <div class="imgWrapper">
-                                        <img class="productImagePreview" src="../../pictures/resources/uploadimage.jpeg" alt="Termékkép">
+                                    <?php
+                                        if(!isset($_SESSION['vanKep'])){
+                                            echo "<img class='categoryImagePreview' src='../../pictures/resources/uploadimage.jpeg' alt='Termékkép'>";
+                                        }
+                                        else {
+                                            echo "<img class='categoryImagePreview' src='../../pictures/products/kep.png' alt='Termékkép'>";
+                                        }
+                                    ?>
                                     </div>
                                 </div>
                                 <div class="productImgRight">
@@ -88,13 +218,12 @@
                                         <label for="productImageInput" class="formButton">Kép választása</label>
                                         <input type="file" name="productImageInput" id="productImageInput" accept="image/*">
                                     </div>
-                                    <button id="imgUploadButton" class="formButton">Kép feltöltése...</button>
-                                    <button id="imgDeleteButton" class="formButton redButton">Kép törlése...</button>
+                                    <button name="imgUpload" id="imgUploadButton" class="formButton">Kép feltöltése...</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <button id="newProductButton" class="formSubmitButton" type="submit">Termék közzététele</button>
+                    <button name="productSave" id="newProductButton" class="formSubmitButton" type="submit">Termék közzététele</button>
                 </div>
             </form>
         </div>

@@ -6,6 +6,96 @@
     if(isset($_SESSION['admin']) && $_SESSION['admin'] == 0){
         header("Location: ../../index.php");
     }
+
+    if (isset($_FILES["categoryImageInput"]) && isset($_POST['imgUpload'])) {
+        $_SESSION['category'] = $_POST['kategoria'];
+        $_SESSION['sess_description'] = $_POST['descInput'];
+        $engedelyezett_kiterjesztesek = ["jpg", "jpeg", "png"];
+        $kiterjesztes = strtolower(pathinfo($_FILES["categoryImageInput"]["name"], PATHINFO_EXTENSION));
+        if (in_array($kiterjesztes, $engedelyezett_kiterjesztesek)) {
+          if ($_FILES["categoryImageInput"]["error"] === 0) {
+            if ($_FILES["categoryImageInput"]["size"] <= 31457280) {
+              $cel = "../../pictures/categories/kep.png";
+              if (move_uploaded_file($_FILES["categoryImageInput"]["tmp_name"], $cel)) {
+                $_SESSION['vanKep'] = 1;
+                $_SESSION['sess_img'] = $cel;
+              }
+            } 
+          }
+        }
+      }
+
+    $_SESSION['error_name'] = "";
+    if(isset($_POST['catSave']) && isset($_POST['kategoria']) && trim($_POST['kategoria']) !== "" && isset($_POST['descInput']) && trim($_POST['descInput']) !== ""){
+        if(isset($_SESSION['sess_img'])){
+            $name = $_POST['kategoria'];
+            $description = $_POST['descInput'];
+            $categories = json_decode(file_get_contents("../../data/products.json"), true);
+            $last = end($categories);
+            $id = $last['id'] + 1;
+            $abc = [
+                "á",
+                "é",
+                "í",
+                "ó",
+                "ö",
+                "ő",
+                "ú",
+                "ü",
+                "ű",
+                " "
+            ];
+            $abc2 = [
+                "a",
+                "e",
+                "i",
+                "o",
+                "o",
+                "o",
+                "u",
+                "u",
+                "u",
+                "_"
+            ];
+            $href = mb_strtolower($name);
+            $href = str_replace($abc, $abc2, $href);
+
+            foreach ($categories as $cat){
+                if($cat['href'] == $href){
+                    $_SESSION['sess_description'] = $description;
+                    $_SESSION['error_name'] = "Ez a kategórianév már foglalt. Válassz másikat!";
+                }
+            }
+
+            if($_SESSION['error_name'] == ""){
+                rename("../../pictures/categories/kep.png", "../../pictures/categories/cat_" . $href . ".png");
+                $_SESSION['sess_img']= "../../pictures/categories/cat_" . $href . ".png";
+                $category = [
+                    "id" => $id,
+                    "href" => $href,
+                    "name" => $name,
+                    "image" => $_SESSION['sess_img'],
+                    "message" => $description,
+                    "products" => []
+                ];
+                array_push($categories, $category);
+                file_put_contents("../../data/products.json", json_encode($categories, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+                unset($_SESSION['vanKep']);
+                unset($_SESSION['sess_img']);
+                unset($_SESSION['sess_description']);
+                unset($_SESSION['category']);
+                unset($_SESSION['noImage']);
+            }
+        }
+        else{
+            $_SESSION['noImage'] = 1;
+            $_SESSION['category'] = $_POST['kategoria'];
+            $_SESSION['sess_description'] = $_POST['descInput'];
+        }
+    }
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="hu">
@@ -38,40 +128,69 @@
     <main>
         <?php include_once "../../templates/adminSideNav.php"; ?>
         <div class="adminMainWrapper formPageWrapper">
-            <form id="newCategoryForm" onsubmit="return false;" enctype="multipart/form-data" method="post">
+            <form id="newCategoryForm" action="ujKategoria.php" enctype="multipart/form-data" method="post">
                 <div id="newCategoryWrapper">
                     <h2 class="formTitle">Új kategória hozzáadása</h2>
                     <div class="formWrapper" id="newCategoryFormWrapper">
                         <div class="formTopRow" id="categoryTopRow">
                             <div class="formTopRowField" id="formCatNameDiv">
                                 <p class="inputTitle">Kategórianév</p>
-                                <input type="text" class="formInput" placeholder="Kategórianév..." required>
+                                <?php
+                                    if(isset($_SESSION['category'])){
+                                        echo "<input type='text' class='formInput' placeholder='Kategórianév...' id='kategoria' name='kategoria' value='{$_SESSION['category']}'>";
+                                    }
+                                    else{
+                                        echo "<input type='text' class='formInput' placeholder='Kategórianév...' id='kategoria' name='kategoria'>";
+                                    }
+                                ?>
+                                <?php
+                                    if(isset($_SESSION['error_name'])){
+                                        echo "<p id='catError'>{$_SESSION['error_name']}</p>";
+                                    }
+                                ?>
                             </div>
                         </div>
                         <div class="formBottomRow">
                             <div class="categoryDescWrapper">
                                 <label for="descInput" class="inputTitle">Kategória leírása</label>
-                                <textarea name="descInput" id="descInput" cols="30" rows="10" class="descInput formInput" placeholder="Rövid leírás..." required></textarea>
+                                <?php
+                                    if(isset($_SESSION['sess_description'])){
+                                        echo "<textarea name='descInput' id='descInput' cols='30' rows='10' class='descInput formInput' placeholder='Rövid leírás...'>{$_SESSION['sess_description']}</textarea>";
+                                    }
+                                    else{
+                                        echo "<textarea name='descInput' id='descInput' cols='30' rows='10' class='descInput formInput' placeholder='Rövid leírás...'></textarea>";
+                                    }
+                                ?>
                             </div>
                             <div class="categoryImgWrapper">
                                 <div class="categoryImgLeft">
                                     <p class="inputTitle">Kategória képe</p>
                                     <div class="imgWrapper">
-                                        <img class="categoryImagePreview" src="../../pictures/resources/uploadimage.jpeg" alt="Kategóriakép">
+                                    <?php
+                                        if(!isset($_SESSION['vanKep'])){
+                                            echo "<img class='categoryImagePreview' src='../../pictures/resources/uploadimage.jpeg' alt='Kategóriakép'>";
+                                        }
+                                        else {
+                                            echo "<img class='categoryImagePreview' src='../../pictures/categories/kep.png' alt='Kategóriakép'>";
+                                        }
+                                    ?>
                                     </div>
                                 </div>
+                            
                                 <div class="categoryImgRight">
-                                    <div class="imgUploadBtnWrapper">
-                                        <label for="categoryImageInput" class="formButton">Kép választása</label>
-                                        <input type="file" name="categoryImageInput" id="categoryImageInput" accept="image/*">
-                                    </div>
-                                    <button id="imgUploadButton" class="formButton">Kép feltöltése...</button>
-                                    <button id="imgDeleteButton" class="formButton redButton">Kép törlése...</button>
+                                            <label for="categoryImageInput" class="formButton">Kép választása</label>
+                                            <input type="file" name="categoryImageInput" id="categoryImageInput" accept="image/*">
+                                    <button name="imgUpload" id="imgUpload" class="formButton" type="submit">Kép feltöltése...</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <button id="newCategoryButton" class="formSubmitButton" type="submit">Kategória mentése</button>
+                    <?php
+                        if(isset($_SESSION["noImage"])){
+                            echo "<p>Nincs kép feltöltve!</p>";
+                        }
+                    ?>
+                    <button name="catSave" id="newCategoryButton" class="formSubmitButton" type="submit">Kategória mentése</button>
                 </div>
             </form>
         </div>

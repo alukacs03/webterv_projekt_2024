@@ -42,31 +42,24 @@
                         echo "<div id='felsoJobb'><div class='jobb'>";
                         echo "<div class='paragraphWrapper'><p class='productParagraph' style='font-size: 1.5rem'>{$product['description']}</p></div>";
                         echo "</div><div class='jobb'>";
-                        echo "
-                        <div id='formWrapper'>
-                        <form id='contactForm' action='index.php' method='POST'>
-                            <div id='contactTopContainer'>
-                                <div id='contactNameContainer' class='contactContainer'>
-                                    <label for='contactNameInput' class='contactLabel'>Név:</label>
-                                    <input type='text' name='contactNameInput' id='contactNameInput' class='contactInputField' placeholder='Név...' required>
-                                </div>
-                                <div id='contactSubjectContainer' class='contactContainer'>
-                                    <label for='contactSubjectInput' class='contactLabel'>Tárgy:</label>
-                                    <input type='text' name='contactSubjectInput' id='contactSubjectInput' class='contactInputField' placeholder='Tárgy...' required>
-                                </div>
-                                <div id='contactEmailContainer' class='contactContainer'>
-                                    <label for='contactEmailInput' class='contactLabel'>E-mail:</label>
-                                    <input type='email' name='contactEmailInput' id='contactEmailInput' class='contactInputField' placeholder='E-mail...' required>
-                                </div>
+                        echo '
+                        <div id="formWrapper">
+                        <form id="contactForm" action="index.php" method="POST">
+                            <div style="display: flex; width: 100%">
+                                <input id="a" type="radio" style="width: 10%">
+                                <input id="b" type="radio" style="width: 10%">
+                                <input id="c" type="radio" style="width: 10%">
+                                <input id="d" type="radio" style="width: 10%">
+                                <input id="e" type="radio" style="width: 10%">
                             </div>  
-                            <div id='contactMessageContainer'>
-                                <label for='contactMessageInput' class='contactLabel' id='contactMessageLabel'>Üzenet:</label>
-                                <textarea name='contactMessageInput' id='contactMessageInput' cols='30' rows='10' required></textarea>
+                            <div id="contactMessageContainer">
+                                <label for="contactMessageInput" class="contactLabel" id="contactMessageLabel">Üzenet:</label>
+                                <textarea name="contactMessageInput" id="contactMessageInput" cols="30" rows="10" required></textarea>
                             </div>
-                            <button id='contactSubmitButton' name='supportSubmit' type='submit'>Üzenet elküldése</button>
+                            <button id="contactSubmitButton" name="supportSubmit" type="submit">Üzenet elküldése</button>
                         </form>
                         </div>
-                        ";
+                        ';
                         echo "</div></div></div>";
                         echo "<div id='termekAlso'>";
                         $reviews = $product['reviews'];
