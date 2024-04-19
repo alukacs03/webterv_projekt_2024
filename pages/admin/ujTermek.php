@@ -20,15 +20,15 @@
             if ($_FILES["productImageInput"]["size"] <= 31457280) {
               $cel = "../../pictures/products/kep.png";
               if (move_uploaded_file($_FILES["productImageInput"]["tmp_name"], $cel)) {
-                $_SESSION['vanKep'] = 1;
+                $_SESSION['vanKepTermek'] = 1;
                 $_SESSION['sess_img'] = $cel;
+                unset($_SESSION['error_name']);
               }
             } 
           }
         }
       }
 
-    $_SESSION['error_name'] = "";
     if(isset($_POST['productSave']) && isset($_POST['termek']) && trim($_POST['termek']) !== "" && isset($_POST['descInput']) && trim($_POST['descInput']) !== ""){
         if(isset($_SESSION['sess_img'])){
             $_SESSION['product'] = $_POST['termek'];
@@ -83,18 +83,21 @@
             ];
             $alt = mb_strtolower($_SESSION['product']);
             $alt = str_replace($abc, $abc2, $alt);
-
+            unset($_SESSION['error_name']);
             if(!$ell){
                 foreach ($products as $prod){
                     if($prod['imagealt'] == $alt){
                         $_SESSION['error_name'] = "Ez a terméknév már foglalt. Válassz másikat!";
+                        break;
+                    }else{
+                        unset($_SESSION['error_name']);
                     }
                 }    
             }
             
-            if($_SESSION['error_name'] == ""){
-                rename("../../pictures/products/kep.png", "../../pictures/products/cat_" . $alt . ".png");
-                $_SESSION['sess_img']= "../../pictures/categories/cat_" . $alt . ".png";
+            if(!isset($_SESSION['error_name'])){
+                rename("../../pictures/products/kep.png", "../../pictures/products/" . $alt . ".png");
+                $_SESSION['sess_img']= "../../pictures/products/" . $alt . ".png";
                 $product = [
                     "id" => $id,
                     "image" => $_SESSION['sess_img'],
@@ -106,12 +109,16 @@
                     "reviews" => []
                 ];
                 array_push($products, $product);
-                array_push($actCat, $products);
-                array_push($categories, $actCat);
-                
+                $actCat['products'] = $products;
+                foreach ($categories as &$category) {
+                    if($category['name'] == $_SESSION['category']){
+                        $category = $actCat;
+                        break;
+                    }
+                }
                 
                 file_put_contents("../../data/products.json", json_encode($categories, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
-                unset($_SESSION['vanKep']);
+                unset($_SESSION['vanKepTermek']);
                 unset($_SESSION['sess_img']);
                 unset($_SESSION['sess_description']);
                 unset($_SESSION['category']);
@@ -119,6 +126,7 @@
                 unset($_SESSION['price']);
                 unset($_SESSION['measure']);
                 unset($_SESSION['noImage']);
+
             }
         }
         else{
@@ -167,16 +175,26 @@
                         <div class="formTopRow">
                             <div class="formTopRowField" id="formProdNameDiv">
                                 <p class="inputTitle">Terméknév</p>
-                                <input name="termek" type="text" class="formInput" placeholder="Terméknév...">
+                                <input name="termek" type="text" class="formInput" placeholder="Terméknév..." value="<?php if(isset($_FILES["productImageInput"]) && isset($_POST['imgUpload']) && !isset($_SESSION['error_name']) && isset($_SESSION['product'])){echo "{$_SESSION['product']}";} ?>" >
                             </div>
                             <div class="formTopRowField" id="formProdCatDiv">
                                 <p class="inputTitle">Termék kategória</p>
                                 <select name="categorySelector" id="categorySelector">
                                     <?php
-                                        echo '<option value="">-</option>';
+                                        if(isset($_SESSION["category"])){
+                                            echo $_SESSION["category"];
+                                        }
+                                        else{
+                                            echo $_SESSION["category"];
+                                        }
                                         $cats = json_decode(file_get_contents("../../data/products.json"), true);
                                         foreach ($cats as $cat){
-                                            echo "<option value='{$cat['name']}'>{$cat['name']}</option>";
+                                            if($cat["name"] == $_SESSION["category"]){
+                                                echo "<option selected value='{$cat['name']}'>{$cat['name']}</option>";
+                                            }
+                                            else{
+                                                echo "<option value='{$cat['name']}'>{$cat['name']}</option>";
+                                            }
                                         }
                                     ?>
                                     
@@ -185,26 +203,26 @@
                             <div class="formTopRowField">
                                 <p class="inputTitle">Ár</p>
                                 <div class="priceInputWrapper">
-                                    <input name="price" type="number" min="0" placeholder="Ár..." class="formInput">
+                                    <input name="price" type="number" min="0" placeholder="Ár..." class="formInput" value="<?php if(isset($_SESSION['price'])){echo "{$_SESSION['price']}";} ?>">
                                     <p class="inputTitle">Ft</p>
                                 </div>
                             </div>
                             <div class="formTopRowField">
                                 <p class="inputTitle">Mértékegység</p>
-                                <input name="measure" type="text" placeholder="m^3" class="formInput">
+                                <input name="measure" type="text" placeholder="m^3" class="formInput" value="<?php if(isset($_SESSION['measure'])){echo "{$_SESSION['measure']}";} ?>">
                             </div>
                         </div>
                         <div class="formBottomRow">
                             <div class="productDescWrapper">
                                 <label for="descInput" class="inputTitle">Termék leírása</label>
-                                <textarea name="descInput" id="descInput" cols="30" rows="10" class="descInput formInput" placeholder="Rövid leírás..."></textarea>
+                                <textarea name="descInput" id="descInput" cols="30" rows="10" class="descInput formInput" placeholder="Rövid leírás..."><?php if(isset($_SESSION['sess_description'])){echo "{$_SESSION['sess_description']}";} ?></textarea>
                             </div>
                             <div class="productImgWrapper">
                                 <div class="productImgLeft">
                                     <p class="inputTitle">Termék képe</p>
                                     <div class="imgWrapper">
                                     <?php
-                                        if(!isset($_SESSION['vanKep'])){
+                                        if(!isset($_SESSION['vanKepTermek'])){
                                             echo "<img class='categoryImagePreview' src='../../pictures/resources/uploadimage.jpeg' alt='Termékkép'>";
                                         }
                                         else {
@@ -223,6 +241,11 @@
                             </div>
                         </div>
                     </div>
+                    <?php
+                        if(isset($_SESSION["error_name"]) && $_SESSION["error_name"] != ""){
+                            echo $_SESSION["error_name"];
+                        }
+                    ?>
                     <button name="productSave" id="newProductButton" class="formSubmitButton" type="submit">Termék közzététele</button>
                 </div>
             </form>

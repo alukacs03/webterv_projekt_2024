@@ -2,7 +2,7 @@
     {
         "id": 1,
         "megrendelo": "marhalevel",
-        "allapot": "3",
+        "allapot": "1",
         "datum": "2024.04.18 19:27",
         "vegosszeg": 13.998,
         "products": [
@@ -23,13 +23,55 @@
     {
         "id": 2,
         "megrendelo": "marhalevel",
-        "allapot": "1",
+        "allapot": "2",
         "datum": "2024.04.18 19:38",
         "vegosszeg": 179700,
         "products": [
             {
                 "id": "1.1",
                 "am": "3"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "megrendelo": "BarnaSanyi",
+        "allapot": "2",
+        "datum": "2024.04.19 03:42",
+        "vegosszeg": 191.42999999999998,
+        "products": [
+            {
+                "id": "3.3",
+                "am": "90"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "megrendelo": "BarnaSanyi",
+        "allapot": "2",
+        "datum": "2024.04.19 03:51",
+        "vegosszeg": 46068.079,
+        "products": [
+            {
+                "id": "6.2",
+                "am": "1"
+            },
+            {
+                "id": "6.1",
+                "am": "1"
+            },
+            {
+                "id": "7.1",
+                "am": 101
+            },
+            {
+                "id": "6.3",
+                "am": "1"
+            },
+            {
+                "id": "5.4",
+                "am": "1"
             }
         ]
     }

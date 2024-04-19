@@ -320,6 +320,10 @@ main {
     grid-template-rows: 1fr;
 }
 
+#productImageInput {
+    display: none;
+}
+
 .formBottomRow {
     display: grid;
     justify-items: center;
@@ -544,6 +548,35 @@ main {
     background-color: var(--light-colour);
     padding: 2vw;
     border-radius: 1rem;
+}
+
+.productsListWrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.productItemWrapper {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    background-color: var(--light-colour);
+    padding: 2vw;
+    border-radius: 1rem;
+}
+
+.productItemWrapper2 {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    background-color: var(--light-colour);
+    padding: 2vw;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
 }
 
 .orderCardField {

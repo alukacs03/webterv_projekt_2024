@@ -46,11 +46,11 @@
                         <div id="formWrapper">
                         <form id="contactForm" action="index.php" method="POST">
                             <div style="display: flex; width: 100%">
-                                <input id="a" type="radio" style="width: 10%">
-                                <input id="b" type="radio" style="width: 10%">
-                                <input id="c" type="radio" style="width: 10%">
-                                <input id="d" type="radio" style="width: 10%">
-                                <input id="e" type="radio" style="width: 10%">
+                                <input name="star" id="a" type="radio" style="width: 10%">
+                                <input name="star" id="b" type="radio" style="width: 10%">
+                                <input name="star" id="c" type="radio" style="width: 10%">
+                                <input name="star" ="d" type="radio" style="width: 10%">
+                                <input name="star" id="e" type="radio" style="width: 10%">
                             </div>  
                             <div id="contactMessageContainer">
                                 <label for="contactMessageInput" class="contactLabel" id="contactMessageLabel">Üzenet:</label>
