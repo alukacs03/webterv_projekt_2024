@@ -7,8 +7,6 @@
         header("Location: ../../index.php");
     }
 
-    $id = $_GET['id'];
-
     if (isset($_FILES["productImageInput"]) && isset($_POST['imgUpload'])) {
         $_SESSION['product'] = $_POST['termek'];
         $_SESSION['sess_description'] = $_POST['descInput'];
@@ -172,7 +170,7 @@
         <div class="adminMainWrapper formPageWrapper">
             <form id="newProductForm" action="ujTermek.php" enctype="multipart/form-data" method="post">
                 <div id="newProductWrapper">
-                    <h2 class="formTitle">Új termék hozzáadása</h2>
+                    <h2 class="formTitle">Termék módosítása</h2>
                     <div class="formWrapper" id="newProductFormWrapper">
                         <div class="formTopRow">
                             <div class="formTopRowField" id="formProdNameDiv">
@@ -248,7 +246,7 @@
                             echo $_SESSION["error_name"];
                         }
                     ?>
-                    <button name="productSave" id="newProductButton" class="formSubmitButton" type="submit">Termék közzététele</button>
+                    <button name="productSave" id="newProductButton" class="formSubmitButton" type="submit">Termék módosítása</button>
                 </div>
             </form>
         </div>

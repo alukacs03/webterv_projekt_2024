@@ -1,5 +1,6 @@
 <?php 
 
+session_start();
 $productId = $_POST['productId'];
 
 
@@ -13,9 +14,13 @@ if (isset($_POST['kosarbaRak']) && isset($_POST['amountInput']) && trim($_POST['
             if($elem['id'] === $productId){
                 $elem["am"] = $elem["am"] + $amount;
                 setcookie("cart", serialize($kosar), time() + (60*60*24*30), "/");
+                $_SESSION['addedToCart'] = "A termék hozzáadva a kosárhoz!";
+
                 if(isset($_POST['cartPage']) && $_POST['cartPage'] == "yes"){
                     header("Location: ../kosar.php");
-                } else {
+                } else if(isset($_POST['productPage']) && $_POST['productPage'] == "yes"){
+                    header("Location: ../termekleiras.php?id={$productId}");
+                }else {
                     header("Location: ../termek.php#form_{$productId}");
                 }        
                 exit();
@@ -26,6 +31,8 @@ if (isset($_POST['kosarbaRak']) && isset($_POST['amountInput']) && trim($_POST['
             if($elem['id'] === $productId){
                 $elem["am"] = $amount;
                 setcookie("cart", serialize($kosar), time() + (60*60*24*30), "/");
+                $_SESSION['addedToCart'] = "A termék hozzáadva a kosárhoz!";
+
                 if(isset($_POST['cartPage']) && $_POST['cartPage'] == "yes"){
                     header("Location: ../kosar.php");
                 } else {
@@ -42,11 +49,15 @@ if (isset($_POST['kosarbaRak']) && isset($_POST['amountInput']) && trim($_POST['
     ];
     array_push($kosar, $newAddition);
     setcookie("cart", serialize($kosar), time() + (60*60*24*30), "/");
+    $_SESSION['addedToCart'] = "A termék hozzáadva a kosárhoz!";
+
 }
 
 if(isset($_POST['cartPage']) && $_POST['cartPage'] == "yes"){
     header("Location: ../kosar.php");
-} else {
+} else if(isset($_POST['productPage']) && $_POST['productPage'] == "yes"){
+    header("Location: ../termekleiras.php?id={$productId}");
+}else {
     header("Location: ../termek.php#form_{$productId}");
-}
+}        
 exit();

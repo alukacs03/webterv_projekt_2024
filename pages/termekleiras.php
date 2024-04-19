@@ -34,11 +34,22 @@
                 foreach ($products as $product){
                     if($id == $product['id']){
                         echo "<div id='termekFelso'><div id='felsoBal'>";
-                        echo "<div class='productCard'>";
+
+                        $ar = number_format($product['price'], 0, ',', '.');
+                        echo "<form id='form_{$product['id']}' method='POST' action='functions/kosarbaRak.php'><div class='productCard'>";
+                        echo "<input type='hidden' name='productId' value='{$product['id']}'>";
+                        echo "<input type='hidden' name='productPage' value='yes'>";
                         echo "<img src='{$product['image']}' alt='{$product['imagealt']}' class='productImage'>";
-                        echo "<div class='productBottomDiv'><div class='productTextWrapper'><p class='productName''>{$product['title']}</p><p class='productPrice'>{$product['price']} Ft / {$product['measure']}</p></div>";
-                        echo "<div class='productPurchaseBar'><input class='amountInput' type='number'><label style='font-size: 1.5rem'>{$product['measure']}</label><a href='javascript:void(0)'><div class='productCartButton'><img class='cartIcon' src='../pictures/resources/shopping-cart.png' alt='kosár'><h3 class='productCartTitle'>Kosárba</h3></div></a></div>";
-                        echo "</div></div></div>";
+                        echo "<div class='productBottomDiv'><div class='productTextWrapper'><p class='productName'>{$product['title']}</p><p class='productPrice'>{$ar} Ft / {$product['measure']}</p></div>";
+                        echo "<div class='productPurchaseBar'><input value='1' max='500' class='amountInput' min='1' type='number' name='amountInput'><label>{$product['measure']}</label><button class='productCartButton' name='kosarbaRak' style='border:none; color: white'><img class='cartIcon' src='../pictures/resources/shopping-cart.png' alt='kosár'><h3 class='productCartTitle'>Kosárba</h3></button></div>";
+                        if (isset($_SESSION['addedToCart'])){
+                            echo "<p class='addedToCartMessage'>{$_SESSION['addedToCart']}</p>";
+                            unset($_SESSION['addedToCart']);
+                        }
+                        echo "</div></div></form>";
+
+
+                        echo "</div>";
                         echo "<div id='felsoJobb'><div class='jobb'>";
                         echo "<div class='paragraphWrapper'><p class='productParagraph' style='font-size: 1.5rem'>{$product['description']}</p></div>";
                         echo "</div><div class='jobb'>";
@@ -49,7 +60,7 @@
                                 <input name="star" id="a" type="radio" style="width: 10%">
                                 <input name="star" id="b" type="radio" style="width: 10%">
                                 <input name="star" id="c" type="radio" style="width: 10%">
-                                <input name="star" ="d" type="radio" style="width: 10%">
+                                <input name="star" id="d" type="radio" style="width: 10%">
                                 <input name="star" id="e" type="radio" style="width: 10%">
                             </div>  
                             <div id="contactMessageContainer">

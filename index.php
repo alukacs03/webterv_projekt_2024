@@ -102,15 +102,21 @@ if (isset($_POST['supportSubmit'])) {
         <h1 class="indexTitle" id="elso">Kiemelt ajánlataink</h1>
         <div id="offerWrapper">
             <?php
-                $offers = json_decode(file_get_contents("./data/offers.json"), true);
+                $categories = json_decode(file_get_contents("./data/products.json"), true);
+                $products = [];
+                foreach ($categories as $category) {
+                    $products = array_merge($products, $category['products']);
+                }
+                shuffle($products);
+                $offers = array_slice($products, 0, 5);
                 foreach ($offers as $offer) {
                     echo "<div class='offerCard'>";
-                    echo "<a href='./pages/termek.html'><img src='{$offer['image']}' alt='{$offer['imagealt']}' class='offerImage'></a>";
+                    echo "<a href='./pages/termekleiras.php?id={$offer['id']}'><img src='{$offer['image']}' alt='{$offer['imagealt']}' class='offerImage'></a>";
                     echo "<div class='offerText'>";
                     echo "<p class='offerTitle'>{$offer['title']}</p>";
                     echo "<p class='offerPrice'>{$offer['price']} Ft / {$offer['measure']}</p>";
                     echo "</div>";
-                    echo "<a href='./pages/termek.php' class='cardButton'>";
+                    echo "<a href='./pages/termekleiras.php?id={$offer['id']}' class='cardButton'>";
                     echo "<div>";
                     echo "<p class='cardButtonText'>Tovább</p>";
                     echo "</div></a></div>";

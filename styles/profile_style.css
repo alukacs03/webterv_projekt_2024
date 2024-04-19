@@ -1,0 +1,77 @@
+#ordersTitle {
+    font-size: 2.5vw;
+    color: var(--dark-green);
+}
+
+.ordersListWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.orderItemWrapper {
+    width: 80%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.5fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-colour);
+    padding: 2vw;
+    border-radius: 1rem;
+}
+
+.orderCardFieldValue .formButton:hover {
+    font-size: 2.2vh;
+}
+
+.orderCardField {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-items: start;
+    align-items: center;
+    gap: 1rem;
+}
+
+.orderCardFieldTitle {
+    font-weight: bold;
+    font-size: 3vh;
+}
+
+.orderCardFieldValue {
+    font-size: 2.5vh;
+}
+
+.orderShipped {
+    background-color: var(--button-color);
+    padding: 1vh;
+    border-radius: 1rem;
+    color: beige;
+    font-weight: bold;
+}
+
+.buttonField, .buttonField:hover {
+    grid-row: 1/3;
+    font-size: 2vh;
+}
+
+.formSubmitButton, .formButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3px;
+    padding: 0;
+    color: white;
+    font-weight: bold;
+    font-size: 2.2vh;
+    width: 22vh;
+    height: 7vh;
+    background-color: var(--button-color);
+    border: none;
+    border-radius: 0.5rem;
+    transition: 0.2s ease;
+}

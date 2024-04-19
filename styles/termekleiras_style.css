@@ -14,6 +14,17 @@ body{
     margin: 0;
     width: 60vh;
     height: 82vh;
+    margin-bottom: 3rem;
+}
+
+.addedToCartMessage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+    color: white;
 }
 
 .productCard{

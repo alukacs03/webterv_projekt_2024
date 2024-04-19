@@ -47,8 +47,9 @@
                     foreach($categories as $category){
                         $products = $category["products"];
                         foreach ($products as $product){
+                            $deleteConfirmText = "Biztos, hogy törölni akarod a {$product['title']} terméket?";
                             echo '
-                            <div class="productItemWrapper2">
+                            <div class="termekWrapper">
                                 <div>
                                     <img src='.$product["image"].' alt='.$product["imagealt"].' class="cartCardProductImage">
                                 </div>
@@ -65,8 +66,10 @@
                                     <div class="orderCardFieldValue productsumField">'.$product['measure'].'</div>
                                 </div>
                                 <div>
-                                    <a  class="orderCardFieldValue formButton buttonField" href="#">Módosítás</a>
-                                    <a class="cartCardBinImage" href="#" name="termekTorol"><img src="../../pictures/resources/bin.png" alt="kuka" class="cartCardBinImage"></a>
+                                    <a  class="orderCardFieldValue formButton buttonField" href="termekModosit.php?id='.$product['id'].'">Módosítás</a>
+                                </div>
+                                <div>
+                                    <a class="cartCardBinImage" onClick=\'javascript:return confirm("'.$deleteConfirmText.'");\' href="./functions/termekTorol.php?id='. $product['id'].'" name="termekTorol"><img src="../../pictures/resources/bin.png" alt="kuka" class="cartCardBinImage"></a>
                                 </div>
                             </div>
                         ';

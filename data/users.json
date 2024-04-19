@@ -4,5 +4,17 @@
         "email": "sbarnabas0502@gmail.com",
         "password": "$2y$10$TDu.o2v3eEp8hUkUIqKDruZWxm8kbmLUxthVbuICISGayMS5lNjqe",
         "admin": 1
+    },
+    "3": {
+        "username": "koliati",
+        "email": "koli@ati.com",
+        "password": "$2y$10$Y.fphzULLOolqmaRpsB2YuO8aBVL.Z6c4JxzAcMaVTgPQ06S\/T9Oa",
+        "admin": 1
+    },
+    "4": {
+        "username": "marhalevel",
+        "email": "marha@level.com",
+        "password": "$2y$10$QDV.9p5X.DGdnVNHQI63SOYTuMU7OAy0sGshoQ4rradXNpJWxFbb6",
+        "admin": 1
     }
 }

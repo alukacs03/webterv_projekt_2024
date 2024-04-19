@@ -384,7 +384,7 @@
                 ]
             },
             {
-                "id": 5.4,
+                "id": "5.4",
                 "image": "..\/..\/pictures\/products\/fidgetfogpiszkalo.jpeg",
                 "imagealt": "fidget spinner fogpiszkáló",
                 "title": "Fidget spinner fogpiszkáló",
@@ -410,7 +410,7 @@
         "message": "A tiplik, más néven faszegek, apró, de annál fontosabb elemei a barkácsolásnak. Ezek a fából készült rögzítőelemek nélkülözhetetlenek, ha két fadarabot szilárdan és tartósan szeretnénk összekötni. Cégünk elkötelezett a kiváló minőségű tiplik gyártása mellett. Termékeinket nem gépeken, hanem kézzel készítjük, gondosan válogatott alapanyagokból. Minden egyes tiplit hozzáértő kezek faragnak tökéletesre, hogy Önnek a legjobb rögzítési élményt nyújthassuk.",
         "products": [
             {
-                "id": 6.1,
+                "id": "6.1",
                 "image": "..\/..\/pictures\/products\/hagyomanyostipli.jpeg",
                 "imagealt": "hagyományos faszeg",
                 "title": "Hagyományos faszeg",
@@ -427,7 +427,7 @@
                 ]
             },
             {
-                "id": 6.2,
+                "id": "6.2",
                 "image": "..\/..\/pictures\/products\/barazdalttipli.jpeg",
                 "imagealt": "barázdált faszeg",
                 "title": "Barázdált faszeg",
@@ -444,7 +444,7 @@
                 ]
             },
             {
-                "id": 6.3,
+                "id": "6.3",
                 "image": "..\/..\/pictures\/products\/fembetetestipli.jpeg",
                 "imagealt": "fémbetétes faszeg",
                 "title": "Fémbetétes faszeg",
@@ -471,42 +471,12 @@
         "products": [
             {
                 "id": "7.1",
-                "image": "..\/..\/pictures\/products\/kaja.png",
-                "imagealt": "kaja",
-                "title": "Kaja",
-                "price": "456",
-                "measure": "db",
-                "description": "ertf",
-                "reviews": []
-            },
-            {
-                "id": "7.2",
-                "image": "..\/..\/pictures\/products\/kaja2.png",
-                "imagealt": "kaja2",
-                "title": "Kaja2",
-                "price": "67",
-                "measure": "db",
-                "description": "cgv",
-                "reviews": []
-            },
-            {
-                "id": "7.3",
-                "image": "..\/..\/pictures\/products\/kaja69.png",
-                "imagealt": "kaja69",
-                "title": "Kaja69",
-                "price": "5",
-                "measure": "db",
-                "description": "dxf",
-                "reviews": []
-            },
-            {
-                "id": "7.4",
-                "image": "..\/..\/pictures\/products\/23.png",
-                "imagealt": "23",
-                "title": "23",
-                "price": "23",
-                "measure": "db",
-                "description": "wqe",
+                "image": "..\/..\/pictures\/products\/502_bad_gateway.png",
+                "imagealt": "502_bad_gateway",
+                "title": "502 bad gateway",
+                "price": "502",
+                "measure": "code",
+                "description": "lorem ipsum dolor sit amet ",
                 "reviews": []
             }
         ]

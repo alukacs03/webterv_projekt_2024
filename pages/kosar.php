@@ -66,7 +66,7 @@
                                         <div class='cartCardField'>
                                             <p class='cartCardTitle'>Mennyiség</p>
                                             <div class='cartCardAmountWrapper'>
-                                                <input type='number' value='{$amount}' min='1' max='100' name='amountInput' id='amountInput' class='amountInput'>
+                                                <input type='number' value='{$amount}' min='1' max='500' name='amountInput' id='amountInput' class='amountInput'>
                                                 <label for='amountInput'>{$product['measure']}</label>
                                             </div>
                                         </div>
