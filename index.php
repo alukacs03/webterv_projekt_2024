@@ -123,7 +123,7 @@ if (isset($_POST['supportSubmit'])) {
                 }
             ?>
         </div>
-        <h1 id="reviewTitle" class="indexTitle">Vásárlóink mondták</h1>
+        <h1 class="indexTitle">Vásárlóink mondták</h1>
         <div id="reviewWrapper">
             <?php
                 $reviewsAll = json_decode(file_get_contents("./data/reviews.json"), true);
@@ -152,44 +152,7 @@ if (isset($_POST['supportSubmit'])) {
                     echo "</div>";
                     echo "</div>";
                 }
-                if(isset($_SESSION['username'])){
-                    $indexReviewMessage = isset($_SESSION['indexReviewMessage']) ? $_SESSION['indexReviewMessage'] : '';
-                    echo '
-                    <div id="formWrapper">
-                            <form id="contactForm" action="pages/functions/ertekelesIr.php" method="POST">
-                                <h2>Értékelés</h2>
-                                <input name="indexIdentifier" type="hidden" value="yes"></input>
-                                <div class="starDiv">
-                                    <input name="star" class="radioStar" id="s5" value="5" type="radio">
-                                    <label for="s5">★</label>
-                                    <input name="star" class="radioStar" id="s4" value="4" type="radio">
-                                    <label for="s4">★</label>
-                                    <input name="star" class="radioStar" id="s3" value="3" type="radio">
-                                    <label for="s3">★</label>
-                                    <input name="star" class="radioStar" id="s2" value="2" type="radio">
-                                    <label for="s2">★</label>
-                                    <input name="star" class="radioStar" id="s1" value="1" type="radio">
-                                    <label for="s1">★</label>
-                                </div>  
-                                <div id="contactMessageContainer">
-                                    <label for="contactMessageInput" class="contactLabel" id="contactMessageLabel">Üzenet:</label>
-                                    <textarea name="contactMessageInput" id="contactMessageInput" cols="30" rows="10" required>' . $indexReviewMessage . '</textarea>
-                                </div>
-                            ';
-                            if(isset($_SESSION['reviewLoginError'])){
-                                echo "<p class='reviewError'>".$_SESSION['reviewLoginError']."</p>";
-                                unset($_SESSION['reviewLoginError']);
-                            }
-                            echo '
-                                <button id="contactSubmitButton" name="contactSubmitButton" onClick=\'javascript:return confirm("Biztosan elküldöd az értékelést?");\' type="submit">Értékelés elküldése</button>
-                            </form>
-                            </div>
-                            ';
-                            echo "</div></div></div>";
-                }
-
             ?>
-
         </div>
         <h1 class="indexTitle">Kik vagyunk mi?</h1>
         <div id="aboutUsWrapper">
@@ -209,6 +172,33 @@ if (isset($_POST['supportSubmit'])) {
                     </a>
                 </div>
             </div>
+        </div>
+        <div id="indexFormTitleWrapper" class="indexTitle">
+            <h1>Kérdésed van?</h1>
+            <h2 class="indexSubTitle">Írd meg nekünk...</h2>
+        </div>
+        <div id="formWrapper">
+            <form id="contactForm" action="index.php" method="POST">
+                <div id="contactTopContainer">
+                    <div id="contactNameContainer" class="contactContainer">
+                        <label for="contactNameInput" class="contactLabel">Név:</label>
+                        <input type="text" name="contactNameInput" id="contactNameInput" class="contactInputField" placeholder="Név..." value="<?php echo isset($_SESSION['username']) ? $_SESSION['username'] : '' ?>" <?php echo isset($_SESSION['username']) ? "readonly" : "" ?> required>
+                    </div>
+                    <div id="contactSubjectContainer" class="contactContainer">
+                        <label for="contactSubjectInput" class="contactLabel">Tárgy:</label>
+                        <input type="text" name="contactSubjectInput" id="contactSubjectInput" class="contactInputField" placeholder="Tárgy..." required>
+                    </div>
+                    <div id="contactEmailContainer" class="contactContainer">
+                        <label for="contactEmailInput" class="contactLabel">E-mail:</label>
+                        <input type="email" name="contactEmailInput" id="contactEmailInput" class="contactInputField" placeholder="E-mail..." value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : '' ?>" <?php echo isset($_SESSION['email']) ? "readonly" : "" ?> required>
+                    </div>
+                </div>
+                <div id="contactMessageContainer">
+                    <label for="contactMessageInput" class="contactLabel" id="contactMessageLabel">Üzenet:</label>
+                    <textarea name="contactMessageInput" id="contactMessageInput" cols="30" rows="10" required></textarea>
+                </div>
+                <button id="contactSubmitButton" name="supportSubmit" type="submit">Üzenet elküldése</button>
+            </form>
         </div>
     </main>
     <a href="#" id="upArrow" class="">

@@ -136,16 +136,6 @@
     },
     {
         "id": 8,
-<<<<<<< Updated upstream
-        "megrendelo": "marhalevel",
-        "allapot": 3,
-        "datum": "2024.04.20 21:49",
-        "vegosszeg": 745002,
-        "products": [
-            {
-                "id": "2.1",
-                "am": "5"
-=======
         "megrendelo": "BarnaSanyi",
         "allapot": "2",
         "datum": "2024.04.20 20:39",
@@ -171,7 +161,6 @@
             {
                 "id": "6.2",
                 "am": "1"
->>>>>>> Stashed changes
             },
             {
                 "id": "7.1",
