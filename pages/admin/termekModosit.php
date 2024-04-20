@@ -6,6 +6,28 @@
     if(isset($_SESSION['admin']) && $_SESSION['admin'] == 0){
         header("Location: ../../index.php");
     }
+    unset($_SESSION['sess_img']);
+    $id = $_GET['id'];
+    $categories = json_decode(file_get_contents("../../data/products.json"), true);
+    foreach($categories as $category){
+        $catId = explode('.', $id)[0];
+        if($category['id'] == $catId){
+            $oldProducts = $category['products'];
+            foreach($oldProducts as $product){
+                if($id == $product['id']){
+                    $_SESSION['product'] = $product['title'];
+                    $_SESSION['sess_description'] = $product['description'];
+                    $_SESSION['category'] = $category['name'];
+                    $_SESSION['price'] = $product['price'];
+                    $_SESSION['measure'] = $product['measure'];
+                    $_SESSION['sess_img'] = $product['image'];
+                    $_SESSION['oldDatas'] = true;
+                    break;
+                }
+            }
+        }
+        
+    }
 
     if (isset($_FILES["productImageInput"]) && isset($_POST['imgUpload'])) {
         $_SESSION['product'] = $_POST['termek'];
@@ -18,11 +40,10 @@
         if (in_array($kiterjesztes, $engedelyezett_kiterjesztesek)) {
           if ($_FILES["productImageInput"]["error"] === 0) {
             if ($_FILES["productImageInput"]["size"] <= 31457280) {
-              $cel = "../../pictures/products/kep.png";
+              $cel = $_SESSION['sess_img'];
               if (move_uploaded_file($_FILES["productImageInput"]["tmp_name"], $cel)) {
-                $_SESSION['vanKepTermek'] = 1;
-                $_SESSION['sess_img'] = $cel;
                 unset($_SESSION['error_name']);
+                unset( $_SESSION['oldDatas']);
               }
             } 
           }
@@ -36,7 +57,6 @@
             $_SESSION['category'] = $_POST['categorySelector'];
             $_SESSION['price'] = $_POST['price'];
             $_SESSION['measure'] = $_POST['measure'];
-            $categories = json_decode(file_get_contents("../../data/products.json"), true);
             $products;
             $actCat = [];
             foreach ($categories as $category) {
@@ -46,16 +66,7 @@
                     break;
                 }
             }
-            $ell = false;
-            if(count($products) > 0){
-                $last = end($products);
-                $idBefore = explode('.', $last['id'])[1] + 1;
-                $id = $actCat['id'] . "." . $idBefore;
-            }
-            else{
-                $id = $actCat['id'] . ".1";
-                $ell = true;
-            }
+            
             
             $abc = [
                 "á",
@@ -84,31 +95,30 @@
             $alt = mb_strtolower($_SESSION['product']);
             $alt = str_replace($abc, $abc2, $alt);
             unset($_SESSION['error_name']);
-            if(!$ell){
-                foreach ($products as $prod){
-                    if($prod['imagealt'] == $alt){
-                        $_SESSION['error_name'] = "Ez a terméknév már foglalt. Válassz másikat!";
-                        break;
-                    }else{
-                        unset($_SESSION['error_name']);
-                    }
-                }    
-            }
+            foreach ($products as $prod){
+                if($prod['imagealt'] == $alt && $id != $prod['id']){
+                    $_SESSION['error_name'] = "Ez a terméknév már foglalt. Válassz másikat!";
+                    unset( $_SESSION['oldDatas']);
+                    break;
+                }else{
+                    unset($_SESSION['error_name']);
+                }
+            }    
+            
             
             if(!isset($_SESSION['error_name'])){
-                rename("../../pictures/products/kep.png", "../../pictures/products/" . $alt . ".png");
+                rename($_SESSION['sess_img'], "../../pictures/products/" . $alt . ".png");
                 $_SESSION['sess_img']= "../../pictures/products/" . $alt . ".png";
-                $product = [
-                    "id" => $id,
-                    "image" => $_SESSION['sess_img'],
-                    "imagealt" => $alt,
-                    "title" => $_SESSION['product'],
-                    "price" => $_SESSION["price"],
-                    "measure" => $_SESSION["measure"],
-                    "description" => $_SESSION['sess_description'],
-                    "reviews" => []
-                ];
-                array_push($products, $product);
+                foreach ($products as &$product){
+                    if($product['id'] == $id){
+                        $product['title'] =  $_SESSION['product'];
+                        $product['image'] = $_SESSION['sess_img'];
+                        $product['price'] = $_SESSION['price'];
+                        $product['measure'] = $_SESSION['measure'];
+                        $product['description'] = $_SESSION['sess_description'];
+                        $product['imagealt'] = $alt;
+                    }
+                }
                 $actCat['products'] = $products;
                 foreach ($categories as &$category) {
                     if($category['name'] == $_SESSION['category']){
@@ -118,7 +128,6 @@
                 }
                 
                 file_put_contents("../../data/products.json", json_encode($categories, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
-                unset($_SESSION['vanKepTermek']);
                 unset($_SESSION['sess_img']);
                 unset($_SESSION['sess_description']);
                 unset($_SESSION['category']);
@@ -126,7 +135,7 @@
                 unset($_SESSION['price']);
                 unset($_SESSION['measure']);
                 unset($_SESSION['noImage']);
-
+                header('Location: ./termekLista.php');
             }
         }
         else{
@@ -168,14 +177,14 @@
     <main>
         <?php include_once "../../templates/adminSideNav.php"; ?>
         <div class="adminMainWrapper formPageWrapper">
-            <form id="newProductForm" action="ujTermek.php" enctype="multipart/form-data" method="post">
+            <form id="newProductForm" action="termekModosit.php?id=<?php echo $id?>" enctype="multipart/form-data" method="post">
                 <div id="newProductWrapper">
                     <h2 class="formTitle">Termék módosítása</h2>
                     <div class="formWrapper" id="newProductFormWrapper">
                         <div class="formTopRow">
                             <div class="formTopRowField" id="formProdNameDiv">
                                 <p class="inputTitle">Terméknév</p>
-                                <input name="termek" type="text" class="formInput" placeholder="Terméknév..." value="<?php if(isset($_FILES["productImageInput"]) && isset($_POST['imgUpload']) && !isset($_SESSION['error_name']) && isset($_SESSION['product'])){echo "{$_SESSION['product']}";} ?>" >
+                                <input name="termek" type="text" class="formInput" placeholder="Terméknév..." value="<?php if((isset($_FILES["productImageInput"]) && isset($_POST['imgUpload']) && !isset($_SESSION['error_name']) && isset($_SESSION['product'])) || isset($_SESSION['oldDatas'])){echo "{$_SESSION['product']}";} ?>" >
                             </div>
                             <div class="formTopRowField" id="formProdCatDiv">
                                 <p class="inputTitle">Termék kategória</p>
@@ -222,12 +231,7 @@
                                     <p class="inputTitle">Termék képe</p>
                                     <div class="imgWrapper">
                                     <?php
-                                        if(!isset($_SESSION['vanKepTermek'])){
-                                            echo "<img class='categoryImagePreview' src='../../pictures/resources/uploadimage.jpeg' alt='Termékkép'>";
-                                        }
-                                        else {
-                                            echo "<img class='categoryImagePreview' src='../../pictures/products/kep.png' alt='Termékkép'>";
-                                        }
+                                        echo "<img class='categoryImagePreview' src={$_SESSION['sess_img']} alt='Termékkép'>";
                                     ?>
                                     </div>
                                 </div>

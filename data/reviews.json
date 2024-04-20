@@ -1,20 +1,18 @@
 [
     {
+        "id": 1,
+        "profilePic": "./pictures/profilepics/customer_1.jpeg",
         "name": "Kiss Lajos",
         "date": "2024.02.21",
         "stars": 5,
-        "message": "Rendeltem t\u0151l\u00fck nemr\u00e9giben, \u00e9s nem csup\u00e1n el\u00e9gedett, de leny\u0171g\u00f6z\u00f6tt vagyok a tapasztalataimmal. A R\u00f6nklovagok csapata val\u00f3ban elk\u00f6telezett a fenntarthat\u00f3 erd\u0151gazd\u00e1lkod\u00e1s \u00e9s a min\u0151s\u00e9gi szolg\u00e1ltat\u00e1sok ir\u00e1nt. A faanyagok, amiket t\u0151l\u00fck rendeltem, kiv\u00e1l\u00f3 min\u0151s\u00e9g\u0171ek \u00e9s pontosan megfeleltek az elv\u00e1r\u00e1saimnak. Az \u00fcgyf\u00e9lszolg\u00e1latuk seg\u00edt\u0151k\u00e9sz \u00e9s profi, a sz\u00e1ll\u00edt\u00e1s pedig pontos \u00e9s gondos."
+        "message": "Rendeltem tőlük nemrégiben, és nem csupán elégedett, de lenyűgözött vagyok a tapasztalataimmal. A Rönklovagok csapata valóban elkötelezett a fenntartható erdőgazdálkodás és a minőségi szolgáltatások iránt. A faanyagok, amiket tőlük rendeltem, kiváló minőségűek és pontosan megfeleltek az elvárásaimnak. Az ügyfélszolgálatuk segítőkész és profi, a szállítás pedig pontos és gondos."
+        
     },
     {
+        "id": 2,
+        "profilePic": "./pictures/profilepics/customer_2.jpeg",
         "name": "Nagy Lajos",
         "date": "2024.02.24",
         "stars": 4,
-        "message": "A R\u00f6nklovagok Kft-t\u0151l pr\u00e9mium fogpiszk\u00e1l\u00f3t v\u00e1s\u00e1roltam, \u00e9s maxim\u00e1lisan el\u00e9gedett vagyok a v\u00e1s\u00e1rl\u00e1si \u00e9lm\u00e9nnyel. A term\u00e9k kiv\u00e1l\u00f3 min\u0151s\u00e9g\u0171, a sz\u00e1ll\u00edt\u00e1s gyors \u00e9s pontos volt, az \u00fcgyf\u00e9lszolg\u00e1lat pedig kiemelked\u0151en seg\u00edt\u0151k\u00e9sz. A fogpiszk\u00e1l\u00f3k gy\u00f6ny\u00f6r\u0171en kidolgozottak, t\u00f6k\u00e9letesen sima fel\u00fclet\u0171ek \u00e9s sz\u00e1lkamentesek. K\u00e9nyelmesen \u00e9s hat\u00e9konyan haszn\u00e1lhat\u00f3k, nem s\u00e9rtik meg az \u00ednyt. A csomagol\u00e1s is ig\u00e9nyes, \u00edgy aj\u00e1nd\u00e9knak is t\u00f6k\u00e9letes. A R\u00f6nklovagok Kft-t mindenkinek j\u00f3 sz\u00edvvel aj\u00e1nlom, aki pr\u00e9mium min\u0151s\u00e9g\u0171 fogpiszk\u00e1l\u00f3t keres."
-    },
-    {
-        "name": "koliati",
-        "date": "2024.04.20.",
-        "stars": "5",
-        "message": "Gyelem!\r\nA kedvenc term\u00e9keimet \u00e1rulj\u00e1k \u0151k, \u00e9s nagyon j\u00f3 min\u0151s\u00e9gben.\r\n\r\nA kedvenc term\u00e9kem egy\u00e9bk\u00e9nt a mentolos fogpiszk\u00e1l\u00f3, amit akkor r\u00e1gcs\u00e1lok, mikor a szakkoll\u00e9giumi tags\u00e1gi d\u00edj befizethet\u0151 a magasf\u00f6ldszinti igazgat\u00f3i irod\u00e1ban."
-    }
+        "message": "A Rönklovagok Kft-től prémium fogpiszkálót vásároltam, és maximálisan elégedett vagyok a vásárlási élménnyel. A termék kiváló minőségű, a szállítás gyors és pontos volt, az ügyfélszolgálat pedig kiemelkedően segítőkész. A fogpiszkálók gyönyörűen kidolgozottak, tökéletesen sima felületűek és szálkamentesek. Kényelmesen és hatékonyan használhatók, nem sértik meg az ínyt. A csomagolás is igényes, így ajándéknak is tökéletes. A Rönklovagok Kft-t mindenkinek jó szívvel ajánlom, aki prémium minőségű fogpiszkálót keres."    }
 ]

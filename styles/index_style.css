@@ -93,12 +93,9 @@
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    width: 100%;
 }
 
 .reviewCard {
-    width: 100%;
-
     display: flex;
     box-sizing: border-box;
     background-color: var(--light-colour);
@@ -410,25 +407,3 @@
     left: 50%;
     bottom: 2vh;
 }
-
-
-.starDiv {
-    display: flex;
-    flex-direction:row-reverse;
-    width: 100%;
-    justify-content: center;
-    gap: 2rem;
-    float: right;
-}
-
-.radioStar {
-    display: none;
-}
-
-label {
-    font-size: 2rem;
-}
-
-input:checked ~ label {
-    color: white;
-  }
