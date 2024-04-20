@@ -2,6 +2,7 @@
             <ul class="sideMenu" id="adminSideNavMenu">
                 <li class="sideMenuItem"><a class="sideMenuLink" href="termekLista.php">Termékek</a></li>
                 <li class="sideMenuItem"><a class="sideMenuLink" href="ujTermek.php">Új termék</a></li>
+                <li class="sideMenuItem"><a class="sideMenuLink" href="kategoriaLista.php">Kategóriák</a></li>
                 <li class="sideMenuItem"><a class="sideMenuLink" href="ujKategoria.php">Új kategória</a></li>
                 <li class="sideMenuItem"><a class="sideMenuLink" href="megrendelesek.php">Megrendelések</a></li>
                 <li class="sideMenuItem"><a class="sideMenuLink" href="felhasznalok.php">Felhasználók</a></li>

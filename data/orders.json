@@ -23,7 +23,7 @@
     {
         "id": 2,
         "megrendelo": "marhalevel",
-        "allapot": "1",
+        "allapot": "2",
         "datum": "2024.04.18 19:38",
         "vegosszeg": 179700,
         "products": [
@@ -136,6 +136,7 @@
     },
     {
         "id": 8,
+<<<<<<< Updated upstream
         "megrendelo": "marhalevel",
         "allapot": 3,
         "datum": "2024.04.20 21:49",
@@ -144,6 +145,33 @@
             {
                 "id": "2.1",
                 "am": "5"
+=======
+        "megrendelo": "BarnaSanyi",
+        "allapot": "2",
+        "datum": "2024.04.20 20:39",
+        "vegosszeg": 41652,
+        "products": [
+            {
+                "id": "7.1",
+                "am": 6
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "megrendelo": "BarnaSanyi",
+        "allapot": 3,
+        "datum": "2024.04.20 21:07",
+        "vegosszeg": 6945.198,
+        "products": [
+            {
+                "id": "6.1",
+                "am": "1"
+            },
+            {
+                "id": "6.2",
+                "am": "1"
+>>>>>>> Stashed changes
             },
             {
                 "id": "7.1",

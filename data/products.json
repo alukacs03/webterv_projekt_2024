@@ -471,6 +471,7 @@
         "products": [
             {
                 "id": "7.1",
+<<<<<<< Updated upstream
                 "image": "..\/..\/pictures\/products\/502_bad_gateway.png",
                 "imagealt": "502_bad_gateway",
                 "title": "502 bad gateway",
@@ -497,7 +498,24 @@
                         "stars": "1"
                     }
                 ]
+=======
+                "image": "..\/..\/pictures\/products\/a_legbolcsebb_valaha.png",
+                "imagealt": "a_legbolcsebb_valaha",
+                "title": "A Legbölcsebb Valaha",
+                "price": "69420",
+                "measure": "pacek",
+                "description": "Mert ő egy igazi férfi!",
+                "reviews": []
+>>>>>>> Stashed changes
             }
         ]
+    },
+    {
+        "id": 8,
+        "href": "teszt_1",
+        "name": "Teszt 1",
+        "image": "..\/..\/pictures\/categories\/cat_teszt_1.png",
+        "message": "Legyen midnen jóóó!",
+        "products": []
     }
 ]

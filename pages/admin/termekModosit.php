@@ -6,27 +6,34 @@
     if(isset($_SESSION['admin']) && $_SESSION['admin'] == 0){
         header("Location: ../../index.php");
     }
-    unset($_SESSION['sess_img']);
     $id = $_GET['id'];
+    unset($_SESSION['sess_img']);
+    $oldCat;
+    $oldId = $id;
     $categories = json_decode(file_get_contents("../../data/products.json"), true);
-    foreach($categories as $category){
-        $catId = explode('.', $id)[0];
-        if($category['id'] == $catId){
-            $oldProducts = $category['products'];
-            foreach($oldProducts as $product){
-                if($id == $product['id']){
-                    $_SESSION['product'] = $product['title'];
-                    $_SESSION['sess_description'] = $product['description'];
-                    $_SESSION['category'] = $category['name'];
-                    $_SESSION['price'] = $product['price'];
-                    $_SESSION['measure'] = $product['measure'];
-                    $_SESSION['sess_img'] = $product['image'];
-                    $_SESSION['oldDatas'] = true;
-                    break;
+    if(!isset($SESSION['done'])){
+        foreach($categories as $category){
+            $catId = explode('.', $id)[0];
+            if($category['id'] == $catId){
+                $oldProducts = $category['products'];
+                foreach($oldProducts as $product){
+                    if($id == $product['id']){
+                        $_SESSION['product'] = $product['title'];
+                        $_SESSION['sess_description'] = $product['description'];
+                        $_SESSION['category'] = $category['name'];
+                        $oldCat = $category['name'];
+                        $_SESSION['price'] = $product['price'];
+                        $_SESSION['measure'] = $product['measure'];
+                        $_SESSION['sess_img'] = $product['image'];
+                        $_SESSION['oldDatas'] = true;
+                        break;
+                    }
                 }
             }
-        }
-        
+    }
+    }
+    else{
+        unset( $SESSION['done'] );
     }
 
     if (isset($_FILES["productImageInput"]) && isset($_POST['imgUpload'])) {
@@ -52,90 +59,203 @@
 
     if(isset($_POST['productSave']) && isset($_POST['termek']) && trim($_POST['termek']) !== "" && isset($_POST['descInput']) && trim($_POST['descInput']) !== ""){
         if(isset($_SESSION['sess_img'])){
-            $_SESSION['product'] = $_POST['termek'];
-            $_SESSION['sess_description'] = $_POST['descInput'];
-            $_SESSION['category'] = $_POST['categorySelector'];
-            $_SESSION['price'] = $_POST['price'];
-            $_SESSION['measure'] = $_POST['measure'];
-            $products;
-            $actCat = [];
-            foreach ($categories as $category) {
-                if($category['name'] == $_SESSION['category']){
-                    $products = $category['products'];
-                    $actCat = $category;
-                    break;
-                }
-            }
-            
-            
-            $abc = [
-                "á",
-                "é",
-                "í",
-                "ó",
-                "ö",
-                "ő",
-                "ú",
-                "ü",
-                "ű",
-                " "
-            ];
-            $abc2 = [
-                "a",
-                "e",
-                "i",
-                "o",
-                "o",
-                "o",
-                "u",
-                "u",
-                "u",
-                "_"
-            ];
-            $alt = mb_strtolower($_SESSION['product']);
-            $alt = str_replace($abc, $abc2, $alt);
-            unset($_SESSION['error_name']);
-            foreach ($products as $prod){
-                if($prod['imagealt'] == $alt && $id != $prod['id']){
-                    $_SESSION['error_name'] = "Ez a terméknév már foglalt. Válassz másikat!";
-                    unset( $_SESSION['oldDatas']);
-                    break;
-                }else{
-                    unset($_SESSION['error_name']);
-                }
-            }    
-            
-            
-            if(!isset($_SESSION['error_name'])){
-                rename($_SESSION['sess_img'], "../../pictures/products/" . $alt . ".png");
-                $_SESSION['sess_img']= "../../pictures/products/" . $alt . ".png";
-                foreach ($products as &$product){
-                    if($product['id'] == $id){
-                        $product['title'] =  $_SESSION['product'];
-                        $product['image'] = $_SESSION['sess_img'];
-                        $product['price'] = $_SESSION['price'];
-                        $product['measure'] = $_SESSION['measure'];
-                        $product['description'] = $_SESSION['sess_description'];
-                        $product['imagealt'] = $alt;
-                    }
-                }
-                $actCat['products'] = $products;
-                foreach ($categories as &$category) {
+            if($_POST['categorySelector'] == $oldCat){
+                $_SESSION['product'] = $_POST['termek'];
+                $_SESSION['sess_description'] = $_POST['descInput'];
+                $_SESSION['category'] = $_POST['categorySelector'];
+                $_SESSION['price'] = $_POST['price'];
+                $_SESSION['measure'] = $_POST['measure'];
+                $products;
+                $actCat = [];
+                foreach ($categories as $category) {
                     if($category['name'] == $_SESSION['category']){
-                        $category = $actCat;
+                        $products = $category['products'];
+                        $actCat = $category;
                         break;
                     }
                 }
                 
-                file_put_contents("../../data/products.json", json_encode($categories, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
-                unset($_SESSION['sess_img']);
-                unset($_SESSION['sess_description']);
-                unset($_SESSION['category']);
-                unset($_SESSION['product']);
-                unset($_SESSION['price']);
-                unset($_SESSION['measure']);
-                unset($_SESSION['noImage']);
-                header('Location: ./termekLista.php');
+                
+                $abc = [
+                    "á",
+                    "é",
+                    "í",
+                    "ó",
+                    "ö",
+                    "ő",
+                    "ú",
+                    "ü",
+                    "ű",
+                    " "
+                ];
+                $abc2 = [
+                    "a",
+                    "e",
+                    "i",
+                    "o",
+                    "o",
+                    "o",
+                    "u",
+                    "u",
+                    "u",
+                    "_"
+                ];
+                $alt = mb_strtolower($_SESSION['product']);
+                $alt = str_replace($abc, $abc2, $alt);
+                unset($_SESSION['error_name']);
+                foreach ($products as $prod){
+                    if($prod['imagealt'] == $alt && $id != $prod['id']){
+                        $_SESSION['error_name'] = "Ez a terméknév már foglalt. Válassz másikat!";
+                        unset( $_SESSION['oldDatas']);
+                        break;
+                    }else{
+                        unset($_SESSION['error_name']);
+                    }
+                }    
+                
+                
+                if(!isset($_SESSION['error_name'])){
+                    rename($_SESSION['sess_img'], "../../pictures/products/" . $alt . ".png");
+                    $_SESSION['sess_img']= "../../pictures/products/" . $alt . ".png";
+                    foreach ($products as &$product){
+                        if($product['id'] == $id){
+                            $product['title'] =  $_SESSION['product'];
+                            $product['image'] = $_SESSION['sess_img'];
+                            $product['price'] = $_SESSION['price'];
+                            $product['measure'] = $_SESSION['measure'];
+                            $product['description'] = $_SESSION['sess_description'];
+                            $product['imagealt'] = $alt;
+                        }
+                    }
+                    $actCat['products'] = $products;
+                    foreach ($categories as &$category) {
+                        if($category['name'] == $_SESSION['category']){
+                            $category = $actCat;
+                            break;
+                        }
+                    }
+                    file_put_contents("../../data/products.json", json_encode($categories, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+                    unset($_SESSION['sess_img']);
+                    unset($_SESSION['sess_description']);
+                    unset($_SESSION['category']);
+                    unset($_SESSION['product']);
+                    unset($_SESSION['price']);
+                    unset($_SESSION['measure']);
+                    unset($_SESSION['noImage']);
+                    $SESSION['done'] = true;
+                    header('Location: ./termekLista.php');
+                }
+            }
+            else{
+                $_SESSION['product'] = $_POST['termek'];
+                $_SESSION['sess_description'] = $_POST['descInput'];
+                $_SESSION['category'] = $_POST['categorySelector'];
+                $_SESSION['price'] = $_POST['price'];
+                $_SESSION['measure'] = $_POST['measure'];
+                $categories = json_decode(file_get_contents("../../data/products.json"), true);
+                $products;
+                $actCat = [];
+                foreach ($categories as $category) {
+                    if($category['name'] == $_SESSION['category']){
+                        $products = $category['products'];
+                        $actCat = $category;
+                        break;
+                    }
+                }
+                $ell = false;
+                if(count($products) > 0){
+                    $last = end($products);
+                    $idBefore = explode('.', $last['id'])[1] + 1;
+                    $id = $actCat['id'] . "." . $idBefore;
+                }
+                else{
+                    $id = $actCat['id'] . ".1";
+                    $ell = true;
+                }
+                
+                $abc = [
+                    "á",
+                    "é",
+                    "í",
+                    "ó",
+                    "ö",
+                    "ő",
+                    "ú",
+                    "ü",
+                    "ű",
+                    " "
+                ];
+                $abc2 = [
+                    "a",
+                    "e",
+                    "i",
+                    "o",
+                    "o",
+                    "o",
+                    "u",
+                    "u",
+                    "u",
+                    "_"
+                ];
+                $alt = mb_strtolower($_SESSION['product']);
+                $alt = str_replace($abc, $abc2, $alt);
+                unset($_SESSION['error_name']);
+                if(!$ell){
+                    foreach ($products as $prod){
+                        if($prod['imagealt'] == $alt){
+                            $_SESSION['error_name'] = "Ez a terméknév már foglalt. Válassz másikat!";
+                            break;
+                        }else{
+                            unset($_SESSION['error_name']);
+                        }
+                    }    
+                }
+            
+                if(!isset($_SESSION['error_name'])){
+                    rename("../../pictures/products/kep.png", "../../pictures/products/" . $alt . ".png");
+                    $_SESSION['sess_img']= "../../pictures/products/" . $alt . ".png";
+                    $product = [
+                        "id" => $id,
+                        "image" => $_SESSION['sess_img'],
+                        "imagealt" => $alt,
+                        "title" => $_SESSION['product'],
+                        "price" => $_SESSION["price"],
+                        "measure" => $_SESSION["measure"],
+                        "description" => $_SESSION['sess_description'],
+                        "reviews" => []
+                    ];
+                    array_push($products, $product);
+                    $actCat['products'] = $products;
+                    foreach ($categories as &$category) {
+                        if($category['name'] == $_SESSION['category']){
+                            $category = $actCat;
+                            break;
+                        }
+                    }
+                    file_put_contents("../../data/products.json", json_encode($categories, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+                    $categories = json_decode(file_get_contents("../../data/products.json"), true);
+                    foreach($categories as &$category){
+                        if($category["name"] == $oldCat){
+                            $products = &$category["products"];
+                            foreach ($products as $product){
+                                if($product['id'] === $oldId){
+                                    unset($products[array_search($product, $products)]);
+                                }
+                            }
+                        }
+                    }
+                    file_put_contents("../../data/products.json", json_encode($categories, JSON_PRETTY_PRINT));
+                    unset($_SESSION['vanKepTermek']);
+                    unset($_SESSION['sess_img']);
+                    unset($_SESSION['sess_description']);
+                    unset($_SESSION['category']);
+                    unset($_SESSION['product']);
+                    unset($_SESSION['price']);
+                    unset($_SESSION['measure']);
+                    unset($_SESSION['noImage']);
+                    $SESSION['done'] = true;
+                    header('Location: ./termekLista.php');
+                }
             }
         }
         else{
