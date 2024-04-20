@@ -86,3 +86,24 @@ body{
     margin-top: 3rem;
     justify-self: center;
 }
+
+.starDiv {
+    display: flex;
+    flex-direction:row-reverse;
+    width: 100%;
+    justify-content: center;
+    gap: 2rem;
+    float: right;
+}
+
+.radioStar {
+    display: none;
+}
+
+label {
+    font-size: 2rem;
+}
+
+input:checked ~ label {
+    color: white;
+  }

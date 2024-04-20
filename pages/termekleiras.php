@@ -2,6 +2,7 @@
     if(session_status() !== PHP_SESSION_ACTIVE){
         session_start();
     }
+
 ?>
 <!DOCTYPE html>
 <html lang="hu">
@@ -47,7 +48,8 @@
                             unset($_SESSION['addedToCart']);
                         }
                         echo "</div></div></form>";
-
+                        
+                        $reviewMessage = isset($_SESSION['reviewMessage']) ? $_SESSION['reviewMessage'] : "";
 
                         echo "</div>";
                         echo "<div id='felsoJobb'><div class='jobb'>";
@@ -55,25 +57,39 @@
                         echo "</div><div class='jobb'>";
                         echo '
                         <div id="formWrapper">
-                        <form id="contactForm" action="index.php" method="POST">
-                            <div style="display: flex; width: 100%">
-                                <input name="star" id="a" type="radio" style="width: 10%">
-                                <input name="star" id="b" type="radio" style="width: 10%">
-                                <input name="star" id="c" type="radio" style="width: 10%">
-                                <input name="star" id="d" type="radio" style="width: 10%">
-                                <input name="star" id="e" type="radio" style="width: 10%">
+                        <form id="contactForm" action="functions/ertekelesIr.php" method="POST">
+                            <h2>Értékelés</h2>
+                            <input name="productId" type="hidden" value="'.$id.'"></input>
+                            <div class="starDiv">
+                                <input name="star" class="radioStar" id="s5" value="5" type="radio">
+                                <label for="s5">★</label>
+                                <input name="star" class="radioStar" id="s4" value="4" type="radio">
+                                <label for="s4">★</label>
+                                <input name="star" class="radioStar" id="s3" value="3" type="radio">
+                                <label for="s3">★</label>
+                                <input name="star" class="radioStar" id="s2" value="2" type="radio">
+                                <label for="s2">★</label>
+                                <input name="star" class="radioStar" id="s1" value="1" type="radio">
+                                <label for="s1">★</label>
                             </div>  
                             <div id="contactMessageContainer">
                                 <label for="contactMessageInput" class="contactLabel" id="contactMessageLabel">Üzenet:</label>
-                                <textarea name="contactMessageInput" id="contactMessageInput" cols="30" rows="10" required></textarea>
+                                <textarea name="contactMessageInput" id="contactMessageInput" cols="30" rows="10" required>' . $reviewMessage . '</textarea>
                             </div>
-                            <button id="contactSubmitButton" name="supportSubmit" type="submit">Üzenet elküldése</button>
+                        ';
+                        if(isset($_SESSION['reviewLoginError'])){
+                            echo "<p class='reviewLoginError'>{$_SESSION['reviewLoginError']}</p>";
+                            unset($_SESSION['reviewLoginError']);
+                        }
+                        echo '
+                            <button id="contactSubmitButton" name="contactSubmitButton" onClick=\'javascript:return confirm("Biztosan elküldöd az értékelést?");\' type="submit">Értékelés elküldése</button>
                         </form>
                         </div>
                         ';
                         echo "</div></div></div>";
                         echo "<div id='termekAlso'>";
                         $reviews = $product['reviews'];
+                        $reviews = array_reverse($reviews);
                         foreach ($reviews as $review) {
                             echo "<div class='reviewCard'>";
                             echo "<div class='reviewLeft'>";
