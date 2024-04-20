@@ -471,12 +471,12 @@
         "products": [
             {
                 "id": "7.1",
-                "image": "..\/..\/pictures\/products\/502_bad_gateway.png",
-                "imagealt": "502_bad_gateway",
-                "title": "502 bad gateway",
-                "price": "502",
-                "measure": "code",
-                "description": "lorem ipsum dolor sit amet ",
+                "image": "..\/..\/pictures\/products\/a_bolcs.png",
+                "imagealt": "a_bolcs",
+                "title": "A Bölcs",
+                "price": "69",
+                "measure": "pacek",
+                "description": "Mert ő egy igazi férfi!",
                 "reviews": []
             }
         ]
