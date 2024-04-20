@@ -19,10 +19,15 @@
 
     $categories = json_decode(file_get_contents("../../data/products.json"), true);
     $productNum = 0;
+    $reviewsNum = 0;
     foreach($categories as $category){
         $productNum += count($category['products']);
-        
+        $products = $category['products'];
+        foreach($products as $product){
+            $reviewsNum += count($product['reviews']);
+        }
     }
+
 ?>
 <!DOCTYPE html>
 <html lang="hu">
@@ -60,8 +65,8 @@
                 <p class="metricText">új megrendelés</p>
             </div>
             <div class="metricsBox" id="metricTopRight">
-                <p class="metricNumber">2</p>
-                <p class="metricText">új vélemény</p>
+                <p class="metricNumber"><?php echo $reviewsNum?></p>
+                <p class="metricText">vélemény</p>
             </div>
             <div class="metricsBox" id="metricBottomLeft">
                 <p class="metricNumber"><?php echo rand(0, 100)?></p>

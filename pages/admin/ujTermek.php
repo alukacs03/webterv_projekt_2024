@@ -7,6 +7,8 @@
         header("Location: ../../index.php");
     }
 
+    $id = $_GET['id'];
+
     if (isset($_FILES["productImageInput"]) && isset($_POST['imgUpload'])) {
         $_SESSION['product'] = $_POST['termek'];
         $_SESSION['sess_description'] = $_POST['descInput'];
