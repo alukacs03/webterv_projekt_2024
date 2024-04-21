@@ -15,6 +15,11 @@ if(isset($_SESSION['admin']) && $_SESSION['admin'] == 0){
     $categories = json_decode(file_get_contents("../../../data/products.json"), true);
     foreach($categories as &$category){
         if($category['id'] == $id){
+            $products = &$category['products'];
+            foreach ($products as $product){
+                unset($products[array_search($product, $products)]);
+                unlink("../../../pictures/products/".$product['image']);
+            }
             unset($categories[array_search($category, $categories)]);
             unlink("../../../pictures/categories/".$category['image']);
         }

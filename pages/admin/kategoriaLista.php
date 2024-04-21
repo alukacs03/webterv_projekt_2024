@@ -41,6 +41,7 @@
 
         <div class="adminMainWrapper productsPageWrapper">
             <h1 id="productsTitle" style="margin: 2rem 0">Termékek</h1>
+            <h3 style="color: red;">Vigyázat! A törlés a kategória törlése az összes benne lévő termék törlését vonja maga utás!</h3>
             <div class="productsListWrapper">
                 <?php 
                     $categories = json_decode(file_get_contents("../../data/products.json"), true);
@@ -48,7 +49,7 @@
                         $productDb = count($category['products']);
                         $deleteConfirmText = "Biztos, hogy törölni akarod a {$category['name']} kategóriát?";
                             echo '
-                            <div class="termekWrapper">
+                            <div class="termekWrapper" style="grid-template-columns: 1fr 1fr 1fr 1fr">
                                 <div>
                                     <img src='.$category["image"].' alt='.$category["href"].' class="cartCardProductImage">
                                 </div>
@@ -59,9 +60,6 @@
                                 <div>
                                     <div class="orderCardFieldTitle">Termékek</div>
                                     <div class="orderCardFieldValue orderNameField">'.$productDb.' db</div>
-                                </div>
-                                <div>
-                                    <a  class="orderCardFieldValue formButton buttonField" href="kategoriaModosit.php?id='.$category['id'].'">Módosítás</a>
                                 </div>
                                 <div>
                                     <a class="cartCardBinImage" onClick=\'javascript:return confirm("'.$deleteConfirmText.'");\' href="./functions/kategoriaTorol.php?id='. $category['id'].'" name="kategoriaTorol"><img src="../../pictures/resources/bin.png" alt="kuka" class="cartCardBinImage"></a>

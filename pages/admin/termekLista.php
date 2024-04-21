@@ -59,7 +59,7 @@
                                 </div>
                                 <div>
                                     <div class="orderCardFieldTitle">Ár</div>
-                                    <div class="orderCardFieldValue orderDateField">'.$product['price'].'</div>
+                                    <div class="orderCardFieldValue orderDateField">'.$product['price'].' Ft</div>
                                 </div>
                                 <div>
                                     <div class="orderCardFieldTitle">Mértékegység</div>
