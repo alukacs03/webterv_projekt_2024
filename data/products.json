@@ -7,10 +7,17 @@
         "message": "Gondosan v\u00e1logatott, kem\u00e9nyf\u00e1b\u00f3l sz\u00e1rmaz\u00f3 t\u0171zif\u00e1nk garant\u00e1lja a hosszan tart\u00f3 melegs\u00e9get \u00e9s a kellemes l\u00e1ngokat. T\u0171zif\u00e1nk kiemelked\u0151 f\u0171t\u0151\u00e9rt\u00e9kkel b\u00edr, \u00edgy kevesebb t\u00fczel\u0151vel is komfortos h\u0151m\u00e9rs\u00e9kletet biztos\u00edthat otthon\u00e1ban. A hosszan \u00e9g\u0151 t\u0171zifa k\u00e9nyelmes haszn\u00e1latot ny\u00fajt, m\u00edg a hangulatos l\u00e1ngok meghitt atmoszf\u00e9r\u00e1t teremtenek kandall\u00f3j\u00e1ban vagy k\u00e1lyh\u00e1j\u00e1ban. A R\u00f6nklovagok Kft. profi fasz\u00e1ll\u00edt\u00f3k\u00e9nt gyorsan \u00e9s hat\u00e9konyan juttatja el a t\u0171zif\u00e1t otthon\u00e1ba az orsz\u00e1g b\u00e1rmely pontj\u00e1ra. V\u00e1lasszon minket, ha megb\u00edzhat\u00f3 partnert keres a kiv\u00e1l\u00f3 min\u0151s\u00e9g\u0171 t\u0171zifa k\u00e9nyelmes beszerz\u00e9s\u00e9hez!",
         "products": [
             {
+<<<<<<< Updated upstream
                 "id": 1.1,
                 "image": "..\/..\/pictures\/products\/bukk.jpg",
                 "imagealt": "b\u00fckkfa",
                 "title": "B\u00fckk",
+=======
+                "id": "1.1",
+                "image": "..\/..\/pictures\/products\/bukk.png",
+                "imagealt": "bukk",
+                "title": "Bükk",
+>>>>>>> Stashed changes
                 "price": "59900",
                 "measure": "m<sup>3<\/sup>",
                 "description": "Itt van a le\u00edr\u00e1s, csak k\u00f6zben meg nem l\u00e1tszik, mert eldugtuk.",
@@ -38,11 +45,23 @@
                         "date": "2024.04.20.",
                         "message": "Az \u00e9let sz\u00e9p, de az \u00c1kos szebb!",
                         "stars": 5
+                    },
+                    {
+                        "username": "marhalevel",
+                        "date": "2024.04.21.",
+                        "message": "asd",
+                        "stars": "5"
+                    },
+                    {
+                        "username": "marhalevel",
+                        "date": "2024.04.21.",
+                        "message": "Te",
+                        "stars": "1"
                     }
                 ]
             },
             {
-                "id": 1.2,
+                "id": "1.2",
                 "image": "..\/..\/pictures\/products\/tolgy.jpg",
                 "imagealt": "t\u00f6lgyfa",
                 "title": "T\u00f6lgy",
@@ -59,11 +78,17 @@
                 ]
             },
             {
-                "id": 1.3,
+                "id": "1.3",
                 "image": "..\/..\/pictures\/products\/fenyo.jpg",
+<<<<<<< Updated upstream
                 "imagealt": "feny\u0151fa",
                 "title": "Feny\u0151",
                 "price": "49.900",
+=======
+                "imagealt": "fenyőfa",
+                "title": "Fenyő",
+                "price": "49900",
+>>>>>>> Stashed changes
                 "measure": "m<sup>3<\/sup>",
                 "description": "Itt van a le\u00edr\u00e1s, csak k\u00f6zben meg nem l\u00e1tszik, mert eldugtuk.",
                 "reviews": [
@@ -76,11 +101,11 @@
                 ]
             },
             {
-                "id": 1.4,
+                "id": "1.4",
                 "image": "..\/..\/pictures\/products\/juhar.jpeg",
                 "imagealt": "juharfa",
                 "title": "Juhar",
-                "price": "55.000",
+                "price": "55000",
                 "measure": "m<sup>3<\/sup>",
                 "description": "Itt van a le\u00edr\u00e1s, csak k\u00f6zben meg nem l\u00e1tszik, mert eldugtuk.",
                 "reviews": [
@@ -93,11 +118,17 @@
                 ]
             },
             {
-                "id": 1.5,
+                "id": "1.5",
                 "image": "..\/..\/pictures\/products\/akac.jpg",
+<<<<<<< Updated upstream
                 "imagealt": "ak\u00e1c",
                 "title": "Ak\u00e1c",
                 "price": "54.900",
+=======
+                "imagealt": "akác",
+                "title": "Akác",
+                "price": "54900",
+>>>>>>> Stashed changes
                 "measure": "m<sup>3<\/sup>",
                 "description": "Itt van a le\u00edr\u00e1s, csak k\u00f6zben meg nem l\u00e1tszik, mert eldugtuk.",
                 "reviews": [
@@ -110,11 +141,17 @@
                 ]
             },
             {
-                "id": 1.6,
+                "id": "1.6",
                 "image": "..\/..\/pictures\/products\/koris.jpeg",
+<<<<<<< Updated upstream
                 "imagealt": "k\u0151ris",
                 "title": "K\u0151ris",
                 "price": "61.900",
+=======
+                "imagealt": "kőris",
+                "title": "Kőris",
+                "price": "61900",
+>>>>>>> Stashed changes
                 "measure": "m<sup>3<\/sup>",
                 "description": "Itt van a le\u00edr\u00e1s, csak k\u00f6zben meg nem l\u00e1tszik, mert eldugtuk.",
                 "reviews": [
@@ -127,7 +164,7 @@
                 ]
             },
             {
-                "id": 1.7,
+                "id": "1.7",
                 "image": "..\/..\/pictures\/products\/lucfenyo.jpeg",
                 "imagealt": "lucfeny\u0151",
                 "title": "Lucfeny\u0151",
@@ -153,7 +190,7 @@
         "message": "Term\u00e9keink gondosan v\u00e1logatott, hazai erd\u0151kb\u0151l sz\u00e1rmaz\u00f3 faanyagb\u00f3l k\u00e9sz\u00fclnek, modern technol\u00f3gi\u00e1k \u00e9s szigor\u00fa min\u0151s\u00e9gellen\u0151rz\u00e9s mellett. F\u0171r\u00e9sz\u00e1runk rendk\u00edv\u00fcl strapab\u00edr\u00f3, ellen\u00e1ll\u00f3 a vetemed\u00e9ssel \u00e9s a gomb\u00e1sod\u00e1ssal szemben, \u00edgy hossz\u00fa t\u00e1v\u00fa megold\u00e1st ny\u00fajt \u00e9p\u00edtkez\u00e9si, bark\u00e1cs- \u00e9s hobbiprojektekhez egyar\u00e1nt. Sz\u00e9les v\u00e1laszt\u00e9kban k\u00edn\u00e1lunk deszk\u00e1kat \u00e9s l\u00e9ceket k\u00fcl\u00f6nb\u00f6z\u0151 m\u00e9retben, vastags\u00e1gban \u00e9s fafajt\u00e1ban, hogy megtal\u00e1lja az \u00d6n ig\u00e9nyeinek \u00e9s c\u00e9ljainak legink\u00e1bb megfelel\u0151 term\u00e9ket. Ak\u00e1r tet\u0151fed\u00e9shez, burkol\u00e1shoz, ker\u00edt\u00e9s\u00e9p\u00edt\u00e9shez, b\u00fatorasztalos munk\u00e1khoz, vagy ak\u00e1r dekor\u00e1ci\u00f3s c\u00e9lokra keres f\u0171r\u00e9sz\u00e1rut, a R\u00f6nklovagok Kft.-n\u00e9l biztosan tal\u00e1l megfelel\u0151t. Csapatunk profi tan\u00e1csad\u00e1ssal \u00e1ll az \u00d6n rendelkez\u00e9s\u00e9re, hogy seg\u00edtsen kiv\u00e1lasztani a legoptim\u00e1lisabb f\u0171r\u00e9sz\u00e1rut projektj\u00e9hez. Tov\u00e1bb\u00e1, ig\u00e9ny eset\u00e9n m\u00e9retre v\u00e1gjuk a f\u0171r\u00e9sz\u00e1rut, \u00e9s ak\u00e1r h\u00e1zhoz is sz\u00e1ll\u00edtjuk.",
         "products": [
             {
-                "id": 2.1,
+                "id": "2.1",
                 "image": "..\/..\/pictures\/products\/fenyodeszka.jpeg",
                 "imagealt": "feny\u0151 deszka",
                 "title": "Feny\u0151 deszka",
@@ -170,7 +207,7 @@
                 ]
             },
             {
-                "id": 2.2,
+                "id": "2.2",
                 "image": "..\/..\/pictures\/products\/fenyogerenda.jpeg",
                 "imagealt": "feny\u0151 gerenda",
                 "title": "Feny\u0151 gerenda",
@@ -187,7 +224,7 @@
                 ]
             },
             {
-                "id": 2.3,
+                "id": "2.3",
                 "image": "..\/..\/pictures\/products\/szarufa.jpeg",
                 "imagealt": "vegyes szarufa",
                 "title": "Vegyes szarufa",
@@ -202,6 +239,16 @@
                         "stars": 5
                     }
                 ]
+            },
+            {
+                "id": "2.4",
+                "image": "..\/..\/pictures\/products\/bukk.png",
+                "imagealt": "bukk",
+                "title": "Bükk",
+                "price": "59900",
+                "measure": "m<sup>3<\/sup>",
+                "description": "Itt van a leírás, csak közben meg nem látszik, mert eldugtuk.",
+                "reviews": []
             }
         ]
     },
@@ -213,9 +260,15 @@
         "message": "A R\u00f6nklovagok Kft. nem csak a t\u0171zifa \u00e9s a f\u0171r\u00e9sz\u00e1ru ter\u00e9n ny\u00fajt kiemelked\u0151 min\u0151s\u00e9get, de az OSB lapok piac\u00e1n is megb\u00edzhat\u00f3 partnernek sz\u00e1m\u00edt. K\u00edn\u00e1latunkban megtal\u00e1lja a legk\u00fcl\u00f6nf\u00e9l\u00e9bb m\u00e9ret\u0171 \u00e9s vastags\u00e1g\u00fa OSB lapokat, melyek kiv\u00e1l\u00f3an alkalmasak \u00e9p\u00edtkez\u00e9si \u00e9s bark\u00e1csmunk\u00e1k sz\u00e9les sk\u00e1l\u00e1j\u00e1hoz. Az OSB lapok (Oriented Strand Board) nagy szil\u00e1rds\u00e1g\u00fa, teherb\u00edr\u00f3 \u00e9s nedvess\u00e9g\u00e1ll\u00f3 \u00e9p\u00edt\u0151anyagok, melyeket faforg\u00e1cs pr\u00e9sel\u00e9s\u00e9vel \u00e9s ragaszt\u00e1s\u00e1val \u00e1ll\u00edtanak el\u0151. Sokoldal\u00faan felhaszn\u00e1lhat\u00f3k tet\u0151fed\u00e9shez, falburkol\u00e1shoz, padl\u00f3zathoz, l\u00e9pcs\u0151\u00e9p\u00edt\u00e9shez, b\u00fatorgy\u00e1rt\u00e1shoz \u00e9s m\u00e9g sok m\u00e1shoz.",
         "products": [
             {
+<<<<<<< Updated upstream
                 "id": 3.1,
                 "image": "..\/..\/pictures\/products\/6mm_osb_lap.png",
                 "imagealt": "6mm_osb_lap",
+=======
+                "id": "3.1",
+                "image": "..\/..\/pictures\/products\/6mmOSB.jpeg",
+                "imagealt": "6mm osb lap",
+>>>>>>> Stashed changes
                 "title": "6mm OSB lap",
                 "price": "1245",
                 "measure": "m<sup>2<\/sup>",
@@ -230,11 +283,11 @@
                 ]
             },
             {
-                "id": 3.2,
+                "id": "3.2",
                 "image": "..\/..\/pictures\/products\/12mmOSB.jpeg",
                 "imagealt": "12mm osb lap",
                 "title": "12mm OSB lap",
-                "price": "2.064",
+                "price": "2064",
                 "measure": "m<sup>2<\/sup>",
                 "description": "Itt van a le\u00edr\u00e1s, csak k\u00f6zben meg nem l\u00e1tszik, mert eldugtuk.",
                 "reviews": [
@@ -247,11 +300,17 @@
                 ]
             },
             {
-                "id": 3.3,
+                "id": "3.3",
                 "image": "..\/..\/pictures\/products\/12mmNOSB.jpeg",
+<<<<<<< Updated upstream
                 "imagealt": "12mm n\u00fatf\u00e9deres osb lap",
                 "title": "12mm n\u00fatf\u00e9deres OSB lap",
                 "price": "2.127",
+=======
+                "imagealt": "12mm nútféderes osb lap",
+                "title": "12mm nútféderes OSB lap",
+                "price": "2127",
+>>>>>>> Stashed changes
                 "measure": "m<sup>2<\/sup>",
                 "description": "Itt van a le\u00edr\u00e1s, csak k\u00f6zben meg nem l\u00e1tszik, mert eldugtuk.",
                 "reviews": [
@@ -264,11 +323,17 @@
                 ]
             },
             {
-                "id": 3.4,
+                "id": "3.4",
                 "image": "..\/..\/pictures\/products\/22mmNOSB.jpeg",
+<<<<<<< Updated upstream
                 "imagealt": "22mm n\u00fatf\u00e9deres osb lap",
                 "title": "22mm n\u00fatf\u00e9deres OSB lap",
                 "price": "3.881",
+=======
+                "imagealt": "22mm nútféderes osb lap",
+                "title": "22mm nútféderes OSB lap",
+                "price": "3881",
+>>>>>>> Stashed changes
                 "measure": "m<sup>2<\/sup>",
                 "description": "Itt van a le\u00edr\u00e1s, csak k\u00f6zben meg nem l\u00e1tszik, mert eldugtuk.",
                 "reviews": [
@@ -290,11 +355,17 @@
         "message": "A R\u00f6nklovagok Kft. nem csak a t\u00e9li hideg elleni v\u00e9dekez\u00e9sben, de a kar\u00e1csonyi hangulat megteremt\u00e9s\u00e9ben is seg\u00edt. Gondosan v\u00e1logatott, friss kar\u00e1csonyf\u00e1inkkal var\u00e1zslatos \u00fcnnepi atmoszf\u00e9r\u00e1t teremthet otthon\u00e1ban. K\u00edn\u00e1latunkban megtal\u00e1lja a klasszikus lucfeny\u0151ket \u00e9s a nordmann feny\u0151ket is, k\u00fcl\u00f6nb\u00f6z\u0151 m\u00e9retben \u00e9s form\u00e1ban, hogy megtal\u00e1lja az \u00d6nnek legmegfelel\u0151bbet. Kar\u00e1csonyf\u00e1inkat fenntarthat\u00f3 erd\u0151gazd\u00e1lkod\u00e1sb\u00f3l sz\u00e1rmaztatjuk, \u00edgy a v\u00e1s\u00e1rl\u00e1sukkal hozz\u00e1j\u00e1rul a k\u00f6rnyezet v\u00e9delm\u00e9hez is.",
         "products": [
             {
-                "id": 4.1,
+                "id": "4.1",
                 "image": "..\/..\/pictures\/products\/luckaracsony.jpeg",
+<<<<<<< Updated upstream
                 "imagealt": "lucfeny\u0151 kar\u00e1csonyfa",
                 "title": "Lucfeny\u0151 kar\u00e1csonyfa",
                 "price": "14.900",
+=======
+                "imagealt": "lucfenyő karácsonyfa",
+                "title": "Lucfenyő karácsonyfa",
+                "price": "14900",
+>>>>>>> Stashed changes
                 "measure": "m",
                 "description": "Itt van a le\u00edr\u00e1s, csak k\u00f6zben meg nem l\u00e1tszik, mert eldugtuk.",
                 "reviews": [
@@ -307,11 +378,17 @@
                 ]
             },
             {
-                "id": 4.2,
+                "id": "4.2",
                 "image": "..\/..\/pictures\/products\/nordmannkaracsony.jpeg",
+<<<<<<< Updated upstream
                 "imagealt": "nordmann feny\u0151 kar\u00e1csonyfa",
                 "title": "Nordmann feny\u0151 kar\u00e1csonyfa",
                 "price": "19.900",
+=======
+                "imagealt": "nordmann fenyő karácsonyfa",
+                "title": "Nordmann fenyő karácsonyfa",
+                "price": "19900",
+>>>>>>> Stashed changes
                 "measure": "m",
                 "description": "Itt van a le\u00edr\u00e1s, csak k\u00f6zben meg nem l\u00e1tszik, mert eldugtuk.",
                 "reviews": [
@@ -333,11 +410,17 @@
         "message": "Feledje el az \u00e1tlagos fogpiszk\u00e1l\u00f3kat! A R\u00f6nklovagok Kft. pr\u00e9mium min\u0151s\u00e9g\u0171 fogpiszk\u00e1l\u00f3kat k\u00edn\u00e1l, melyek a mindennapi rutinj\u00e1t is luxuss\u00e1 var\u00e1zsolj\u00e1k. K\u00edn\u00e1latunkban olyan fogpiszk\u00e1l\u00f3k tal\u00e1lhat\u00f3k, amelyek nemcsak praktikusak, hanem kiemelked\u0151 min\u0151s\u00e9g\u0171ek \u00e9s eleg\u00e1nsak is. A R\u00f6nklovagok Kft. fogpiszk\u00e1l\u00f3i: Kiv\u00e1lasztott ny\u00edrf\u00e1b\u00f3l k\u00e9sz\u00fclnek: Kiz\u00e1r\u00f3lag a legfinomabb, hib\u00e1tlan ny\u00edrf\u00e1t haszn\u00e1ljuk, \u00edgy biztos\u00edtva a fogpiszk\u00e1l\u00f3k rendk\u00edv\u00fcli simas\u00e1g\u00e1t \u00e9s sz\u00e1lkamentes haszn\u00e1lat\u00e1t. K\u00e9nyelmes \u00e9s prec\u00edz: Ergonomikus kialak\u00edt\u00e1suknak k\u00f6sz\u00f6nhet\u0151en k\u00e9nyelmesen tarthat\u00f3k a k\u00e9zben, pontos \u00e9s k\u00edm\u00e9letes tiszt\u00edt\u00e1st biztos\u00edtva. Tart\u00f3s \u00e9s megb\u00edzhat\u00f3: A ny\u00edrf\u00e1b\u00f3l k\u00e9sz\u00fclt fogpiszk\u00e1l\u00f3k rendk\u00edv\u00fcl strapab\u00edr\u00f3ak, nem hajlanak el \u00e9s nem t\u00f6redeznek haszn\u00e1lat k\u00f6zben. Letisztult elegancia: Modern diz\u00e1jnjukkal nemcsak praktikus eszk\u00f6z\u00f6k, hanem eleg\u00e1ns kieg\u00e9sz\u00edt\u0151i az asztalnak vagy a neszesszernek. A R\u00f6nklovagok Kft. pr\u00e9mium min\u0151s\u00e9g\u0171 fogpiszk\u00e1l\u00f3i azoknak az ig\u00e9nyes v\u00e1s\u00e1rl\u00f3knak sz\u00f3lnak, akik a legjobbat keresik. T\u00f6k\u00e9letes v\u00e1laszt\u00e1s egy eleg\u00e1ns vacsora kieg\u00e9sz\u00edt\u0151jek\u00e9nt, vagy a mindennapi fog\u00e1pol\u00e1s sor\u00e1n is.",
         "products": [
             {
-                "id": 5.1,
+                "id": "5.1",
                 "image": "..\/..\/pictures\/products\/premiumfogpiszkalo.jpeg",
+<<<<<<< Updated upstream
                 "imagealt": "pr\u00e9mium fogpiszk\u00e1l\u00f3",
                 "title": "Pr\u00e9mium fogpiszk\u00e1l\u00f3",
                 "price": "4.999",
+=======
+                "imagealt": "prémium fogpiszkáló",
+                "title": "Prémium fogpiszkáló",
+                "price": "4999",
+>>>>>>> Stashed changes
                 "measure": "100 db",
                 "description": "Itt van a le\u00edr\u00e1s, csak k\u00f6zben meg nem l\u00e1tszik, mert eldugtuk.",
                 "reviews": [
@@ -350,7 +433,7 @@
                 ]
             },
             {
-                "id": 5.2,
+                "id": "5.2",
                 "image": "..\/..\/pictures\/products\/simafogpiszkalo.jpeg",
                 "imagealt": "fogpiszk\u00e1l\u00f3",
                 "title": "Fogpiszk\u00e1l\u00f3",
@@ -367,11 +450,17 @@
                 ]
             },
             {
-                "id": 5.3,
+                "id": "5.3",
                 "image": "..\/..\/pictures\/products\/mentolosfogpiszkalo.jpeg",
+<<<<<<< Updated upstream
                 "imagealt": "mentolos fogpiszk\u00e1l\u00f3",
                 "title": "Mentolos fogpiszk\u00e1l\u00f3",
                 "price": "5.999",
+=======
+                "imagealt": "mentolos fogpiszkáló",
+                "title": "Mentolos fogpiszkáló",
+                "price": "5999",
+>>>>>>> Stashed changes
                 "measure": "100 db",
                 "description": "Itt van a le\u00edr\u00e1s, csak k\u00f6zben meg nem l\u00e1tszik, mert eldugtuk.",
                 "reviews": [
@@ -386,9 +475,15 @@
             {
                 "id": "5.4",
                 "image": "..\/..\/pictures\/products\/fidgetfogpiszkalo.jpeg",
+<<<<<<< Updated upstream
                 "imagealt": "fidget spinner fogpiszk\u00e1l\u00f3",
                 "title": "Fidget spinner fogpiszk\u00e1l\u00f3",
                 "price": "5.000",
+=======
+                "imagealt": "fidget spinner fogpiszkáló",
+                "title": "Fidget spinner fogpiszkáló",
+                "price": "5000",
+>>>>>>> Stashed changes
                 "measure": "db",
                 "description": "Itt van a le\u00edr\u00e1s, csak k\u00f6zben meg nem l\u00e1tszik, mert eldugtuk.",
                 "reviews": [
@@ -399,6 +494,16 @@
                         "stars": 5
                     }
                 ]
+            },
+            {
+                "id": "5.5",
+                "image": "..\/..\/pictures\/products\/bukk.png",
+                "imagealt": "bukk",
+                "title": "Bükk",
+                "price": "59900",
+                "measure": "m<sup>3<\/sup>",
+                "description": "Itt van a leírás, csak közben meg nem látszik, mert eldugtuk.",
+                "reviews": []
             }
         ]
     },
@@ -412,9 +517,15 @@
             {
                 "id": "6.1",
                 "image": "..\/..\/pictures\/products\/hagyomanyostipli.jpeg",
+<<<<<<< Updated upstream
                 "imagealt": "hagyom\u00e1nyos faszeg",
                 "title": "Hagyom\u00e1nyos faszeg",
                 "price": "1.199",
+=======
+                "imagealt": "hagyományos faszeg",
+                "title": "Hagyományos faszeg",
+                "price": "1199",
+>>>>>>> Stashed changes
                 "measure": "100 db",
                 "description": "Itt van a le\u00edr\u00e1s, csak k\u00f6zben meg nem l\u00e1tszik, mert eldugtuk.",
                 "reviews": [
@@ -429,9 +540,15 @@
             {
                 "id": "6.2",
                 "image": "..\/..\/pictures\/products\/barazdalttipli.jpeg",
+<<<<<<< Updated upstream
                 "imagealt": "bar\u00e1zd\u00e1lt faszeg",
                 "title": "Bar\u00e1zd\u00e1lt faszeg",
                 "price": "1.999",
+=======
+                "imagealt": "barázdált faszeg",
+                "title": "Barázdált faszeg",
+                "price": "1999",
+>>>>>>> Stashed changes
                 "measure": "100 db",
                 "description": "Itt van a le\u00edr\u00e1s, csak k\u00f6zben meg nem l\u00e1tszik, mert eldugtuk.",
                 "reviews": [
@@ -445,12 +562,47 @@
             },
             {
                 "id": "6.3",
+<<<<<<< Updated upstream
                 "image": "..\/..\/pictures\/products\/fembetetes_faszeg.png",
                 "imagealt": "fembetetes_faszeg",
                 "title": "F\u00e9mbet\u00e9tes faszeg",
                 "price": "3",
                 "measure": "100 db",
                 "description": "Itt van a le\u00edr\u00e1s, csak k\u00f6zben meg nem l\u00e1tszik, mert eldugtuk.",
+=======
+                "image": "..\/..\/pictures\/products\/fembetetestipli.jpeg",
+                "imagealt": "f\u00e9mbet\u00e9tes faszeg",
+                "title": "F\u00e9mbet\u00e9tes faszeg",
+                "price": "3881",
+                "measure": "100 db",
+                "description": "Itt van a le\u00edr\u00e1s, csak k\u00f6zben meg nem l\u00e1tszik, mert eldugtuk.",
+                "reviews": [
+                    {
+                        "username": "B\u00e1s",
+                        "date": "2024.04.20.",
+                        "message": "Az \u00e9let sz\u00e9p, de az \u00c1kos szebb!",
+                        "stars": 5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "href": "bilicki",
+        "name": "Bilicki",
+        "image": "..\/..\/pictures\/categories\/cat_bilicki.png",
+        "message": "hal",
+        "products": [
+            {
+                "id": "7.1",
+                "image": "..\/..\/pictures\/products\/a_legbolcsebb_valaha.png",
+                "imagealt": "a_legbolcsebb_valaha",
+                "title": "A Legbölcsebb Valaha",
+                "price": "69420",
+                "measure": "pacek",
+                "description": "Mert ő egy igazi férfi!",
+>>>>>>> Stashed changes
                 "reviews": []
             }
         ]

@@ -1,20 +1,14 @@
-{
-    "1": {
-        "username": "BarnaSanyi",
-        "email": "sbarnabas0502@gmail.com",
-        "password": "$2y$10$TDu.o2v3eEp8hUkUIqKDruZWxm8kbmLUxthVbuICISGayMS5lNjqe",
-        "admin": 1
-    },
-    "3": {
-        "username": "koliati",
-        "email": "koli@ati.com",
-        "password": "$2y$10$Y.fphzULLOolqmaRpsB2YuO8aBVL.Z6c4JxzAcMaVTgPQ06S\/T9Oa",
-        "admin": 0
-    },
-    "4": {
+[
+    {
         "username": "marhalevel",
         "email": "marha@level.com",
-        "password": "$2y$10$QDV.9p5X.DGdnVNHQI63SOYTuMU7OAy0sGshoQ4rradXNpJWxFbb6",
+        "password": "$2y$10$K15SlLLEw71IN7GZ5IUXZOeubKQP\/KHEDNyO3uUjQ7A9DB3HT6fhe",
         "admin": 1
+    },
+    {
+        "username": "sajt",
+        "email": "sajt@sajt.com",
+        "password": "$2y$10$RiH05mAnG58nBpZ6eHJmsO2sCXvvULF3ivGt95s0\/palZ\/Gm4W6CS",
+        "admin": 0
     }
-}
+]
