@@ -29,7 +29,7 @@
                 <h2>Profil adatok - <?php echo $_SESSION['username']; ?></h2>
                 <h3>Valamelyik adat módosításához csak írd át az adott adatot.</h3>
                 <?php if(isset($_SESSION['emptyFields'])) {echo $_SESSION['emptyFields'];}?>
-                <div id="contactTopContainer" style="flex-wrap: row">
+                <div id="contactTopContainer" style="flex-wrap: wrap">
                     <div id="contactNameContainer" class="contactContainer">
                         <label for="contactNameInput" class="contactLabel">Név</label>
                         <input type="text" name="contactNameInput" id="contactNameInput" class="contactInputField" placeholder="Név..." value="<?php echo isset($_SESSION['username']) ? $_SESSION['username'] : '' ?>">
@@ -38,15 +38,15 @@
                         <label for="contactEmailInput" class="contactLabel">E-mail</label>
                         <input type="email" name="contactEmailInput" id="contactEmailInput" class="contactInputField" placeholder="E-mail..." value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : '' ?>">
                     </div>
-                    <div id="contactSubjectContainer" class="contactContainer">
+                    <div class="contactContainer">
                         <label for="newPass" class="contactLabel">Új jelszó</label>
                         <input type="password" name="newPass" id="newPass" class="contactInputField" value="" placeholder="Új jelszó...">
                     </div>
-                    <div id="contactSubjectContainer" class="contactContainer">
+                    <div class="contactContainer">
                         <label for="newPassAgain" class="contactLabel">Új jelszó mégegyszer</label>
                         <input type="password" name="newPassAgain" id="newPassAgain" class="contactInputField" value="" placeholder="Új jelszó...">
                     </div>
-                    <div id="contactSubjectContainer" class="contactContainer">
+                    <div class="contactContainer">
                         <label for="currPass" class="contactLabel">Jelenlegi jelszó*</label>
                         <input type="password" name="currPass" id="currPass" class="contactInputField" placeholder="Jelenlegi jelszó..." required>
                         <h6 style="user-select: none;">*A jelenlegi jelszó megadása kötelező.</h6>
@@ -55,6 +55,7 @@
                 </div>
 
                 <button id="contactSubmitButton" name="userChangeSubmit" type="submit">Adatok módosítása</button>
+                <a href="functions/deleteUser.php?username=<?php echo $_SESSION['username'] ?>" onClick="javascript:return confirm('Biztosan törölni akarod a fiókod?')" id="deleteUserButton" style="background-color: red;" class="formButton buttonField">Fiók törlése</a>
             </form>
         </div>
         <h1 id="ordersTitle">Megrendelések</h1>

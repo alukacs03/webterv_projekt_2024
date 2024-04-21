@@ -48,7 +48,7 @@
                     echo "<input type='hidden' name='productId' value='{$product['id']}'>";
                     echo "<a href='termekleiras.php?id={$product['id']}'><img src='{$product['image']}' alt='{$product['imagealt']}' class='productImage'></a>";
                     echo "<div class='productBottomDiv'><div class='productTextWrapper'><p class='productName'>{$product['title']}</p><p class='productPrice'>{$ar} Ft / {$product['measure']}</p></div>";
-                    echo "<div class='productPurchaseBar'><input value='1' max='500' class='amountInput' min='1' type='number' name='amountInput'><label>{$product['measure']}</label><button class='productCartButton' name='kosarbaRak' style='border:none; color: white'><img class='cartIcon' src='../pictures/resources/shopping-cart.png' alt='kosár'><h3 class='productCartTitle'>Kosárba</h3></button></div>";
+                    echo "<div class='productPurchaseBar'><input value='1' max='500' class='amountInput' min='1' type='number' name='amountInput'><label>{$product['measure']}</label><button class='productCartButton' name='kosarbaRak' style='border:none; color: white'><img class='cartIcon' src='../pictures/resources/shopping-cart.png' alt='kosár'>Kosárba</button></div>";
                     echo "</div></div></form>";
                 };
                 echo "</div>";

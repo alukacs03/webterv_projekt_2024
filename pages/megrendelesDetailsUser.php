@@ -29,7 +29,6 @@
 </head>
 <body>
     <?php include_once "../templates/header.php"; ?>
-    </header>
     <main>
         <div class="adminMainWrapper ordersPageWrapper">
             <div id="topbar">

@@ -4,7 +4,6 @@
         setcookie("cart", serialize([]), time() + (60*60*24*30), "/");
     }    
     $vegosszeg = 0;
-    $szallitas = 0;
 ?>
 <!DOCTYPE html>
 <html lang="hu">
@@ -106,7 +105,7 @@
                 </div>
                 <div class="sumCardField">
                     <p class="cartCardSummaryText" id="cartCardProductsPrice"><?php echo number_format($vegosszeg, 0, ',', '.')?> Ft</p>
-                    <p class="cartCardSummaryText" id="cartCardTransportPrice"><?php echo number_format($szallitas, 0, ',', '.')?> Ft</p>
+                    <p class="cartCardSummaryText" id="cartCardTransportPrice">0 Ft (korlátozott akció)</p>
                 </div>
                 <div class="sumCardField" id="sumCardSumField">
                     <p class="cartCardSummaryText" id="cartCardLastFieldSumTitle">Összesen</p>

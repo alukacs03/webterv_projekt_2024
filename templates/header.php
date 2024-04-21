@@ -14,6 +14,9 @@
                 <a href="termek.php" class="menuLink">Termékek</a>
             </li>
             <li class="menuItem">
+                <a href="faszett.php" class="menuLink">Faszettek</a>
+            </li>
+            <li class="menuItem">
                 <a href="kosar.php" class="menuLink">Kosár</a>
             </li>
             <?php

@@ -82,7 +82,7 @@
                                         <div class="orderCardFieldValue orderSumField">'.$vegosszeg.' Ft</div>
                                     </div>
                                     <form class="orderCardField" method="post">
-                                    <button  class="orderCardFieldValue formButton buttonField" action="megrendelesDetails.php">MÓDOSÍTÁS</button>
+                                    <button  class="orderCardFieldValue formButton buttonField">MÓDOSÍTÁS</button>
                                         <select id="categorySelector" name="categorySelector">
                                             <option value="1" ' . ($order['allapot'] == 1 ? "selected" : "") . '>Kiszállítva</option>
                                             <option value="2" ' . ($order['allapot'] == 2 ? "selected" : "") . '>Folyamatban</option>
